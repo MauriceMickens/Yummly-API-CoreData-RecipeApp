@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  SearchBarCustomSegue.h
 //  YumYum2
 //
 //  Created by PhantomDestroyer on 2/21/15.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface SearchBarCustomSegue : UIStoryboardSegue
 
 @end
-
