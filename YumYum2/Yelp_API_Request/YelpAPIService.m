@@ -15,8 +15,7 @@
 
 @implementation YelpAPIService
 
--(void)searchNearByRestaurantsByFilter:(NSString *)categoryFilter atLatitude:(CLLocationDegrees)latitude
-                          andLongitude:(CLLocationDegrees)longitude {
+-(void)searchNearByRestaurantsByFilter:(NSString *)categoryFilter atLatitude:(CLLocationDegrees)latitude andLongitude:(CLLocationDegrees)longitude {
     
     NSString *urlString = [NSString stringWithFormat:@"%@?term=%@&category_filter=%@&ll=%f,%f",
                            YELP_SEARCH_URL,

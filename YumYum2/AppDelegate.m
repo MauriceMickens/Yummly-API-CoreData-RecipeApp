@@ -14,11 +14,16 @@
 
 @implementation AppDelegate
 
-
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+
     [self customizeAppearance];
+    
+    // Intialize location manager
+    
+    self.customLocationManager = [[CLLocationManager alloc] init];
+    self.customLocationManager.desiredAccuracy = kCLLocationAccuracyKilometer;
+    self.customLocationManager.delegate = self;
+    [self.customLocationManager startUpdatingLocation];
     
     return YES;
 }
@@ -130,6 +135,37 @@
             abort();
         }
     }
+}
+
+# pragma mark - Updates user's current location
+
+-(void)updateCurrentLocation {
+    [self.customLocationManager startUpdatingLocation];
+}
+
+-(void)stopUpdatingCurrentLocation {
+    [self.customLocationManager stopUpdatingHeading];
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
+    self.currentUserLocation = newLocation;
+    
+    [self.customLocationManager stopUpdatingLocation];
+    self.currentUserLocation = [[CLLocation alloc] initWithLatitude:newLocation.coordinate.latitude
+                                                          longitude:newLocation.coordinate.longitude];
+}
+
+#pragma mark - CLLocationManagerDelegate
+- (void)locationManager:(CLLocationManager *)manager
+       didFailWithError:(NSError *)error
+{
+    NSLog(@"didFailWithError %@", error);
+}
+- (void)locationManager:(CLLocationManager *)manager
+     didUpdateLocations:(NSArray *)locations
+{
+    CLLocation *newLocation = [locations lastObject];
+    NSLog(@"didUpdateLocations %@", newLocation);
 }
 
 @end

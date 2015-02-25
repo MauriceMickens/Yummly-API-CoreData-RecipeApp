@@ -27,12 +27,74 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="What's for Dinner?" id="3oJ-OH-8HY">
                         <barButtonItem key="leftBarButtonItem" image="search-1" id="6xR-6K-F0R"/>
-                        <barButtonItem key="rightBarButtonItem" image="map_pin_location_2" id="U8R-AC-Qx9"/>
+                        <barButtonItem key="rightBarButtonItem" image="map_pin_location_2" id="U8R-AC-Qx9">
+                            <connections>
+                                <segue destination="nKA-Lu-htD" kind="presentation" id="FNj-X6-hQY"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o3g-gm-dgp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="801" y="-1408"/>
+            <point key="canvasLocation" x="817" y="-1402"/>
+        </scene>
+        <!--Nearby Fressh-->
+        <scene sceneID="Siw-GI-Kgj">
+            <objects>
+                <tableViewController id="dOu-Me-YnN" customClass="YelpViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="88" sectionHeaderHeight="22" sectionFooterHeight="22" id="3vX-Eg-DC3">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="YelpResultTableViewCell" rowHeight="88" id="PQw-TV-geT" customClass="YelpResultTableViewCell">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PQw-TV-geT" id="LbU-eo-uTn">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8gJ-BX-0mq">
+                                            <rect key="frame" x="125" y="0.0" width="467" height="34"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fFa-1H-s3J">
+                                            <rect key="frame" x="125" y="31" width="95" height="24"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dx2-TO-ofH">
+                                            <rect key="frame" x="125" y="61" width="467" height="21"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AGq-SP-Mus">
+                                            <rect key="frame" x="8" y="8" width="109" height="74"/>
+                                        </imageView>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="addressLabel" destination="Dx2-TO-ofH" id="eLa-zt-Yn2"/>
+                                    <outlet property="nameLabel" destination="8gJ-BX-0mq" id="g8G-MA-Vh4"/>
+                                    <outlet property="ratingImage" destination="fFa-1H-s3J" id="fz2-WP-0ex"/>
+                                    <outlet property="thumbImage" destination="AGq-SP-Mus" id="X3S-1t-kB7"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="dOu-Me-YnN" id="b5D-am-8Np"/>
+                            <outlet property="delegate" destination="dOu-Me-YnN" id="gO6-LM-OWw"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Nearby Fressh" id="dqJ-9K-OVs">
+                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="mgd-he-gpK"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="YelpResultTableView" destination="3vX-Eg-DC3" id="JXI-sj-fJ8"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NU3-S9-RZD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2552" y="-1414"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="37u-7A-9Rw">
@@ -225,6 +287,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uRs-GE-uAA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="279" y="460"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="zua-k9-wcj">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nKA-Lu-htD" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Qdu-w9-XyW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="dOu-Me-YnN" kind="relationship" relationship="rootViewController" id="tMf-rY-kXI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jU5-Hx-OTn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1740" y="-1402"/>
         </scene>
     </scenes>
     <resources>
