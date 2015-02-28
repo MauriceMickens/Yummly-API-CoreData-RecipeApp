@@ -17,7 +17,7 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        // Initialization code
+
     }
     return self;
 }
@@ -41,12 +41,12 @@
 
 - (void)configureForSearchResult:(SearchResult *)searchResult
 {
-    self.recipeNameLabel.text = searchResult.recipeName;
+    self.recipeLabel.text = searchResult.recipeName;
     
-    self.sourceNameLabel.text = searchResult.sourceDisplayName;
+    self.sourceLabel.text = searchResult.sourceDisplayName;
     
     
-    [self.artworkImageView setImageWithURL:
+    [self.artworkView setImageWithURL:
      [NSURL URLWithString:searchResult.imageUrlsBySize[@"90"]]
                           placeholderImage:[UIImage imageNamed:@"Placeholder"]];
 }
@@ -66,9 +66,9 @@
 - (void)prepareForReuse
 {
     [super prepareForReuse];
-    [self.artworkImageView cancelImageRequestOperation];
-    self.recipeNameLabel.text = nil;
-    self.sourceNameLabel.text = nil;
+    [self.artworkView cancelImageRequestOperation];
+    self.recipeLabel.text = nil;
+    self.sourceLabel.text = nil;
 }
 
 @end

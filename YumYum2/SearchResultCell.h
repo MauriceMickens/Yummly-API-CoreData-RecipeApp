@@ -12,9 +12,10 @@
 
 @interface SearchResultCell : UITableViewCell
 
-@property (nonatomic, weak) IBOutlet UILabel *recipeNameLabel;
-@property (nonatomic, weak) IBOutlet UILabel *sourceNameLabel;
-@property (nonatomic, weak) IBOutlet UIImageView *artworkImageView;
+
+@property (nonatomic, weak) IBOutlet UILabel *recipeLabel;
+@property (nonatomic, weak) IBOutlet UILabel *sourceLabel;
+@property (nonatomic, weak) IBOutlet UIImageView *artworkView;
 
 - (void)configureForSearchResult:(SearchResult *)searchResult;
 
