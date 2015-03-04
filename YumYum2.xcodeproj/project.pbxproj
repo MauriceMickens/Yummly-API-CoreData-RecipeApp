@@ -43,11 +43,18 @@
 		9E7DF3D41A9A23F1004DB657 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E7DF3D31A9A23F1004DB657 /* Foundation.framework */; };
 		9E7DF3D61A9A2404004DB657 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E7DF3D51A9A2404004DB657 /* UIKit.framework */; };
 		9E9277651AA2345500CF85A6 /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E9277641AA2345500CF85A6 /* SearchResultCell.xib */; };
+		9E92776A1AA2671500CF85A6 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E9277691AA2671400CF85A6 /* Accelerate.framework */; };
+		9E92776F1AA274AA00CF85A6 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E92776E1AA274AA00CF85A6 /* CoreImage.framework */; };
+		9E9277731AA2759100CF85A6 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E9277721AA2759100CF85A6 /* UIImage+Resize.m */; };
+		9E9277761AA277DF00CF85A6 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E9277751AA277DF00CF85A6 /* UIImage+ImageEffects.m */; };
+		9E9277791AA290D300CF85A6 /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E9277781AA290D300CF85A6 /* NavigationController.m */; };
+		9E92777C1AA36D3E00CF85A6 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E92777B1AA36D3E00CF85A6 /* HomeViewController.m */; };
+		9E9277811AA38CFB00CF85A6 /* HomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E9277801AA38CFB00CF85A6 /* HomeCell.m */; };
+		9EB272A41AA3E44700525022 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9EB272A31AA3E44700525022 /* Images.xcassets */; };
 		9EB89C0D1A9FFA0600A2BE44 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EB89C0C1A9FFA0600A2BE44 /* Main.storyboard */; };
 		9EBB37721A98F7B4002B3B09 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EBB37711A98F7B4002B3B09 /* main.m */; };
 		9EBB37751A98F7B4002B3B09 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EBB37741A98F7B4002B3B09 /* AppDelegate.m */; };
 		9EBB37781A98F7B5002B3B09 /* YumYum2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9EBB37761A98F7B5002B3B09 /* YumYum2.xcdatamodeld */; };
-		9EBB37801A98F7B5002B3B09 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9EBB377F1A98F7B5002B3B09 /* Images.xcassets */; };
 		9EBB37831A98F7B5002B3B09 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EBB37811A98F7B5002B3B09 /* LaunchScreen.xib */; };
 		9EBB378F1A98F7B5002B3B09 /* YumYum2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EBB378E1A98F7B5002B3B09 /* YumYum2Tests.m */; };
 		9EBB379A1A98F855002B3B09 /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EBB37991A98F855002B3B09 /* TabBarController.m */; };
@@ -131,6 +138,19 @@
 		9E7DF3D31A9A23F1004DB657 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9E7DF3D51A9A2404004DB657 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9E9277641AA2345500CF85A6 /* SearchResultCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchResultCell.xib; sourceTree = "<group>"; };
+		9E9277691AA2671400CF85A6 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		9E92776E1AA274AA00CF85A6 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		9E9277711AA2759100CF85A6 /* UIImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resize.h"; sourceTree = "<group>"; };
+		9E9277721AA2759100CF85A6 /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
+		9E9277741AA277DF00CF85A6 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		9E9277751AA277DF00CF85A6 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		9E9277771AA290D300CF85A6 /* NavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationController.h; sourceTree = "<group>"; };
+		9E9277781AA290D300CF85A6 /* NavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationController.m; sourceTree = "<group>"; };
+		9E92777A1AA36D3E00CF85A6 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		9E92777B1AA36D3E00CF85A6 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		9E92777F1AA38CFB00CF85A6 /* HomeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeCell.h; sourceTree = "<group>"; };
+		9E9277801AA38CFB00CF85A6 /* HomeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeCell.m; sourceTree = "<group>"; };
+		9EB272A31AA3E44700525022 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9EB89C0C1A9FFA0600A2BE44 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		9EBB376C1A98F7B4002B3B09 /* YumYum2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YumYum2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EBB37701A98F7B4002B3B09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -138,7 +158,6 @@
 		9EBB37731A98F7B4002B3B09 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9EBB37741A98F7B4002B3B09 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		9EBB37771A98F7B5002B3B09 /* YumYum2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = YumYum2.xcdatamodel; sourceTree = "<group>"; };
-		9EBB377F1A98F7B5002B3B09 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9EBB37821A98F7B5002B3B09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		9EBB37881A98F7B5002B3B09 /* YumYum2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YumYum2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EBB378D1A98F7B5002B3B09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -160,6 +179,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E92776F1AA274AA00CF85A6 /* CoreImage.framework in Frameworks */,
+				9E92776A1AA2671500CF85A6 /* Accelerate.framework in Frameworks */,
 				9E1ABDE71A9C18EA008334BD /* CoreGraphics.framework in Frameworks */,
 				9E7DF3D61A9A2404004DB657 /* UIKit.framework in Frameworks */,
 				9E7DF3D41A9A23F1004DB657 /* Foundation.framework in Frameworks */,
@@ -266,6 +287,9 @@
 				9E76EE881A9E4A0E00B9E0FA /* SearchResultCell.m */,
 				9E76EE891A9E4A0E00B9E0FA /* SearchResult.h */,
 				9E76EE8A1A9E4A0E00B9E0FA /* SearchResult.m */,
+				9E92777F1AA38CFB00CF85A6 /* HomeCell.h */,
+				9E9277801AA38CFB00CF85A6 /* HomeCell.m */,
+				9E9277701AA2753900CF85A6 /* Other Sources */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -273,6 +297,8 @@
 		9E7DF3C81A9A2363004DB657 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9E92776E1AA274AA00CF85A6 /* CoreImage.framework */,
+				9E9277691AA2671400CF85A6 /* Accelerate.framework */,
 				9E1ABDE61A9C18EA008334BD /* CoreGraphics.framework */,
 				9E7DF3D51A9A2404004DB657 /* UIKit.framework */,
 				9E7DF3D31A9A23F1004DB657 /* Foundation.framework */,
@@ -284,6 +310,17 @@
 				E6E5900FE08573553276D1C2 /* libPods-YumYum2.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9E9277701AA2753900CF85A6 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				9E9277741AA277DF00CF85A6 /* UIImage+ImageEffects.h */,
+				9E9277751AA277DF00CF85A6 /* UIImage+ImageEffects.m */,
+				9E9277711AA2759100CF85A6 /* UIImage+Resize.h */,
+				9E9277721AA2759100CF85A6 /* UIImage+Resize.m */,
+			);
+			name = "Other Sources";
 			sourceTree = "<group>";
 		};
 		9EBB37631A98F7B4002B3B09 = {
@@ -317,8 +354,8 @@
 				9EFE32D51A9EBFD800819E54 /* Views */,
 				9EF9AFF61A9E4FEB00033F94 /* View Controllers */,
 				9E76EE861A9E49CA00B9E0FA /* Model */,
-				9EBB377F1A98F7B5002B3B09 /* Images.xcassets */,
 				9EBB37811A98F7B5002B3B09 /* LaunchScreen.xib */,
+				9EB272A31AA3E44700525022 /* Images.xcassets */,
 				9EBB37761A98F7B5002B3B09 /* YumYum2.xcdatamodeld */,
 				9EBB376F1A98F7B4002B3B09 /* Supporting Files */,
 			);
@@ -362,6 +399,10 @@
 				9E76EE811A9D5E7500B9E0FA /* YelpViewController.m */,
 				9EBB379E1A990A92002B3B09 /* SearchListViewController.h */,
 				9EBB379F1A990A92002B3B09 /* SearchListViewController.m */,
+				9E9277771AA290D300CF85A6 /* NavigationController.h */,
+				9E9277781AA290D300CF85A6 /* NavigationController.m */,
+				9E92777A1AA36D3E00CF85A6 /* HomeViewController.h */,
+				9E92777B1AA36D3E00CF85A6 /* HomeViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -468,13 +509,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				9EB89C0D1A9FFA0600A2BE44 /* Main.storyboard in Resources */,
+				9EB272A41AA3E44700525022 /* Images.xcassets in Resources */,
 				9EFE32DF1A9EC79700819E54 /* LoadingCell.xib in Resources */,
 				9E9277651AA2345500CF85A6 /* SearchResultCell.xib in Resources */,
 				9E1ABDDD1A9C14A0008334BD /* README in Resources */,
 				9E1ABDDA1A9C14A0008334BD /* OATestServer.rb in Resources */,
 				9EFE32DD1A9EC70500819E54 /* NothingFoundCell.xib in Resources */,
 				9EBB37831A98F7B5002B3B09 /* LaunchScreen.xib in Resources */,
-				9EBB37801A98F7B5002B3B09 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -525,6 +566,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E9277761AA277DF00CF85A6 /* UIImage+ImageEffects.m in Sources */,
 				9E1ABDCF1A9C14A0008334BD /* sha1.c in Sources */,
 				9E1ABDCE1A9C14A0008334BD /* hmac.c in Sources */,
 				9E1ABDD31A9C14A0008334BD /* OADataFetcher.m in Sources */,
@@ -534,7 +576,9 @@
 				9E1ABDD71A9C14A0008334BD /* OAProblem.m in Sources */,
 				9E1ABDD51A9C14A0008334BD /* OAMutableURLRequest.m in Sources */,
 				9E1ABDD91A9C14A0008334BD /* OAServiceTicket.m in Sources */,
+				9E9277731AA2759100CF85A6 /* UIImage+Resize.m in Sources */,
 				9E1ABDD81A9C14A0008334BD /* OARequestParameter.m in Sources */,
+				9E9277811AA38CFB00CF85A6 /* HomeCell.m in Sources */,
 				9E1ABDD21A9C14A0008334BD /* OAConsumer.m in Sources */,
 				9EBB37A01A990A92002B3B09 /* SearchListViewController.m in Sources */,
 				9E76EE8B1A9E4A0E00B9E0FA /* SearchResultCell.m in Sources */,
@@ -548,11 +592,13 @@
 				9EBB37751A98F7B4002B3B09 /* AppDelegate.m in Sources */,
 				9E1ABDCD1A9C14A0008334BD /* Base64Transcoder.c in Sources */,
 				9EBB37721A98F7B4002B3B09 /* main.m in Sources */,
+				9E92777C1AA36D3E00CF85A6 /* HomeViewController.m in Sources */,
 				9EBB379D1A990A04002B3B09 /* SearchBarViewController.m in Sources */,
 				9E1ABDE51A9C14F1008334BD /* YelpAPIService.m in Sources */,
 				9E1ABDDB1A9C14A0008334BD /* OAToken.m in Sources */,
 				9E76EE851A9D600500B9E0FA /* YelpResultTableViewCell.m in Sources */,
 				9E76EE8C1A9E4A0E00B9E0FA /* SearchResult.m in Sources */,
+				9E9277791AA290D300CF85A6 /* NavigationController.m in Sources */,
 				9E1ABDCC1A9C14A0008334BD /* NSURL+Base.m in Sources */,
 				9E1ABDDC1A9C14A0008334BD /* OATokenManager.m in Sources */,
 			);

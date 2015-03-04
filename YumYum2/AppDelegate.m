@@ -30,7 +30,11 @@
 
 - (void)customizeAppearance
 {
-   
+    [[UINavigationBar appearance] setBarTintColor:[UIColor redColor]];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{
+                                                           NSForegroundColorAttributeName : [UIColor whiteColor],
+                                                           }];
+    [[UITabBar appearance] setTintColor: [UIColor redColor]];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

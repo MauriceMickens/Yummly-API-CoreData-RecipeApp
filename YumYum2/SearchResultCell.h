@@ -16,6 +16,7 @@
 @property (nonatomic, weak) IBOutlet UILabel *recipeLabel;
 @property (nonatomic, weak) IBOutlet UILabel *sourceLabel;
 @property (nonatomic, weak) IBOutlet UIImageView *artworkView;
+@property (nonatomic, weak) UIImage *backgroundImage;
 
 - (void)configureForSearchResult:(SearchResult *)searchResult;
 

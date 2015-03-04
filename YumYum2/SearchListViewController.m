@@ -41,9 +41,16 @@ static const int NumberOfSections = 1;
     return self;
 }
 
+- (IBAction)cancel:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+      self.tableView.rowHeight = 132;
     _searchBar.delegate = self;
     
     UINib *cellNib = [UINib nibWithNibName:SearchResultCellIdentifier bundle:nil];
@@ -54,7 +61,6 @@ static const int NumberOfSections = 1;
     
     cellNib = [UINib nibWithNibName:LoadingCellIdentifier bundle:nil];
     [self.tableView registerNib:cellNib forCellReuseIdentifier:LoadingCellIdentifier];
-    
     
 }
 

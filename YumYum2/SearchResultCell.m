@@ -10,6 +10,7 @@
 #import "SearchResultCell.h"
 #import <AFNetworking/UIImageView+AFNetworking.h>
 #import "SearchResult.h"
+#import "UIImage+ImageEffects.h"
 
 @implementation SearchResultCell
 
@@ -33,9 +34,6 @@
 {
   [super awakeFromNib];
 
-  UIView *selectedView = [[UIView alloc] initWithFrame:CGRectZero];
-  selectedView.backgroundColor = [UIColor colorWithRed:20/255.0f green:160/255.0f blue:160/255.0f alpha:0.5f];
-  self.selectedBackgroundView = selectedView;
 
 }
 
@@ -45,22 +43,19 @@
     
     self.sourceLabel.text = searchResult.sourceDisplayName;
     
-    
     [self.artworkView setImageWithURL:
      [NSURL URLWithString:searchResult.imageUrlsBySize[@"90"]]
                           placeholderImage:[UIImage imageNamed:@"Placeholder"]];
+    
+    self.artworkView.layer.borderWidth = 3.0f;
+    self.artworkView.layer.cornerRadius = self.artworkView.bounds.size.width / 2.0f;
+    self.artworkView.clipsToBounds = YES;
+
+  
+
+    
 }
-                            
-//Given a UIImage and a CGSize, this method will return a resized UIImage.
-- (UIImage*)imageWithImage:(UIImage*)image scaledToSize:(CGSize)newSize;
-{
-    UIGraphicsBeginImageContext( newSize );
-    [image drawInRect:CGRectMake(0,0,newSize.width,newSize.height)];
-    UIImage* newImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-        
-    return newImage;
-}
+
 
 // Clear any image download thats still in progress and clear labels
 - (void)prepareForReuse
