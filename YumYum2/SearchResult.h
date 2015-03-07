@@ -22,6 +22,5 @@
 @property (nonatomic, copy) NSDictionary *flavors;
 @property (nonatomic) NSNumber *rating;
 
-- (NSComparisonResult)compareName:(SearchResult *)other;
 
 @end

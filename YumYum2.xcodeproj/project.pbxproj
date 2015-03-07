@@ -51,6 +51,10 @@
 		9E92777C1AA36D3E00CF85A6 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E92777B1AA36D3E00CF85A6 /* HomeViewController.m */; };
 		9E9277811AA38CFB00CF85A6 /* HomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E9277801AA38CFB00CF85A6 /* HomeCell.m */; };
 		9EB272A41AA3E44700525022 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9EB272A31AA3E44700525022 /* Images.xcassets */; };
+		9EB272A61AA6B07D00525022 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EB272A51AA6B07D00525022 /* QuartzCore.framework */; };
+		9EB272B01AA6BF4B00525022 /* ShoppingListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB272AF1AA6BF4B00525022 /* ShoppingListCell.m */; };
+		9EB272B51AA6C4C100525022 /* ShoppingListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB272B41AA6C4C100525022 /* ShoppingListViewController.m */; };
+		9EB272B81AA80C6B00525022 /* ShoppingListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB272B71AA80C6B00525022 /* ShoppingListItem.m */; };
 		9EB89C0D1A9FFA0600A2BE44 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EB89C0C1A9FFA0600A2BE44 /* Main.storyboard */; };
 		9EBB37721A98F7B4002B3B09 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EBB37711A98F7B4002B3B09 /* main.m */; };
 		9EBB37751A98F7B4002B3B09 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EBB37741A98F7B4002B3B09 /* AppDelegate.m */; };
@@ -58,7 +62,6 @@
 		9EBB37831A98F7B5002B3B09 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EBB37811A98F7B5002B3B09 /* LaunchScreen.xib */; };
 		9EBB378F1A98F7B5002B3B09 /* YumYum2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EBB378E1A98F7B5002B3B09 /* YumYum2Tests.m */; };
 		9EBB379A1A98F855002B3B09 /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EBB37991A98F855002B3B09 /* TabBarController.m */; };
-		9EBB379D1A990A04002B3B09 /* SearchBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EBB379C1A990A04002B3B09 /* SearchBarViewController.m */; };
 		9EBB37A01A990A92002B3B09 /* SearchListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EBB379F1A990A92002B3B09 /* SearchListViewController.m */; };
 		9EFE32DD1A9EC70500819E54 /* NothingFoundCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EFE32DC1A9EC70500819E54 /* NothingFoundCell.xib */; };
 		9EFE32DF1A9EC79700819E54 /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EFE32DE1A9EC79700819E54 /* LoadingCell.xib */; };
@@ -151,6 +154,13 @@
 		9E92777F1AA38CFB00CF85A6 /* HomeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeCell.h; sourceTree = "<group>"; };
 		9E9277801AA38CFB00CF85A6 /* HomeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeCell.m; sourceTree = "<group>"; };
 		9EB272A31AA3E44700525022 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		9EB272A51AA6B07D00525022 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		9EB272AE1AA6BF4B00525022 /* ShoppingListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingListCell.h; sourceTree = "<group>"; };
+		9EB272AF1AA6BF4B00525022 /* ShoppingListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingListCell.m; sourceTree = "<group>"; };
+		9EB272B31AA6C4C100525022 /* ShoppingListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingListViewController.h; sourceTree = "<group>"; };
+		9EB272B41AA6C4C100525022 /* ShoppingListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingListViewController.m; sourceTree = "<group>"; };
+		9EB272B61AA80C6B00525022 /* ShoppingListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingListItem.h; sourceTree = "<group>"; };
+		9EB272B71AA80C6B00525022 /* ShoppingListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingListItem.m; sourceTree = "<group>"; };
 		9EB89C0C1A9FFA0600A2BE44 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		9EBB376C1A98F7B4002B3B09 /* YumYum2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YumYum2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EBB37701A98F7B4002B3B09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -164,8 +174,6 @@
 		9EBB378E1A98F7B5002B3B09 /* YumYum2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YumYum2Tests.m; sourceTree = "<group>"; };
 		9EBB37981A98F855002B3B09 /* TabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
 		9EBB37991A98F855002B3B09 /* TabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
-		9EBB379B1A990A04002B3B09 /* SearchBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchBarViewController.h; sourceTree = "<group>"; };
-		9EBB379C1A990A04002B3B09 /* SearchBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchBarViewController.m; sourceTree = "<group>"; };
 		9EBB379E1A990A92002B3B09 /* SearchListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchListViewController.h; sourceTree = "<group>"; };
 		9EBB379F1A990A92002B3B09 /* SearchListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchListViewController.m; sourceTree = "<group>"; };
 		9EFE32DC1A9EC70500819E54 /* NothingFoundCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NothingFoundCell.xib; sourceTree = "<group>"; };
@@ -179,6 +187,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9EB272A61AA6B07D00525022 /* QuartzCore.framework in Frameworks */,
 				9E92776F1AA274AA00CF85A6 /* CoreImage.framework in Frameworks */,
 				9E92776A1AA2671500CF85A6 /* Accelerate.framework in Frameworks */,
 				9E1ABDE71A9C18EA008334BD /* CoreGraphics.framework in Frameworks */,
@@ -281,14 +290,10 @@
 		9E76EE861A9E49CA00B9E0FA /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				9E76EE831A9D600500B9E0FA /* YelpResultTableViewCell.h */,
-				9E76EE841A9D600500B9E0FA /* YelpResultTableViewCell.m */,
-				9E76EE871A9E4A0E00B9E0FA /* SearchResultCell.h */,
-				9E76EE881A9E4A0E00B9E0FA /* SearchResultCell.m */,
 				9E76EE891A9E4A0E00B9E0FA /* SearchResult.h */,
 				9E76EE8A1A9E4A0E00B9E0FA /* SearchResult.m */,
-				9E92777F1AA38CFB00CF85A6 /* HomeCell.h */,
-				9E9277801AA38CFB00CF85A6 /* HomeCell.m */,
+				9EB272B61AA80C6B00525022 /* ShoppingListItem.h */,
+				9EB272B71AA80C6B00525022 /* ShoppingListItem.m */,
 				9E9277701AA2753900CF85A6 /* Other Sources */,
 			);
 			name = Model;
@@ -297,6 +302,7 @@
 		9E7DF3C81A9A2363004DB657 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9EB272A51AA6B07D00525022 /* QuartzCore.framework */,
 				9E92776E1AA274AA00CF85A6 /* CoreImage.framework */,
 				9E9277691AA2671400CF85A6 /* Accelerate.framework */,
 				9E1ABDE61A9C18EA008334BD /* CoreGraphics.framework */,
@@ -391,8 +397,6 @@
 		9EF9AFF61A9E4FEB00033F94 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				9EBB379B1A990A04002B3B09 /* SearchBarViewController.h */,
-				9EBB379C1A990A04002B3B09 /* SearchBarViewController.m */,
 				9EBB37981A98F855002B3B09 /* TabBarController.h */,
 				9EBB37991A98F855002B3B09 /* TabBarController.m */,
 				9E76EE801A9D5E7500B9E0FA /* YelpViewController.h */,
@@ -403,6 +407,8 @@
 				9E9277781AA290D300CF85A6 /* NavigationController.m */,
 				9E92777A1AA36D3E00CF85A6 /* HomeViewController.h */,
 				9E92777B1AA36D3E00CF85A6 /* HomeViewController.m */,
+				9EB272B31AA6C4C100525022 /* ShoppingListViewController.h */,
+				9EB272B41AA6C4C100525022 /* ShoppingListViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -410,6 +416,14 @@
 		9EFE32D51A9EBFD800819E54 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9E92777F1AA38CFB00CF85A6 /* HomeCell.h */,
+				9E9277801AA38CFB00CF85A6 /* HomeCell.m */,
+				9EB272AE1AA6BF4B00525022 /* ShoppingListCell.h */,
+				9EB272AF1AA6BF4B00525022 /* ShoppingListCell.m */,
+				9E76EE831A9D600500B9E0FA /* YelpResultTableViewCell.h */,
+				9E76EE841A9D600500B9E0FA /* YelpResultTableViewCell.m */,
+				9E76EE871A9E4A0E00B9E0FA /* SearchResultCell.h */,
+				9E76EE881A9E4A0E00B9E0FA /* SearchResultCell.m */,
 				9EFE32DC1A9EC70500819E54 /* NothingFoundCell.xib */,
 				9E9277641AA2345500CF85A6 /* SearchResultCell.xib */,
 				9EFE32DE1A9EC79700819E54 /* LoadingCell.xib */,
@@ -572,6 +586,7 @@
 				9E1ABDD31A9C14A0008334BD /* OADataFetcher.m in Sources */,
 				9E1ABDD61A9C14A0008334BD /* OAPlaintextSignatureProvider.m in Sources */,
 				9E1ABDE41A9C14F1008334BD /* Restaurant.m in Sources */,
+				9EB272B51AA6C4C100525022 /* ShoppingListViewController.m in Sources */,
 				9E1ABDCB1A9C14A0008334BD /* NSString+URLEncoding.m in Sources */,
 				9E1ABDD71A9C14A0008334BD /* OAProblem.m in Sources */,
 				9E1ABDD51A9C14A0008334BD /* OAMutableURLRequest.m in Sources */,
@@ -582,6 +597,7 @@
 				9E1ABDD21A9C14A0008334BD /* OAConsumer.m in Sources */,
 				9EBB37A01A990A92002B3B09 /* SearchListViewController.m in Sources */,
 				9E76EE8B1A9E4A0E00B9E0FA /* SearchResultCell.m in Sources */,
+				9EB272B01AA6BF4B00525022 /* ShoppingListCell.m in Sources */,
 				9EBB37781A98F7B5002B3B09 /* YumYum2.xcdatamodeld in Sources */,
 				9E1ABDCA1A9C14A0008334BD /* NSMutableURLRequest+Parameters.m in Sources */,
 				9E1ABDD01A9C14A0008334BD /* OAAttachment.m in Sources */,
@@ -593,11 +609,11 @@
 				9E1ABDCD1A9C14A0008334BD /* Base64Transcoder.c in Sources */,
 				9EBB37721A98F7B4002B3B09 /* main.m in Sources */,
 				9E92777C1AA36D3E00CF85A6 /* HomeViewController.m in Sources */,
-				9EBB379D1A990A04002B3B09 /* SearchBarViewController.m in Sources */,
 				9E1ABDE51A9C14F1008334BD /* YelpAPIService.m in Sources */,
 				9E1ABDDB1A9C14A0008334BD /* OAToken.m in Sources */,
 				9E76EE851A9D600500B9E0FA /* YelpResultTableViewCell.m in Sources */,
 				9E76EE8C1A9E4A0E00B9E0FA /* SearchResult.m in Sources */,
+				9EB272B81AA80C6B00525022 /* ShoppingListItem.m in Sources */,
 				9E9277791AA290D300CF85A6 /* NavigationController.m in Sources */,
 				9E1ABDCC1A9C14A0008334BD /* NSURL+Base.m in Sources */,
 				9E1ABDDC1A9C14A0008334BD /* OATokenManager.m in Sources */,

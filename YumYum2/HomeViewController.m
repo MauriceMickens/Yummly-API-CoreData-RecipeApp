@@ -8,6 +8,9 @@
 
 #import "HomeViewController.h"
 #import "HomeCell.h"
+#import "SearchListViewController.h"
+#import "SearchResultCell.h"
+#import "SearchResult.h"
 
 static NSString * const HomeCellIdentifier = @"HomeCell";
 
@@ -48,6 +51,7 @@ static NSString * const HomeCellIdentifier = @"HomeCell";
     // Dispose of any resources that can be recreated.
 }
 
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -64,6 +68,7 @@ static NSString * const HomeCellIdentifier = @"HomeCell";
     
     HomeCell *cell = (HomeCell *)[tableView dequeueReusableCellWithIdentifier:HomeCellIdentifier forIndexPath:indexPath];
     
+    
     NSString *categoryName = _categories[indexPath.row];
     cell.dietLabel.text = categoryName;
     
@@ -78,6 +83,20 @@ static NSString * const HomeCellIdentifier = @"HomeCell";
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue
+                 sender:(id)sender
+{       // Check for the correct segue
+    if ([segue.identifier isEqualToString:@"ShowCategory"]) {
+        
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        
+        UINavigationController *navigationController = segue.destinationViewController;
+        
+        SearchListViewController *controller = (SearchListViewController *)navigationController.topViewController;
+        
+    }
 }
 
 - (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath

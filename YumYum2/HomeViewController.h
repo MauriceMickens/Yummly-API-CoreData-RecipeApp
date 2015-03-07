@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SearchListViewController.h"
 
 @interface HomeViewController : UITableViewController
 
