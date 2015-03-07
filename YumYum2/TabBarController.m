@@ -12,10 +12,7 @@
 
 - (UIStatusBarStyle)preferredStatusBarStyle
 {
-    return UIStatusBarStyleLightContent;
+    return UIStatusBarStyleDefault;
 }
-- (UIViewController *)childViewControllerForStatusBarStyle
-{
-    return nil;
-}
+
 @end

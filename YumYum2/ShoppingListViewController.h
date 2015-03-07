@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EditItemViewController.h"
 
-@interface ShoppingListViewController : UIViewController 
+@interface ShoppingListViewController : UIViewController
 
 @end

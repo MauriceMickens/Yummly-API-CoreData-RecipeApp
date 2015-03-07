@@ -55,6 +55,7 @@
 		9EB272B01AA6BF4B00525022 /* ShoppingListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB272AF1AA6BF4B00525022 /* ShoppingListCell.m */; };
 		9EB272B51AA6C4C100525022 /* ShoppingListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB272B41AA6C4C100525022 /* ShoppingListViewController.m */; };
 		9EB272B81AA80C6B00525022 /* ShoppingListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB272B71AA80C6B00525022 /* ShoppingListItem.m */; };
+		9EB272BB1AAB6A3E00525022 /* EditItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB272BA1AAB6A3E00525022 /* EditItemViewController.m */; };
 		9EB89C0D1A9FFA0600A2BE44 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EB89C0C1A9FFA0600A2BE44 /* Main.storyboard */; };
 		9EBB37721A98F7B4002B3B09 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EBB37711A98F7B4002B3B09 /* main.m */; };
 		9EBB37751A98F7B4002B3B09 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EBB37741A98F7B4002B3B09 /* AppDelegate.m */; };
@@ -161,6 +162,8 @@
 		9EB272B41AA6C4C100525022 /* ShoppingListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingListViewController.m; sourceTree = "<group>"; };
 		9EB272B61AA80C6B00525022 /* ShoppingListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingListItem.h; sourceTree = "<group>"; };
 		9EB272B71AA80C6B00525022 /* ShoppingListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingListItem.m; sourceTree = "<group>"; };
+		9EB272B91AAB6A3E00525022 /* EditItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditItemViewController.h; sourceTree = "<group>"; };
+		9EB272BA1AAB6A3E00525022 /* EditItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditItemViewController.m; sourceTree = "<group>"; };
 		9EB89C0C1A9FFA0600A2BE44 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		9EBB376C1A98F7B4002B3B09 /* YumYum2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YumYum2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EBB37701A98F7B4002B3B09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -409,6 +412,8 @@
 				9E92777B1AA36D3E00CF85A6 /* HomeViewController.m */,
 				9EB272B31AA6C4C100525022 /* ShoppingListViewController.h */,
 				9EB272B41AA6C4C100525022 /* ShoppingListViewController.m */,
+				9EB272B91AAB6A3E00525022 /* EditItemViewController.h */,
+				9EB272BA1AAB6A3E00525022 /* EditItemViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -595,6 +600,7 @@
 				9E1ABDD81A9C14A0008334BD /* OARequestParameter.m in Sources */,
 				9E9277811AA38CFB00CF85A6 /* HomeCell.m in Sources */,
 				9E1ABDD21A9C14A0008334BD /* OAConsumer.m in Sources */,
+				9EB272BB1AAB6A3E00525022 /* EditItemViewController.m in Sources */,
 				9EBB37A01A990A92002B3B09 /* SearchListViewController.m in Sources */,
 				9E76EE8B1A9E4A0E00B9E0FA /* SearchResultCell.m in Sources */,
 				9EB272B01AA6BF4B00525022 /* ShoppingListCell.m in Sources */,

@@ -9,13 +9,15 @@
 #import "ShoppingListViewController.h"
 #import "ShoppingListCell.h"
 #import "ShoppingListItem.h"
+#import "EditItemViewController.h"
 
 static NSString * const ShoppingListCellIdentifier = @"ShoppingListCell";
 
-@interface ShoppingListViewController () <UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource>
+@interface ShoppingListViewController () <UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource,EditItemViewControllerDelegate>
 
-@property (weak, nonatomic) IBOutlet UITextField *searchTextField;
+@property (weak, nonatomic) IBOutlet UITextField *fTextField;
 @property (weak, nonatomic) IBOutlet UITableView *resultTableView;
+@property (weak, nonatomic) IBOutlet UIButton *addButton;
 
 @end
 
@@ -36,34 +38,7 @@ static NSString * const ShoppingListCellIdentifier = @"ShoppingListCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    _items = [[NSMutableArray alloc] initWithCapacity:20];
-    ShoppingListItem *item;
-    
-    item = [[ShoppingListItem alloc] init];
-    item.text = @"Walk the dog";
-    item.checked = NO;
-    [_items addObject:item];
-    
-    item = [[ShoppingListItem  alloc] init];
-    item.text = @"Brush my teeth";
-    item.checked = YES;
-    [_items addObject:item];
-    
-    item = [[ShoppingListItem alloc] init];
-    item.text = @"Learn iOS development";
-    item.checked = YES;
-    [_items addObject:item];
-    
-    item = [[ShoppingListItem  alloc] init];
-    item.text = @"Soccer practice";
-    item.checked = NO;
-    [_items addObject:item];
-    
-    item = [[ShoppingListItem  alloc] init];
-    item.text = @"Eat ice cream";
-    item.checked = YES;
-    [_items addObject:item];
-    
+    _items = [[NSMutableArray alloc] initWithCapacity:10];
 
 }
 
@@ -99,10 +74,11 @@ static NSString * const ShoppingListCellIdentifier = @"ShoppingListCell";
 - (void)configureCheckmarkForCell:(ShoppingListCell *)cell
              withShoppingListItem:(ShoppingListItem *)item
 {
+    UILabel *label = (UILabel *)[cell viewWithTag:1001];
     if (item.checked) {
-        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        label.text = @"√";
     } else {
-        cell.accessoryType = UITableViewCellAccessoryNone;
+        label.text = @"";
     }
 }
 
@@ -138,7 +114,9 @@ static NSString * const ShoppingListCellIdentifier = @"ShoppingListCell";
     // Create new ShoppingListItem object
     ShoppingListItem *item = [[ShoppingListItem alloc] init];
     
-    item.text = @"I am a new row";
+    // Set the item text to textfield text with no checkmark 
+    item.text = self.fTextField.text;
+    item.checked = NO;
     
     // Add the updated ShoppingListItem object to the data model
     [_items addObject:item];
@@ -155,28 +133,48 @@ static NSString * const ShoppingListCellIdentifier = @"ShoppingListCell";
     
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue
+                 sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"EditItem"]){
+        // Get the Navigation bar controller from storyboard
+        UINavigationController *navigationController = segue.destinationViewController;
+        
+        // Get the embeded view controller(EditItemViewController)
+        EditItemViewController *controller =
+            (EditItemViewController *)navigationController.topViewController;
+        
+        //Set delegate so self.ViewController is notified of user actions
+        controller.delegate = self;
+        
+        // Get the row number from the tapped disclosure button in cell
+        NSIndexPath *indexPath = [self.resultTableView indexPathForCell:sender];
+        
+        // Obtain and set shopping list item to edit
+        controller.itemToEdit = _items[indexPath.row];
+    }
+}
+
 # pragma mark - Textfield Delegate Method and Method to handle Button Touch-up Event
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    if ([self.searchTextField isFirstResponder]) {
-        [self.searchTextField resignFirstResponder];
+    if ([self.fTextField isFirstResponder]) {
+        [self.fTextField resignFirstResponder];
     }
-    
-    [self.resultTableView reloadData];
     
     return YES;
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    if ([self.searchTextField isFirstResponder]) {
-        [self.searchTextField resignFirstResponder];
+    if ([self.fTextField isFirstResponder]) {
+        [self.fTextField resignFirstResponder];
     }
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void)tableView:(UITableView *)tableView
@@ -191,10 +189,23 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
                      withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
-- (IBAction)cancel:(id)sender
+- (void)editItemViewControllerDidCancel:(EditItemViewController *)controller
 {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)editItemViewController:(EditItemViewController *)controller didFinishEditingItem:(ShoppingListItem *)item
+{
+    NSInteger index = [_items indexOfObject:item];
     
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index
+                                                inSection:0];
+    ShoppingListCell *cell = [self.resultTableView
+                             cellForRowAtIndexPath:indexPath];
+    
+    [self configureTextForCell:cell withShoppingListItem:item];
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

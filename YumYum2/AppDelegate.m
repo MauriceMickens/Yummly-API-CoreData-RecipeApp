@@ -16,7 +16,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
-    [self customizeAppearance];
+    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationNone];
     
     // Intialize location manager
     
@@ -30,10 +30,10 @@
 
 - (void)customizeAppearance
 {
-    [[UINavigationBar appearance] setBarTintColor:[UIColor redColor]];
-    [[UINavigationBar appearance] setTitleTextAttributes:@{
-                                                           NSForegroundColorAttributeName : [UIColor whiteColor],
-                                                           }];
+    //[[UINavigationBar appearance] setBarTintColor:[UIColor redColor]];
+    //[[UINavigationBar appearance] setTitleTextAttributes:@{
+                                                           //NSForegroundColorAttributeName : [UIColor whiteColor],
+                                                           //}];
     [[UITabBar appearance] setTintColor: [UIColor redColor]];
 }
 
