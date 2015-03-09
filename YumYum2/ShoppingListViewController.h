@@ -9,6 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "EditItemViewController.h"
 
+@class ShoppingList;
+
 @interface ShoppingListViewController : UIViewController
+
+@property (nonatomic, strong) ShoppingList *shoppingList;
 
 @end

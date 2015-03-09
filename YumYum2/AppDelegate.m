@@ -7,6 +7,11 @@
 //
 
 #import "AppDelegate.h"
+#import <FacebookSDK/FacebookSDK.h>
+
+#import "SCErrorHandler.h"
+#import "SCSettings.h"
+
 
 @interface AppDelegate ()
 
@@ -14,9 +19,17 @@
 
 @implementation AppDelegate
 
++ (void)initialize
+{
+    // Nib files require the type to have been loaded before they can do the wireup successfully.
+    // http://stackoverflow.com/questions/1725881/unknown-class-myclass-in-interface-builder-file-error-at-runtime
+    [FBLoginView class];
+    [FBProfilePictureView class];
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
-    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationNone];
+    [self customizeAppearance];
     
     // Intialize location manager
     
@@ -34,8 +47,59 @@
     //[[UINavigationBar appearance] setTitleTextAttributes:@{
                                                            //NSForegroundColorAttributeName : [UIColor whiteColor],
                                                            //}];
-    [[UITabBar appearance] setTintColor: [UIColor redColor]];
+    //[[UITabBar appearance] setTintColor: [UIColor redColor]];
 }
+
+- (void)applicationDidBecomeActive:(UIApplication *)application {
+    
+    // Logs 'install' and 'app activate' App Events.
+    [FBAppEvents activateApp];
+    
+    // Facebook SDK * login flow *
+    // We need to properly handle activation of the application with regards to SSO
+    //  (e.g., returning from iOS 6.0 authorization dialog or from fast app switching).
+    [FBAppCall handleDidBecomeActive];
+}
+
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation {
+    // Facebook SDK * login flow *
+    // Attempt to handle URLs to complete any auth (e.g., SSO) flow.
+    return [FBAppCall handleOpenURL:url sourceApplication:sourceApplication fallbackHandler:^(FBAppCall *call) {
+        // Since Scrumptious supports Single Sign On from the Facebook App (such as bookmarks),
+        // we supply a fallback handler to parse any inbound URLs (e.g., deep links)
+        // which can contain an access token.
+        if (call.accessTokenData) {
+            if ([FBSession activeSession].isOpen) {
+                NSLog(@"INFO: Ignoring new access token because current session is open.");
+            }
+            else {
+                [self _handleOpenURLWithAccessToken:call.accessTokenData];
+            }
+        }
+    }];
+}
+
+- (void)_handleOpenURLWithAccessToken:(FBAccessTokenData *)token {
+    // Initialize a new blank session instance...
+    FBSession *sessionFromToken = [[FBSession alloc] initWithAppID:nil
+                                                       permissions:nil
+                                                   defaultAudience:FBSessionDefaultAudienceNone
+                                                   urlSchemeSuffix:nil
+                                                tokenCacheStrategy:[FBSessionTokenCachingStrategy nullCacheInstance] ];
+    [FBSession setActiveSession:sessionFromToken];
+    // ... and open it from the supplied token.
+    [sessionFromToken openFromAccessTokenData:token
+                            completionHandler:^(FBSession *session, FBSessionState status, NSError *error) {
+                                // Forward any errors to the FBLoginView delegate.
+                                if (error) {
+                                    SCHandleError(error);
+                                }
+                            }];
+}
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -49,10 +113,6 @@
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-}
-
-- (void)applicationDidBecomeActive:(UIApplication *)application {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {

@@ -56,13 +56,21 @@
 		9EB272B51AA6C4C100525022 /* ShoppingListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB272B41AA6C4C100525022 /* ShoppingListViewController.m */; };
 		9EB272B81AA80C6B00525022 /* ShoppingListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB272B71AA80C6B00525022 /* ShoppingListItem.m */; };
 		9EB272BB1AAB6A3E00525022 /* EditItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB272BA1AAB6A3E00525022 /* EditItemViewController.m */; };
+		9EB272BE1AAB98BF00525022 /* AllListsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB272BD1AAB98BF00525022 /* AllListsViewController.m */; };
+		9EB272C11AABA24A00525022 /* ShoppingList.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB272C01AABA24A00525022 /* ShoppingList.m */; };
+		9EB274A41AAD276B00525022 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EB274A31AAD276B00525022 /* FacebookSDK.framework */; };
+		9EB274A61AAD30B300525022 /* FacebookSDKOverrides.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9EB274A51AAD30B300525022 /* FacebookSDKOverrides.bundle */; };
+		9EB274A81AAD30C900525022 /* FBUserSettingsViewResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9EB274A71AAD30C900525022 /* FBUserSettingsViewResources.bundle */; };
+		9EB274AB1AAD320300525022 /* SCErrorHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB274AA1AAD320300525022 /* SCErrorHandler.m */; };
+		9EB274AE1AAD325300525022 /* SCSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB274AD1AAD325300525022 /* SCSettings.m */; };
+		9EB274B11AAD347100525022 /* SCImagePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB274B01AAD347100525022 /* SCImagePicker.m */; };
+		9EB274B41AAD349A00525022 /* SCLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB274B31AAD349A00525022 /* SCLoginViewController.m */; };
 		9EB89C0D1A9FFA0600A2BE44 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EB89C0C1A9FFA0600A2BE44 /* Main.storyboard */; };
 		9EBB37721A98F7B4002B3B09 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EBB37711A98F7B4002B3B09 /* main.m */; };
 		9EBB37751A98F7B4002B3B09 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EBB37741A98F7B4002B3B09 /* AppDelegate.m */; };
 		9EBB37781A98F7B5002B3B09 /* YumYum2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9EBB37761A98F7B5002B3B09 /* YumYum2.xcdatamodeld */; };
 		9EBB37831A98F7B5002B3B09 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EBB37811A98F7B5002B3B09 /* LaunchScreen.xib */; };
 		9EBB378F1A98F7B5002B3B09 /* YumYum2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EBB378E1A98F7B5002B3B09 /* YumYum2Tests.m */; };
-		9EBB379A1A98F855002B3B09 /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EBB37991A98F855002B3B09 /* TabBarController.m */; };
 		9EBB37A01A990A92002B3B09 /* SearchListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EBB379F1A990A92002B3B09 /* SearchListViewController.m */; };
 		9EFE32DD1A9EC70500819E54 /* NothingFoundCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EFE32DC1A9EC70500819E54 /* NothingFoundCell.xib */; };
 		9EFE32DF1A9EC79700819E54 /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EFE32DE1A9EC79700819E54 /* LoadingCell.xib */; };
@@ -164,6 +172,21 @@
 		9EB272B71AA80C6B00525022 /* ShoppingListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingListItem.m; sourceTree = "<group>"; };
 		9EB272B91AAB6A3E00525022 /* EditItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditItemViewController.h; sourceTree = "<group>"; };
 		9EB272BA1AAB6A3E00525022 /* EditItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditItemViewController.m; sourceTree = "<group>"; };
+		9EB272BC1AAB98BF00525022 /* AllListsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllListsViewController.h; sourceTree = "<group>"; };
+		9EB272BD1AAB98BF00525022 /* AllListsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllListsViewController.m; sourceTree = "<group>"; };
+		9EB272BF1AABA24A00525022 /* ShoppingList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingList.h; sourceTree = "<group>"; };
+		9EB272C01AABA24A00525022 /* ShoppingList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingList.m; sourceTree = "<group>"; };
+		9EB274A31AAD276B00525022 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		9EB274A51AAD30B300525022 /* FacebookSDKOverrides.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FacebookSDKOverrides.bundle; sourceTree = "<group>"; };
+		9EB274A71AAD30C900525022 /* FBUserSettingsViewResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FBUserSettingsViewResources.bundle; sourceTree = "<group>"; };
+		9EB274A91AAD320300525022 /* SCErrorHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCErrorHandler.h; sourceTree = "<group>"; };
+		9EB274AA1AAD320300525022 /* SCErrorHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCErrorHandler.m; sourceTree = "<group>"; };
+		9EB274AC1AAD325300525022 /* SCSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSettings.h; sourceTree = "<group>"; };
+		9EB274AD1AAD325300525022 /* SCSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSettings.m; sourceTree = "<group>"; };
+		9EB274AF1AAD347100525022 /* SCImagePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCImagePicker.h; sourceTree = "<group>"; };
+		9EB274B01AAD347100525022 /* SCImagePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCImagePicker.m; sourceTree = "<group>"; };
+		9EB274B21AAD349A00525022 /* SCLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCLoginViewController.h; sourceTree = "<group>"; };
+		9EB274B31AAD349A00525022 /* SCLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCLoginViewController.m; sourceTree = "<group>"; };
 		9EB89C0C1A9FFA0600A2BE44 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		9EBB376C1A98F7B4002B3B09 /* YumYum2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YumYum2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EBB37701A98F7B4002B3B09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -175,8 +198,6 @@
 		9EBB37881A98F7B5002B3B09 /* YumYum2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YumYum2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EBB378D1A98F7B5002B3B09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9EBB378E1A98F7B5002B3B09 /* YumYum2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YumYum2Tests.m; sourceTree = "<group>"; };
-		9EBB37981A98F855002B3B09 /* TabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
-		9EBB37991A98F855002B3B09 /* TabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
 		9EBB379E1A990A92002B3B09 /* SearchListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchListViewController.h; sourceTree = "<group>"; };
 		9EBB379F1A990A92002B3B09 /* SearchListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchListViewController.m; sourceTree = "<group>"; };
 		9EFE32DC1A9EC70500819E54 /* NothingFoundCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NothingFoundCell.xib; sourceTree = "<group>"; };
@@ -198,6 +219,7 @@
 				9E7DF3D41A9A23F1004DB657 /* Foundation.framework in Frameworks */,
 				9E7DF3D21A9A23DE004DB657 /* Security.framework in Frameworks */,
 				9E7DF3D01A9A23CD004DB657 /* SystemConfiguration.framework in Frameworks */,
+				9EB274A41AAD276B00525022 /* FacebookSDK.framework in Frameworks */,
 				9E7DF3CE1A9A23C0004DB657 /* CFNetwork.framework in Frameworks */,
 				9E7DF3CC1A9A23AF004DB657 /* AVFoundation.framework in Frameworks */,
 				9E7DF3CA1A9A2390004DB657 /* CoreLocation.framework in Frameworks */,
@@ -293,6 +315,8 @@
 		9E76EE861A9E49CA00B9E0FA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9EB272BF1AABA24A00525022 /* ShoppingList.h */,
+				9EB272C01AABA24A00525022 /* ShoppingList.m */,
 				9E76EE891A9E4A0E00B9E0FA /* SearchResult.h */,
 				9E76EE8A1A9E4A0E00B9E0FA /* SearchResult.m */,
 				9EB272B61AA80C6B00525022 /* ShoppingListItem.h */,
@@ -305,6 +329,9 @@
 		9E7DF3C81A9A2363004DB657 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9EB274A71AAD30C900525022 /* FBUserSettingsViewResources.bundle */,
+				9EB274A51AAD30B300525022 /* FacebookSDKOverrides.bundle */,
+				9EB274A31AAD276B00525022 /* FacebookSDK.framework */,
 				9EB272A51AA6B07D00525022 /* QuartzCore.framework */,
 				9E92776E1AA274AA00CF85A6 /* CoreImage.framework */,
 				9E9277691AA2671400CF85A6 /* Accelerate.framework */,
@@ -324,7 +351,13 @@
 		9E9277701AA2753900CF85A6 /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				9EB274AF1AAD347100525022 /* SCImagePicker.h */,
+				9EB274B01AAD347100525022 /* SCImagePicker.m */,
+				9EB274A91AAD320300525022 /* SCErrorHandler.h */,
+				9EB274AA1AAD320300525022 /* SCErrorHandler.m */,
 				9E9277741AA277DF00CF85A6 /* UIImage+ImageEffects.h */,
+				9EB274AC1AAD325300525022 /* SCSettings.h */,
+				9EB274AD1AAD325300525022 /* SCSettings.m */,
 				9E9277751AA277DF00CF85A6 /* UIImage+ImageEffects.m */,
 				9E9277711AA2759100CF85A6 /* UIImage+Resize.h */,
 				9E9277721AA2759100CF85A6 /* UIImage+Resize.m */,
@@ -400,8 +433,8 @@
 		9EF9AFF61A9E4FEB00033F94 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				9EBB37981A98F855002B3B09 /* TabBarController.h */,
-				9EBB37991A98F855002B3B09 /* TabBarController.m */,
+				9EB274B21AAD349A00525022 /* SCLoginViewController.h */,
+				9EB274B31AAD349A00525022 /* SCLoginViewController.m */,
 				9E76EE801A9D5E7500B9E0FA /* YelpViewController.h */,
 				9E76EE811A9D5E7500B9E0FA /* YelpViewController.m */,
 				9EBB379E1A990A92002B3B09 /* SearchListViewController.h */,
@@ -414,6 +447,8 @@
 				9EB272B41AA6C4C100525022 /* ShoppingListViewController.m */,
 				9EB272B91AAB6A3E00525022 /* EditItemViewController.h */,
 				9EB272BA1AAB6A3E00525022 /* EditItemViewController.m */,
+				9EB272BC1AAB98BF00525022 /* AllListsViewController.h */,
+				9EB272BD1AAB98BF00525022 /* AllListsViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -510,6 +545,7 @@
 			knownRegions = (
 				en,
 				Base,
+				he,
 			);
 			mainGroup = 9EBB37631A98F7B4002B3B09;
 			productRefGroup = 9EBB376D1A98F7B4002B3B09 /* Products */;
@@ -531,6 +567,8 @@
 				9EB272A41AA3E44700525022 /* Images.xcassets in Resources */,
 				9EFE32DF1A9EC79700819E54 /* LoadingCell.xib in Resources */,
 				9E9277651AA2345500CF85A6 /* SearchResultCell.xib in Resources */,
+				9EB274A81AAD30C900525022 /* FBUserSettingsViewResources.bundle in Resources */,
+				9EB274A61AAD30B300525022 /* FacebookSDKOverrides.bundle in Resources */,
 				9E1ABDDD1A9C14A0008334BD /* README in Resources */,
 				9E1ABDDA1A9C14A0008334BD /* OATestServer.rb in Resources */,
 				9EFE32DD1A9EC70500819E54 /* NothingFoundCell.xib in Resources */,
@@ -585,6 +623,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9EB274B41AAD349A00525022 /* SCLoginViewController.m in Sources */,
 				9E9277761AA277DF00CF85A6 /* UIImage+ImageEffects.m in Sources */,
 				9E1ABDCF1A9C14A0008334BD /* sha1.c in Sources */,
 				9E1ABDCE1A9C14A0008334BD /* hmac.c in Sources */,
@@ -599,6 +638,7 @@
 				9E9277731AA2759100CF85A6 /* UIImage+Resize.m in Sources */,
 				9E1ABDD81A9C14A0008334BD /* OARequestParameter.m in Sources */,
 				9E9277811AA38CFB00CF85A6 /* HomeCell.m in Sources */,
+				9EB274AE1AAD325300525022 /* SCSettings.m in Sources */,
 				9E1ABDD21A9C14A0008334BD /* OAConsumer.m in Sources */,
 				9EB272BB1AAB6A3E00525022 /* EditItemViewController.m in Sources */,
 				9EBB37A01A990A92002B3B09 /* SearchListViewController.m in Sources */,
@@ -607,12 +647,15 @@
 				9EBB37781A98F7B5002B3B09 /* YumYum2.xcdatamodeld in Sources */,
 				9E1ABDCA1A9C14A0008334BD /* NSMutableURLRequest+Parameters.m in Sources */,
 				9E1ABDD01A9C14A0008334BD /* OAAttachment.m in Sources */,
-				9EBB379A1A98F855002B3B09 /* TabBarController.m in Sources */,
 				9E76EE821A9D5E7500B9E0FA /* YelpViewController.m in Sources */,
 				9E1ABDD11A9C14A0008334BD /* OACall.m in Sources */,
+				9EB274B11AAD347100525022 /* SCImagePicker.m in Sources */,
 				9E1ABDD41A9C14A0008334BD /* OAHMAC_SHA1SignatureProvider.m in Sources */,
+				9EB272BE1AAB98BF00525022 /* AllListsViewController.m in Sources */,
 				9EBB37751A98F7B4002B3B09 /* AppDelegate.m in Sources */,
 				9E1ABDCD1A9C14A0008334BD /* Base64Transcoder.c in Sources */,
+				9EB274AB1AAD320300525022 /* SCErrorHandler.m in Sources */,
+				9EB272C11AABA24A00525022 /* ShoppingList.m in Sources */,
 				9EBB37721A98F7B4002B3B09 /* main.m in Sources */,
 				9E92777C1AA36D3E00CF85A6 /* HomeViewController.m in Sources */,
 				9E1ABDE51A9C14F1008334BD /* YelpAPIService.m in Sources */,
@@ -728,6 +771,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -739,9 +783,18 @@
 			baseConfigurationReference = B9F2D41630E6C9DD0513DDAD /* Pods-YumYum2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/mrmickens85/Documents/FacebookSDK,
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = YumYum2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				"USER_HEADER_SEARCH_PATHS[arch=*]" = "";
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Debug;
 		};
@@ -750,9 +803,17 @@
 			baseConfigurationReference = 9983C747CD43D92F3F72B1EA /* Pods-YumYum2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/mrmickens85/Documents/FacebookSDK,
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = YumYum2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Release;
 		};

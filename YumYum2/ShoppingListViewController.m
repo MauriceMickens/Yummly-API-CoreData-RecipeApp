@@ -10,6 +10,7 @@
 #import "ShoppingListCell.h"
 #import "ShoppingListItem.h"
 #import "EditItemViewController.h"
+#import "ShoppingList.h"
 
 static NSString * const ShoppingListCellIdentifier = @"ShoppingListCell";
 
@@ -26,20 +27,73 @@ static NSString * const ShoppingListCellIdentifier = @"ShoppingListCell";
     NSMutableArray *_items;
 }
 
+- (void)loadChecklistItems
+{
+    // Get file from path of the data file
+    NSString *path = [self dataFilePath];
+    
+    // Check to see if file exits
+    if ([[NSFileManager defaultManager] fileExistsAtPath:path]) {
+        
+        // If ShoppingList.plist exists load the data in the array of items
+        NSData *data = [[NSData alloc] initWithContentsOfFile:path];
+        
+        NSKeyedUnarchiver *unarchiver = [[NSKeyedUnarchiver alloc]
+                                         initForReadingWithData:data];
+        
+        _items = [unarchiver decodeObjectForKey:@"ShoppinglistItems"];
+        
+        [unarchiver finishDecoding];
+    } else {
+        // If there there is no ShoppingList.plist
+        _items = [[NSMutableArray alloc] initWithCapacity:20];
+    }
+}
+
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
-    self = [super initWithCoder:aDecoder];
-    if (self) {
-
+    if ((self = [super initWithCoder:aDecoder])) {
+        [self loadChecklistItems];
     }
     return self;
+}
+
+- (NSString *)documentsDirectory
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths firstObject];
+    return documentsDirectory;
+}
+- (NSString *)dataFilePath
+{
+    return [[self documentsDirectory]
+            stringByAppendingPathComponent:@"ShoppingList.plist"];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    _items = [[NSMutableArray alloc] initWithCapacity:10];
+    self.title = self.shoppingList.name;
+}
 
+- (IBAction)cancel
+{
+    [self.presentingViewController
+     dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)saveShoppingListItems
+{
+    NSMutableData *data = [[NSMutableData alloc] init];
+    
+    NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc]
+                                 initForWritingWithMutableData:data];
+    
+    [archiver encodeObject:_items forKey:@"ShoppinglistItems"];
+    
+    [archiver finishEncoding];
+    
+    [data writeToFile:[self dataFilePath] atomically:YES];
 }
 
 #pragma mark - UITableViewDataSource
@@ -100,6 +154,8 @@ static NSString * const ShoppingListCellIdentifier = @"ShoppingListCell";
     [item toggleChecked];
     
     [self configureCheckmarkForCell:cell withShoppingListItem:item];
+    
+    [self saveShoppingListItems];
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
@@ -183,6 +239,9 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Remove item from data model
     [_items removeObjectAtIndex:indexPath.row];
+    
+    [self saveShoppingListItems];
+    
     // Delete corresponding row from table view
     NSArray *indexPaths = @[indexPath];
     [tableView deleteRowsAtIndexPaths:indexPaths
@@ -204,6 +263,8 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
                              cellForRowAtIndexPath:indexPath];
     
     [self configureTextForCell:cell withShoppingListItem:item];
+    
+    [self saveShoppingListItems];
     
     [self dismissViewControllerAnimated:YES completion:nil];
 }
