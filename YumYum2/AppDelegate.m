@@ -2,7 +2,7 @@
 //  AppDelegate.m
 //  YumYum2
 //
-//  Created by PhantomDestroyer on 2/21/15.
+//  Created by Maurice Mickens on 2/21/15.
 //  Copyright (c) 2015 Loud Skies. All rights reserved.
 //
 
@@ -11,6 +11,7 @@
 
 #import "SCErrorHandler.h"
 #import "SCSettings.h"
+#import "DetailViewController.h"
 
 
 @interface AppDelegate ()
@@ -38,16 +39,23 @@
     self.customLocationManager.delegate = self;
     [self.customLocationManager startUpdatingLocation];
     
+    DetailViewController *detailViewController = [[DetailViewController alloc] init];
+    
+    // Create an instance of a UINavigationController
+    // its stack contains only itemsViewController
+    UINavigationController *navController = [[UINavigationController alloc]
+                                             initWithRootViewController:detailViewController];
+    
     return YES;
 }
 
 - (void)customizeAppearance
 {
-    //[[UINavigationBar appearance] setBarTintColor:[UIColor redColor]];
-    //[[UINavigationBar appearance] setTitleTextAttributes:@{
-                                                           //NSForegroundColorAttributeName : [UIColor whiteColor],
-                                                           //}];
-    //[[UITabBar appearance] setTintColor: [UIColor redColor]];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor redColor]];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{
+                                                           NSForegroundColorAttributeName : [UIColor whiteColor],
+                                                           }];
+    [[UITabBar appearance] setTintColor: [UIColor redColor]];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {

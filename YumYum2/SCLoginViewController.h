@@ -22,6 +22,7 @@
 
 @property (nonatomic, strong) IBOutlet FBLoginView *loginView;
 @property (nonatomic, strong) IBOutlet UIButton *continueButton;
+@property (nonatomic, strong) IBOutlet UIImageView *backgroundView;
 
 - (IBAction)showLogin:(UIStoryboardSegue *)segue;
 

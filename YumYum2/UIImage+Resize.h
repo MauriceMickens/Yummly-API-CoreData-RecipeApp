@@ -1,11 +1,15 @@
+//
+//  UIImage+Resize.h
+//  YumYum2
+//
+//  Created by Maurice Mickens on 3/11/15.
+//  Copyright (c) 2015 Loud Skies. All rights reserved.
+//
 
 #import <UIKit/UIKit.h>
 
-// Handy category on UIImage to resize an image. It ignores the aspect-ratio
-// of the image (same effect as UIViewContentModeScaleToFill).
-//
 @interface UIImage (Resize)
 
-- (UIImage *)resizedImageWithSize:(CGSize)size;
+- (UIImage *)resizedImageWithBounds:(CGSize)bounds;
 
 @end

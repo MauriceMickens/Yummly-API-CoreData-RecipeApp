@@ -4,14 +4,12 @@
 //
 //  YumYum
 //
-//  Created by PhantomDestroyer on 1/15/15.
+//  Created by Maurice Mickens on 1/15/15.
 //  Copyright (c) 2015 Loud Skies. All rights reserved.
 
 #import "SearchResultCell.h"
 #import <AFNetworking/UIImageView+AFNetworking.h>
 #import "SearchResult.h"
-#import <QuartzCore/QuartzCore.h>
-#import "UIImage+ImageEffects.h"
 
 @implementation SearchResultCell
 
@@ -48,12 +46,9 @@
      [NSURL URLWithString:searchResult.imageUrlsBySize[@"90"]]
                           placeholderImage:[UIImage imageNamed:@"Placeholder"]];
     
-    self.artworkView.layer.borderWidth = 2.0f;
+    self.artworkView.layer.borderWidth = 1.0f;
     self.artworkView.layer.cornerRadius = self.artworkView.bounds.size.width / 2.0f;
     self.artworkView.clipsToBounds = YES;
-
-  
-
     
 }
 

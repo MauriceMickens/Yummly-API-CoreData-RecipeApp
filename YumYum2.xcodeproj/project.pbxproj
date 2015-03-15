@@ -31,6 +31,7 @@
 		9E1ABDE41A9C14F1008334BD /* Restaurant.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E1ABDE11A9C14F1008334BD /* Restaurant.m */; };
 		9E1ABDE51A9C14F1008334BD /* YelpAPIService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E1ABDE31A9C14F1008334BD /* YelpAPIService.m */; };
 		9E1ABDE71A9C18EA008334BD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E1ABDE61A9C18EA008334BD /* CoreGraphics.framework */; };
+		9E20C3D81AB5F17B0007E9B0 /* ReadMe.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9E20C3D71AB5F17B0007E9B0 /* ReadMe.txt */; };
 		9E76EE821A9D5E7500B9E0FA /* YelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E76EE811A9D5E7500B9E0FA /* YelpViewController.m */; };
 		9E76EE851A9D600500B9E0FA /* YelpResultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E76EE841A9D600500B9E0FA /* YelpResultTableViewCell.m */; };
 		9E76EE8B1A9E4A0E00B9E0FA /* SearchResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E76EE881A9E4A0E00B9E0FA /* SearchResultCell.m */; };
@@ -45,7 +46,6 @@
 		9E9277651AA2345500CF85A6 /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E9277641AA2345500CF85A6 /* SearchResultCell.xib */; };
 		9E92776A1AA2671500CF85A6 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E9277691AA2671400CF85A6 /* Accelerate.framework */; };
 		9E92776F1AA274AA00CF85A6 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E92776E1AA274AA00CF85A6 /* CoreImage.framework */; };
-		9E9277731AA2759100CF85A6 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E9277721AA2759100CF85A6 /* UIImage+Resize.m */; };
 		9E9277761AA277DF00CF85A6 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E9277751AA277DF00CF85A6 /* UIImage+ImageEffects.m */; };
 		9E9277791AA290D300CF85A6 /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E9277781AA290D300CF85A6 /* NavigationController.m */; };
 		9E92777C1AA36D3E00CF85A6 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E92777B1AA36D3E00CF85A6 /* HomeViewController.m */; };
@@ -65,6 +65,11 @@
 		9EB274AE1AAD325300525022 /* SCSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB274AD1AAD325300525022 /* SCSettings.m */; };
 		9EB274B11AAD347100525022 /* SCImagePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB274B01AAD347100525022 /* SCImagePicker.m */; };
 		9EB274B41AAD349A00525022 /* SCLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB274B31AAD349A00525022 /* SCLoginViewController.m */; };
+		9EB274C81AAFDC7C00525022 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB274C61AAFDC7C00525022 /* DetailViewController.m */; };
+		9EB274CF1AB11ABE00525022 /* RecipeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB274CD1AB11ABE00525022 /* RecipeDetailViewController.m */; };
+		9EB274D01AB11ABE00525022 /* RecipeDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EB274CE1AB11ABE00525022 /* RecipeDetailViewController.xib */; };
+		9EB274D31AB134D400525022 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB274D21AB134D400525022 /* UIImage+Resize.m */; };
+		9EB274D61AB143F000525022 /* DetailSearchResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB274D51AB143F000525022 /* DetailSearchResult.m */; };
 		9EB89C0D1A9FFA0600A2BE44 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EB89C0C1A9FFA0600A2BE44 /* Main.storyboard */; };
 		9EBB37721A98F7B4002B3B09 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EBB37711A98F7B4002B3B09 /* main.m */; };
 		9EBB37751A98F7B4002B3B09 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EBB37741A98F7B4002B3B09 /* AppDelegate.m */; };
@@ -134,12 +139,13 @@
 		9E1ABDE21A9C14F1008334BD /* YelpAPIService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YelpAPIService.h; sourceTree = "<group>"; };
 		9E1ABDE31A9C14F1008334BD /* YelpAPIService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YelpAPIService.m; sourceTree = "<group>"; };
 		9E1ABDE61A9C18EA008334BD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		9E76EE801A9D5E7500B9E0FA /* YelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YelpViewController.h; sourceTree = "<group>"; };
-		9E76EE811A9D5E7500B9E0FA /* YelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YelpViewController.m; sourceTree = "<group>"; };
-		9E76EE831A9D600500B9E0FA /* YelpResultTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YelpResultTableViewCell.h; sourceTree = "<group>"; };
-		9E76EE841A9D600500B9E0FA /* YelpResultTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YelpResultTableViewCell.m; sourceTree = "<group>"; };
-		9E76EE871A9E4A0E00B9E0FA /* SearchResultCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultCell.h; sourceTree = "<group>"; };
-		9E76EE881A9E4A0E00B9E0FA /* SearchResultCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultCell.m; sourceTree = "<group>"; };
+		9E20C3D71AB5F17B0007E9B0 /* ReadMe.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe.txt; sourceTree = "<group>"; };
+		9E76EE801A9D5E7500B9E0FA /* YelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YelpViewController.h; path = YumYum2/YelpViewController.h; sourceTree = "<group>"; };
+		9E76EE811A9D5E7500B9E0FA /* YelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YelpViewController.m; path = YumYum2/YelpViewController.m; sourceTree = "<group>"; };
+		9E76EE831A9D600500B9E0FA /* YelpResultTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YelpResultTableViewCell.h; path = YumYum2/YelpResultTableViewCell.h; sourceTree = "<group>"; };
+		9E76EE841A9D600500B9E0FA /* YelpResultTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YelpResultTableViewCell.m; path = YumYum2/YelpResultTableViewCell.m; sourceTree = "<group>"; };
+		9E76EE871A9E4A0E00B9E0FA /* SearchResultCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchResultCell.h; path = YumYum2/SearchResultCell.h; sourceTree = "<group>"; };
+		9E76EE881A9E4A0E00B9E0FA /* SearchResultCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchResultCell.m; path = YumYum2/SearchResultCell.m; sourceTree = "<group>"; };
 		9E76EE891A9E4A0E00B9E0FA /* SearchResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResult.h; sourceTree = "<group>"; };
 		9E76EE8A1A9E4A0E00B9E0FA /* SearchResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResult.m; sourceTree = "<group>"; };
 		9E7DF3C91A9A2390004DB657 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -149,31 +155,29 @@
 		9E7DF3D11A9A23DE004DB657 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		9E7DF3D31A9A23F1004DB657 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9E7DF3D51A9A2404004DB657 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		9E9277641AA2345500CF85A6 /* SearchResultCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchResultCell.xib; sourceTree = "<group>"; };
+		9E9277641AA2345500CF85A6 /* SearchResultCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SearchResultCell.xib; path = YumYum2/SearchResultCell.xib; sourceTree = "<group>"; };
 		9E9277691AA2671400CF85A6 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		9E92776E1AA274AA00CF85A6 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
-		9E9277711AA2759100CF85A6 /* UIImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resize.h"; sourceTree = "<group>"; };
-		9E9277721AA2759100CF85A6 /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
 		9E9277741AA277DF00CF85A6 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
 		9E9277751AA277DF00CF85A6 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
-		9E9277771AA290D300CF85A6 /* NavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationController.h; sourceTree = "<group>"; };
-		9E9277781AA290D300CF85A6 /* NavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationController.m; sourceTree = "<group>"; };
-		9E92777A1AA36D3E00CF85A6 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
-		9E92777B1AA36D3E00CF85A6 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
-		9E92777F1AA38CFB00CF85A6 /* HomeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeCell.h; sourceTree = "<group>"; };
-		9E9277801AA38CFB00CF85A6 /* HomeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeCell.m; sourceTree = "<group>"; };
-		9EB272A31AA3E44700525022 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		9E9277771AA290D300CF85A6 /* NavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NavigationController.h; path = YumYum2/NavigationController.h; sourceTree = "<group>"; };
+		9E9277781AA290D300CF85A6 /* NavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NavigationController.m; path = YumYum2/NavigationController.m; sourceTree = "<group>"; };
+		9E92777A1AA36D3E00CF85A6 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeViewController.h; path = YumYum2/HomeViewController.h; sourceTree = "<group>"; };
+		9E92777B1AA36D3E00CF85A6 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeViewController.m; path = YumYum2/HomeViewController.m; sourceTree = "<group>"; };
+		9E92777F1AA38CFB00CF85A6 /* HomeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeCell.h; path = YumYum2/HomeCell.h; sourceTree = "<group>"; };
+		9E9277801AA38CFB00CF85A6 /* HomeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeCell.m; path = YumYum2/HomeCell.m; sourceTree = "<group>"; };
+		9EB272A31AA3E44700525022 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = YumYum2/Images.xcassets; sourceTree = "<group>"; };
 		9EB272A51AA6B07D00525022 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		9EB272AE1AA6BF4B00525022 /* ShoppingListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingListCell.h; sourceTree = "<group>"; };
-		9EB272AF1AA6BF4B00525022 /* ShoppingListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingListCell.m; sourceTree = "<group>"; };
-		9EB272B31AA6C4C100525022 /* ShoppingListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingListViewController.h; sourceTree = "<group>"; };
-		9EB272B41AA6C4C100525022 /* ShoppingListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingListViewController.m; sourceTree = "<group>"; };
+		9EB272AE1AA6BF4B00525022 /* ShoppingListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShoppingListCell.h; path = YumYum2/ShoppingListCell.h; sourceTree = "<group>"; };
+		9EB272AF1AA6BF4B00525022 /* ShoppingListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShoppingListCell.m; path = YumYum2/ShoppingListCell.m; sourceTree = "<group>"; };
+		9EB272B31AA6C4C100525022 /* ShoppingListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShoppingListViewController.h; path = YumYum2/ShoppingListViewController.h; sourceTree = "<group>"; };
+		9EB272B41AA6C4C100525022 /* ShoppingListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShoppingListViewController.m; path = YumYum2/ShoppingListViewController.m; sourceTree = "<group>"; };
 		9EB272B61AA80C6B00525022 /* ShoppingListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingListItem.h; sourceTree = "<group>"; };
 		9EB272B71AA80C6B00525022 /* ShoppingListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingListItem.m; sourceTree = "<group>"; };
-		9EB272B91AAB6A3E00525022 /* EditItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditItemViewController.h; sourceTree = "<group>"; };
-		9EB272BA1AAB6A3E00525022 /* EditItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditItemViewController.m; sourceTree = "<group>"; };
-		9EB272BC1AAB98BF00525022 /* AllListsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllListsViewController.h; sourceTree = "<group>"; };
-		9EB272BD1AAB98BF00525022 /* AllListsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllListsViewController.m; sourceTree = "<group>"; };
+		9EB272B91AAB6A3E00525022 /* EditItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EditItemViewController.h; path = YumYum2/EditItemViewController.h; sourceTree = "<group>"; };
+		9EB272BA1AAB6A3E00525022 /* EditItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EditItemViewController.m; path = YumYum2/EditItemViewController.m; sourceTree = "<group>"; };
+		9EB272BC1AAB98BF00525022 /* AllListsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AllListsViewController.h; path = YumYum2/AllListsViewController.h; sourceTree = "<group>"; };
+		9EB272BD1AAB98BF00525022 /* AllListsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AllListsViewController.m; path = YumYum2/AllListsViewController.m; sourceTree = "<group>"; };
 		9EB272BF1AABA24A00525022 /* ShoppingList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingList.h; sourceTree = "<group>"; };
 		9EB272C01AABA24A00525022 /* ShoppingList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingList.m; sourceTree = "<group>"; };
 		9EB274A31AAD276B00525022 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
@@ -185,12 +189,21 @@
 		9EB274AD1AAD325300525022 /* SCSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSettings.m; sourceTree = "<group>"; };
 		9EB274AF1AAD347100525022 /* SCImagePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCImagePicker.h; sourceTree = "<group>"; };
 		9EB274B01AAD347100525022 /* SCImagePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCImagePicker.m; sourceTree = "<group>"; };
-		9EB274B21AAD349A00525022 /* SCLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCLoginViewController.h; sourceTree = "<group>"; };
-		9EB274B31AAD349A00525022 /* SCLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCLoginViewController.m; sourceTree = "<group>"; };
-		9EB89C0C1A9FFA0600A2BE44 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		9EB274B21AAD349A00525022 /* SCLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCLoginViewController.h; path = YumYum2/SCLoginViewController.h; sourceTree = "<group>"; };
+		9EB274B31AAD349A00525022 /* SCLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCLoginViewController.m; path = YumYum2/SCLoginViewController.m; sourceTree = "<group>"; };
+		9EB274C51AAFDC7C00525022 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailViewController.h; path = YumYum2/DetailViewController.h; sourceTree = "<group>"; };
+		9EB274C61AAFDC7C00525022 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailViewController.m; path = YumYum2/DetailViewController.m; sourceTree = "<group>"; };
+		9EB274CC1AB11ABE00525022 /* RecipeDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecipeDetailViewController.h; path = YumYum2/RecipeDetailViewController.h; sourceTree = "<group>"; };
+		9EB274CD1AB11ABE00525022 /* RecipeDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RecipeDetailViewController.m; path = YumYum2/RecipeDetailViewController.m; sourceTree = "<group>"; };
+		9EB274CE1AB11ABE00525022 /* RecipeDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RecipeDetailViewController.xib; path = YumYum2/RecipeDetailViewController.xib; sourceTree = "<group>"; };
+		9EB274D11AB134D400525022 /* UIImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resize.h"; sourceTree = "<group>"; };
+		9EB274D21AB134D400525022 /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
+		9EB274D41AB143F000525022 /* DetailSearchResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailSearchResult.h; sourceTree = "<group>"; };
+		9EB274D51AB143F000525022 /* DetailSearchResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailSearchResult.m; sourceTree = "<group>"; };
+		9EB89C0C1A9FFA0600A2BE44 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = YumYum2/Main.storyboard; sourceTree = "<group>"; };
 		9EBB376C1A98F7B4002B3B09 /* YumYum2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YumYum2.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		9EBB37701A98F7B4002B3B09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9EBB37711A98F7B4002B3B09 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9EBB37701A98F7B4002B3B09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = YumYum2/Info.plist; sourceTree = "<group>"; };
+		9EBB37711A98F7B4002B3B09 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = YumYum2/main.m; sourceTree = "<group>"; };
 		9EBB37731A98F7B4002B3B09 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9EBB37741A98F7B4002B3B09 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		9EBB37771A98F7B5002B3B09 /* YumYum2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = YumYum2.xcdatamodel; sourceTree = "<group>"; };
@@ -198,10 +211,10 @@
 		9EBB37881A98F7B5002B3B09 /* YumYum2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YumYum2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EBB378D1A98F7B5002B3B09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9EBB378E1A98F7B5002B3B09 /* YumYum2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YumYum2Tests.m; sourceTree = "<group>"; };
-		9EBB379E1A990A92002B3B09 /* SearchListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchListViewController.h; sourceTree = "<group>"; };
-		9EBB379F1A990A92002B3B09 /* SearchListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchListViewController.m; sourceTree = "<group>"; };
-		9EFE32DC1A9EC70500819E54 /* NothingFoundCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NothingFoundCell.xib; sourceTree = "<group>"; };
-		9EFE32DE1A9EC79700819E54 /* LoadingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
+		9EBB379E1A990A92002B3B09 /* SearchListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchListViewController.h; path = YumYum2/SearchListViewController.h; sourceTree = "<group>"; };
+		9EBB379F1A990A92002B3B09 /* SearchListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchListViewController.m; path = YumYum2/SearchListViewController.m; sourceTree = "<group>"; };
+		9EFE32DC1A9EC70500819E54 /* NothingFoundCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NothingFoundCell.xib; path = YumYum2/NothingFoundCell.xib; sourceTree = "<group>"; };
+		9EFE32DE1A9EC79700819E54 /* LoadingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoadingCell.xib; path = YumYum2/LoadingCell.xib; sourceTree = "<group>"; };
 		B9F2D41630E6C9DD0513DDAD /* Pods-YumYum2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YumYum2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YumYum2/Pods-YumYum2.debug.xcconfig"; sourceTree = "<group>"; };
 		E6E5900FE08573553276D1C2 /* libPods-YumYum2.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YumYum2.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -312,18 +325,131 @@
 			path = Yelp_API_Request;
 			sourceTree = "<group>";
 		};
-		9E76EE861A9E49CA00B9E0FA /* Model */ = {
+		9E20C3D91AB5F4B90007E9B0 /* Home View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				9E92777A1AA36D3E00CF85A6 /* HomeViewController.h */,
+				9E92777B1AA36D3E00CF85A6 /* HomeViewController.m */,
+				9EBB379E1A990A92002B3B09 /* SearchListViewController.h */,
+				9EBB379F1A990A92002B3B09 /* SearchListViewController.m */,
+				9EB274CC1AB11ABE00525022 /* RecipeDetailViewController.h */,
+				9EB274CD1AB11ABE00525022 /* RecipeDetailViewController.m */,
+				9E9277771AA290D300CF85A6 /* NavigationController.h */,
+				9E9277781AA290D300CF85A6 /* NavigationController.m */,
+				9EB274C51AAFDC7C00525022 /* DetailViewController.h */,
+				9EB274C61AAFDC7C00525022 /* DetailViewController.m */,
+				9E76EE801A9D5E7500B9E0FA /* YelpViewController.h */,
+				9E76EE811A9D5E7500B9E0FA /* YelpViewController.m */,
+			);
+			name = "Home View Controllers";
+			sourceTree = "<group>";
+		};
+		9E20C3DA1AB5F4CD0007E9B0 /* Stash View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Stash View Controllers";
+			sourceTree = "<group>";
+		};
+		9E20C3DB1AB5F4E70007E9B0 /* Create Recipe View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Create Recipe View Controllers";
+			sourceTree = "<group>";
+		};
+		9E20C3DC1AB5F4F60007E9B0 /* Shopping List View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9EB272BC1AAB98BF00525022 /* AllListsViewController.h */,
+				9EB272BD1AAB98BF00525022 /* AllListsViewController.m */,
+				9EB272B31AA6C4C100525022 /* ShoppingListViewController.h */,
+				9EB272B41AA6C4C100525022 /* ShoppingListViewController.m */,
+				9EB272B91AAB6A3E00525022 /* EditItemViewController.h */,
+				9EB272BA1AAB6A3E00525022 /* EditItemViewController.m */,
+			);
+			name = "Shopping List View Controllers";
+			sourceTree = "<group>";
+		};
+		9E20C3DD1AB5F5110007E9B0 /* Facebook View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9EB274B21AAD349A00525022 /* SCLoginViewController.h */,
+				9EB274B31AAD349A00525022 /* SCLoginViewController.m */,
+			);
+			name = "Facebook View Controllers";
+			sourceTree = "<group>";
+		};
+		9E20C3DF1AB5F6AD0007E9B0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9E20C3E31AB5F8CA0007E9B0 /* Xibs */,
+				9E20C3E21AB5F8B30007E9B0 /* Table Cells */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		9E20C3E01AB5F6FE0007E9B0 /* Application Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9EB89C0C1A9FFA0600A2BE44 /* Main.storyboard */,
+				9EBB37701A98F7B4002B3B09 /* Info.plist */,
+				9EB272A31AA3E44700525022 /* Images.xcassets */,
+			);
+			name = "Application Resources";
+			sourceTree = "<group>";
+		};
+		9E20C3E11AB5F7A50007E9B0 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				9EBB37711A98F7B4002B3B09 /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		9E20C3E21AB5F8B30007E9B0 /* Table Cells */ = {
+			isa = PBXGroup;
+			children = (
+				9E92777F1AA38CFB00CF85A6 /* HomeCell.h */,
+				9E9277801AA38CFB00CF85A6 /* HomeCell.m */,
+				9EB272AE1AA6BF4B00525022 /* ShoppingListCell.h */,
+				9EB272AF1AA6BF4B00525022 /* ShoppingListCell.m */,
+				9E76EE831A9D600500B9E0FA /* YelpResultTableViewCell.h */,
+				9E76EE841A9D600500B9E0FA /* YelpResultTableViewCell.m */,
+				9E76EE871A9E4A0E00B9E0FA /* SearchResultCell.h */,
+				9E76EE881A9E4A0E00B9E0FA /* SearchResultCell.m */,
+			);
+			name = "Table Cells";
+			sourceTree = "<group>";
+		};
+		9E20C3E31AB5F8CA0007E9B0 /* Xibs */ = {
+			isa = PBXGroup;
+			children = (
+				9EB274CE1AB11ABE00525022 /* RecipeDetailViewController.xib */,
+				9EBB37811A98F7B5002B3B09 /* LaunchScreen.xib */,
+				9EFE32DC1A9EC70500819E54 /* NothingFoundCell.xib */,
+				9E9277641AA2345500CF85A6 /* SearchResultCell.xib */,
+				9EFE32DE1A9EC79700819E54 /* LoadingCell.xib */,
+			);
+			name = Xibs;
+			sourceTree = "<group>";
+		};
+		9E76EE861A9E49CA00B9E0FA /* Model and Model Classes */ = {
+			isa = PBXGroup;
+			children = (
+				9EBB37761A98F7B5002B3B09 /* YumYum2.xcdatamodeld */,
 				9EB272BF1AABA24A00525022 /* ShoppingList.h */,
 				9EB272C01AABA24A00525022 /* ShoppingList.m */,
 				9E76EE891A9E4A0E00B9E0FA /* SearchResult.h */,
 				9E76EE8A1A9E4A0E00B9E0FA /* SearchResult.m */,
+				9EB274D41AB143F000525022 /* DetailSearchResult.h */,
+				9EB274D51AB143F000525022 /* DetailSearchResult.m */,
 				9EB272B61AA80C6B00525022 /* ShoppingListItem.h */,
 				9EB272B71AA80C6B00525022 /* ShoppingListItem.m */,
 				9E9277701AA2753900CF85A6 /* Other Sources */,
 			);
-			name = Model;
+			name = "Model and Model Classes";
+			path = YumYum2;
 			sourceTree = "<group>";
 		};
 		9E7DF3C81A9A2363004DB657 /* Frameworks */ = {
@@ -359,8 +485,8 @@
 				9EB274AC1AAD325300525022 /* SCSettings.h */,
 				9EB274AD1AAD325300525022 /* SCSettings.m */,
 				9E9277751AA277DF00CF85A6 /* UIImage+ImageEffects.m */,
-				9E9277711AA2759100CF85A6 /* UIImage+Resize.h */,
-				9E9277721AA2759100CF85A6 /* UIImage+Resize.m */,
+				9EB274D11AB134D400525022 /* UIImage+Resize.h */,
+				9EB274D21AB134D400525022 /* UIImage+Resize.m */,
 			);
 			name = "Other Sources";
 			sourceTree = "<group>";
@@ -368,11 +494,22 @@
 		9EBB37631A98F7B4002B3B09 = {
 			isa = PBXGroup;
 			children = (
-				9EBB376E1A98F7B4002B3B09 /* YumYum2 */,
+				9E20C3D71AB5F17B0007E9B0 /* ReadMe.txt */,
+				9EBB376E1A98F7B4002B3B09 /* Application */,
+				9E76EE861A9E49CA00B9E0FA /* Model and Model Classes */,
+				9E20C3D91AB5F4B90007E9B0 /* Home View Controllers */,
+				9E20C3DA1AB5F4CD0007E9B0 /* Stash View Controllers */,
+				9E20C3DB1AB5F4E70007E9B0 /* Create Recipe View Controllers */,
+				9E20C3DC1AB5F4F60007E9B0 /* Shopping List View Controllers */,
+				9E20C3DD1AB5F5110007E9B0 /* Facebook View Controllers */,
+				9E20C3DF1AB5F6AD0007E9B0 /* Views */,
 				9EBB378B1A98F7B5002B3B09 /* YumYum2Tests */,
 				9EBB376D1A98F7B4002B3B09 /* Products */,
 				9E7DF3C81A9A2363004DB657 /* Frameworks */,
 				C9ACCD9694466D2321773093 /* Pods */,
+				9E20C3E01AB5F6FE0007E9B0 /* Application Resources */,
+				9E20C3E11AB5F7A50007E9B0 /* Other Sources */,
+				9EBB376F1A98F7B4002B3B09 /* Supporting Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -385,32 +522,24 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9EBB376E1A98F7B4002B3B09 /* YumYum2 */ = {
+		9EBB376E1A98F7B4002B3B09 /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				9E1ABD9F1A9C14A0008334BD /* OAuthConsumer */,
-				9E1ABDDE1A9C14F1008334BD /* Yelp_API_Request */,
 				9EBB37731A98F7B4002B3B09 /* AppDelegate.h */,
 				9EBB37741A98F7B4002B3B09 /* AppDelegate.m */,
-				9EB89C0C1A9FFA0600A2BE44 /* Main.storyboard */,
-				9EFE32D51A9EBFD800819E54 /* Views */,
-				9EF9AFF61A9E4FEB00033F94 /* View Controllers */,
-				9E76EE861A9E49CA00B9E0FA /* Model */,
-				9EBB37811A98F7B5002B3B09 /* LaunchScreen.xib */,
-				9EB272A31AA3E44700525022 /* Images.xcassets */,
-				9EBB37761A98F7B5002B3B09 /* YumYum2.xcdatamodeld */,
-				9EBB376F1A98F7B4002B3B09 /* Supporting Files */,
 			);
+			name = Application;
 			path = YumYum2;
 			sourceTree = "<group>";
 		};
 		9EBB376F1A98F7B4002B3B09 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				9EBB37701A98F7B4002B3B09 /* Info.plist */,
-				9EBB37711A98F7B4002B3B09 /* main.m */,
+				9E1ABD9F1A9C14A0008334BD /* OAuthConsumer */,
+				9E1ABDDE1A9C14F1008334BD /* Yelp_API_Request */,
 			);
 			name = "Supporting Files";
+			path = YumYum2;
 			sourceTree = "<group>";
 		};
 		9EBB378B1A98F7B5002B3B09 /* YumYum2Tests */ = {
@@ -428,47 +557,6 @@
 				9EBB378D1A98F7B5002B3B09 /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		9EF9AFF61A9E4FEB00033F94 /* View Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				9EB274B21AAD349A00525022 /* SCLoginViewController.h */,
-				9EB274B31AAD349A00525022 /* SCLoginViewController.m */,
-				9E76EE801A9D5E7500B9E0FA /* YelpViewController.h */,
-				9E76EE811A9D5E7500B9E0FA /* YelpViewController.m */,
-				9EBB379E1A990A92002B3B09 /* SearchListViewController.h */,
-				9EBB379F1A990A92002B3B09 /* SearchListViewController.m */,
-				9E9277771AA290D300CF85A6 /* NavigationController.h */,
-				9E9277781AA290D300CF85A6 /* NavigationController.m */,
-				9E92777A1AA36D3E00CF85A6 /* HomeViewController.h */,
-				9E92777B1AA36D3E00CF85A6 /* HomeViewController.m */,
-				9EB272B31AA6C4C100525022 /* ShoppingListViewController.h */,
-				9EB272B41AA6C4C100525022 /* ShoppingListViewController.m */,
-				9EB272B91AAB6A3E00525022 /* EditItemViewController.h */,
-				9EB272BA1AAB6A3E00525022 /* EditItemViewController.m */,
-				9EB272BC1AAB98BF00525022 /* AllListsViewController.h */,
-				9EB272BD1AAB98BF00525022 /* AllListsViewController.m */,
-			);
-			name = "View Controllers";
-			sourceTree = "<group>";
-		};
-		9EFE32D51A9EBFD800819E54 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				9E92777F1AA38CFB00CF85A6 /* HomeCell.h */,
-				9E9277801AA38CFB00CF85A6 /* HomeCell.m */,
-				9EB272AE1AA6BF4B00525022 /* ShoppingListCell.h */,
-				9EB272AF1AA6BF4B00525022 /* ShoppingListCell.m */,
-				9E76EE831A9D600500B9E0FA /* YelpResultTableViewCell.h */,
-				9E76EE841A9D600500B9E0FA /* YelpResultTableViewCell.m */,
-				9E76EE871A9E4A0E00B9E0FA /* SearchResultCell.h */,
-				9E76EE881A9E4A0E00B9E0FA /* SearchResultCell.m */,
-				9EFE32DC1A9EC70500819E54 /* NothingFoundCell.xib */,
-				9E9277641AA2345500CF85A6 /* SearchResultCell.xib */,
-				9EFE32DE1A9EC79700819E54 /* LoadingCell.xib */,
-			);
-			name = Views;
 			sourceTree = "<group>";
 		};
 		C9ACCD9694466D2321773093 /* Pods */ = {
@@ -564,6 +652,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9EB89C0D1A9FFA0600A2BE44 /* Main.storyboard in Resources */,
+				9EB274D01AB11ABE00525022 /* RecipeDetailViewController.xib in Resources */,
 				9EB272A41AA3E44700525022 /* Images.xcassets in Resources */,
 				9EFE32DF1A9EC79700819E54 /* LoadingCell.xib in Resources */,
 				9E9277651AA2345500CF85A6 /* SearchResultCell.xib in Resources */,
@@ -572,6 +661,7 @@
 				9E1ABDDD1A9C14A0008334BD /* README in Resources */,
 				9E1ABDDA1A9C14A0008334BD /* OATestServer.rb in Resources */,
 				9EFE32DD1A9EC70500819E54 /* NothingFoundCell.xib in Resources */,
+				9E20C3D81AB5F17B0007E9B0 /* ReadMe.txt in Resources */,
 				9EBB37831A98F7B5002B3B09 /* LaunchScreen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -627,19 +717,22 @@
 				9E9277761AA277DF00CF85A6 /* UIImage+ImageEffects.m in Sources */,
 				9E1ABDCF1A9C14A0008334BD /* sha1.c in Sources */,
 				9E1ABDCE1A9C14A0008334BD /* hmac.c in Sources */,
+				9EB274CF1AB11ABE00525022 /* RecipeDetailViewController.m in Sources */,
 				9E1ABDD31A9C14A0008334BD /* OADataFetcher.m in Sources */,
 				9E1ABDD61A9C14A0008334BD /* OAPlaintextSignatureProvider.m in Sources */,
 				9E1ABDE41A9C14F1008334BD /* Restaurant.m in Sources */,
+				9EB274C81AAFDC7C00525022 /* DetailViewController.m in Sources */,
 				9EB272B51AA6C4C100525022 /* ShoppingListViewController.m in Sources */,
 				9E1ABDCB1A9C14A0008334BD /* NSString+URLEncoding.m in Sources */,
 				9E1ABDD71A9C14A0008334BD /* OAProblem.m in Sources */,
 				9E1ABDD51A9C14A0008334BD /* OAMutableURLRequest.m in Sources */,
 				9E1ABDD91A9C14A0008334BD /* OAServiceTicket.m in Sources */,
-				9E9277731AA2759100CF85A6 /* UIImage+Resize.m in Sources */,
+				9EB274D31AB134D400525022 /* UIImage+Resize.m in Sources */,
 				9E1ABDD81A9C14A0008334BD /* OARequestParameter.m in Sources */,
 				9E9277811AA38CFB00CF85A6 /* HomeCell.m in Sources */,
 				9EB274AE1AAD325300525022 /* SCSettings.m in Sources */,
 				9E1ABDD21A9C14A0008334BD /* OAConsumer.m in Sources */,
+				9EB274D61AB143F000525022 /* DetailSearchResult.m in Sources */,
 				9EB272BB1AAB6A3E00525022 /* EditItemViewController.m in Sources */,
 				9EBB37A01A990A92002B3B09 /* SearchListViewController.m in Sources */,
 				9E76EE8B1A9E4A0E00B9E0FA /* SearchResultCell.m in Sources */,
@@ -694,6 +787,7 @@
 				9EBB37821A98F7B5002B3B09 /* Base */,
 			);
 			name = LaunchScreen.xib;
+			path = YumYum2;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

@@ -2,7 +2,7 @@
 //  ShopppingListViewCell.m
 //  YumYum2
 //
-//  Created by PhantomDestroyer on 3/3/15.
+//  Created by Maurice Mickens on 3/3/15.
 //  Copyright (c) 2015 Loud Skies. All rights reserved.
 //
 

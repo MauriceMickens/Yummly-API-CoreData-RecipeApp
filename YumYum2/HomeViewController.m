@@ -2,7 +2,7 @@
 //  HomeViewController.m
 //  YumYum2
 //
-//  Created by PhantomDestroyer on 3/1/15.
+//  Created by Maurice Mickens on 3/1/15.
 //  Copyright (c) 2015 Loud Skies. All rights reserved.
 //
 
@@ -28,7 +28,7 @@ static NSString * const HomeCellIdentifier = @"HomeCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.tableView.rowHeight = 176;
+    self.tableView.rowHeight = 264;
     
     //UINib *cellNib = [UINib nibWithNibName:HomeCellIdentifier bundle:nil];
     //[self.tableView registerNib:cellNib forCellReuseIdentifier:HomeCellIdentifier];

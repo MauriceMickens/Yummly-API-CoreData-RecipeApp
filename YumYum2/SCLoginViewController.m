@@ -44,6 +44,7 @@
     [super viewDidLoad];
 
     self.loginView.readPermissions = @[@"public_profile", @"user_friends"];
+    self.backgroundView.image = [UIImage imageNamed:@"fb_Background"]; 
 }
 
 - (void)viewDidAppear:(BOOL)animated

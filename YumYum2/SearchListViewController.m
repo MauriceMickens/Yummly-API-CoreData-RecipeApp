@@ -2,13 +2,17 @@
 //  SearchListViewController.m
 //  YumYum2
 //
-//  Created by PhantomDestroyer on 2/21/15.
+//  Created by Maurice Mickens on 2/21/15.
 //  Copyright (c) 2015 Loud Skies. All rights reserved.
 //
 
 #import "SearchListViewController.h"
 #import "SearchResultCell.h"
 #import <AFNetworking/AFNetworking.h>
+#import "RecipeDetailViewController.h"
+#import "UIImage+Resize.h"
+#import "DetailSearchResult.h"
+
 
 
 static NSString * const SearchResultCellIdentifier = @"SearchResultCell";
@@ -27,8 +31,10 @@ static const int NumberOfSections = 1;
 @implementation SearchListViewController
 {
     NSMutableArray *_searchResults;
+    NSMutableArray *_detailSearchResults;
     BOOL _isLoading;
     NSOperationQueue *_queue;
+    NSOperationQueue *_detailQueue;
     
 }
 
@@ -37,6 +43,9 @@ static const int NumberOfSections = 1;
     self = [super initWithCoder:aDecoder];
     if (self) {
         _queue = [[NSOperationQueue alloc] init];
+        _detailQueue = [[NSOperationQueue alloc] init];
+        _detailSearchResults = [[NSMutableArray alloc] init];
+        
     }
     return self;
 }
@@ -126,6 +135,56 @@ static const int NumberOfSections = 1;
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
+    // Set searchResult of the selected row
+    SearchResult *searchResult = _searchResults[indexPath.row];
+    
+    // Get the recipeID from the selected searchResult
+    NSString *recipeID = searchResult.recipeID;
+    
+    // Get a URL object from search string recipeID
+    NSURL *url = [self urlWithRecipeId:recipeID];
+    
+    // Get a request object for the server using url object
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    
+    // Initiate request operation on the server
+    AFHTTPRequestOperation *operation =
+    [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    
+    // Parse JSON from server
+    operation.responseSerializer = [AFJSONResponseSerializer serializer];
+    
+    [operation setCompletionBlockWithSuccess:^
+     // Request and Serialization on the server was successful
+     (AFHTTPRequestOperation *operation, id responseObject) {
+         
+         DetailSearchResult *result = [self parseDetailDictionary:responseObject];
+         
+         // Create instance of the RecipeDetailViewController
+         RecipeDetailViewController *controller =
+         [[RecipeDetailViewController alloc]
+            initWithNibName: @"RecipeDetailViewController" bundle:nil];
+         
+         controller.detailSearchResult = result;
+         
+         // Show the RecipeDetailViewController
+         [self presentViewController:controller animated:YES
+                          completion:nil];
+         
+         // Request was a failure
+     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+         
+         // Prevents error msg when failure block is invoked
+         if (operation.isCancelled) {
+             return;
+         }
+         [self showNetworkError];
+         _isLoading = NO;
+         [self.tableView reloadData];
+     }];
+    
+    [_detailQueue addOperation:operation];
+    
 }
 
 - (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -161,6 +220,7 @@ static const int NumberOfSections = 1;
         
         // Initialize searchResults array with 10 elements
         _searchResults = [NSMutableArray arrayWithCapacity:10];
+    
         
         // Get a URL object from search string
         NSURL *url = [self urlWithSearchText:searchBar.text];
@@ -222,7 +282,23 @@ static const int NumberOfSections = 1;
     
     // Builds the URL as a string by putting text from search bar behing the "term" parameter
     NSString *urlString = [NSString stringWithFormat:
-                           @"http://api.yummly.com/v1/api/recipes?_app_id=&_app_key=&q=%@", escapedSearchText];
+                           @"http://api.yummly.com/v1/api/recipes?_app_id=931de797&_app_key=fd48f14cdc64094977eaf86a7906d50b&q=%@", escapedSearchText];
+    
+    // Turns "urlString" into a NSURL object
+    NSURL *url = [NSURL URLWithString:urlString];
+    
+    return url;
+}
+
+- (NSURL *)urlWithRecipeId:(NSString *)searchText
+{
+    
+    // Call the "stringByAddingPercentEscapesUsingEncoding" method to escape speacial characters
+    NSString *escapedSearchText = [searchText stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    
+    // Builds the URL as a string by putting text from search bar behing the "term" parameter
+    NSString *urlString = [NSString stringWithFormat:
+                           @"http://api.yummly.com/v1/api/recipe/%@?_app_id=931de797&_app_key=fd48f14cdc64094977eaf86a7906d50b", escapedSearchText];
     
     // Turns "urlString" into a NSURL object
     NSURL *url = [NSURL URLWithString:urlString];
@@ -231,9 +307,10 @@ static const int NumberOfSections = 1;
 }
 
 
+
 - (void)parseDictionary:(NSDictionary *)dictionary
 {
-    
+
     NSArray *array = dictionary[@"matches"];
     if (array == nil) {
    
@@ -249,8 +326,73 @@ static const int NumberOfSections = 1;
         
         if (searchResult != nil){
             [_searchResults addObject:searchResult];
+    
         }
     }
+    
+}
+
+- (DetailSearchResult *)parseDetailDictionary:(NSDictionary *)dictionary
+{
+    NSString *recipeName = dictionary[@"name"];
+    //NSLog(@"RecipeName: %@",recipeName);
+    
+    NSString *totalTime = dictionary[@"totalTime"];
+    /*if (totalTime == nil){
+        NSLog(@"Expected 'totalTime' string");
+        return;
+    }*/
+    NSDictionary *recipeSource = dictionary[@"source"];
+    /*if (recipeSource == nil){
+        NSLog(@"Expected 'recipeSource' dictionary");
+        return;
+    }*/
+    NSArray *arrayImages = dictionary[@"images"];
+    /*if (arrayImages == nil){
+        NSLog(@"Expected 'arrayImages' array");
+        return;
+    }*/
+    NSArray *arrayIngredients = dictionary[@"ingredientLines"];
+    /*if (arrayIngredients == nil){
+        NSLog(@"Expected 'arrayIngredients' NSArray");
+        return;
+    }*/
+    NSDictionary *attribution = dictionary[@"attribution"];
+    /*if (attribution == nil){
+        NSLog(@"Expected 'attribution' dictionary");
+        return;
+    }*/
+    NSArray *numberOfServings = dictionary[@"numberOfServings"];
+    /*if (numberOfServings == nil){
+        NSLog(@"Expected 'numberOfServings' array");
+        return;
+    }*/
+    
+    DetailSearchResult *detailSearchResult = [[DetailSearchResult alloc]init];
+    
+    detailSearchResult.recipeName = recipeName;
+    //NSLog(@"detailSearchResult: %@",detailSearchResult.recipeName);
+    
+    detailSearchResult.totalTime = totalTime;
+    //NSLog(@"detailSearchResult: %@",detailSearchResult.totalTime);
+    
+    detailSearchResult.sourceRecipe = recipeSource;
+    //NSLog(@"detailSearchResult: %@",detailSearchResult.sourceRecipe[@"sourceDisplayName"]);
+    
+    for (NSDictionary *dict in arrayImages){
+        detailSearchResult.bigImages = dict[@"hostedLargeUrl"];
+    }
+    
+    detailSearchResult.ingredientLines = arrayIngredients;
+    
+    //[_detailSearchResults addObject:detailSearchResult];
+
+    /*for (DetailSearchResult *result in _detailSearchResults){
+        NSLog(@"ArrayResult-RecipeName: %@", result.recipeName);
+        NSLog(@"ArrayResult-RecipeName: %@", result.totalTime);
+    }*/
+    
+    return detailSearchResult;
     
 }
 
@@ -271,6 +413,7 @@ static const int NumberOfSections = 1;
     
     return searchResult;
 }
+
 
 - (void)showNetworkError
 {
