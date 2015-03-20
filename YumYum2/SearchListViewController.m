@@ -218,48 +218,75 @@ static const int NumberOfSections = 1;
         // Cancels old searches if new search is peformed
         [_queue cancelAllOperations];
         
-        // Initialize searchResults array with 10 elements
-        _searchResults = [NSMutableArray arrayWithCapacity:10];
+        // Initialize searchResults array with 20 elements
+        _searchResults = [NSMutableArray arrayWithCapacity:20];
     
         
         // Get a URL object from search string
         NSURL *url = [self urlWithSearchText:searchBar.text];
         
-        // Get a request object for the server using url object
-        NSURLRequest *request = [NSURLRequest requestWithURL:url];
-        
-        // Initiate request operation on the server
-        AFHTTPRequestOperation *operation =
-        [[AFHTTPRequestOperation alloc] initWithRequest:request];
-        
-        // Parse JSON from server
-        operation.responseSerializer = [AFJSONResponseSerializer serializer];
-        
-        [operation setCompletionBlockWithSuccess:^
-         // Request and Serialization on the server was successful
-         (AFHTTPRequestOperation *operation, id responseObject) {
-             
-             [self parseDictionary:responseObject];
-             _isLoading = NO;
-             [self.tableView reloadData];
-             
-             // Request was a failure
-         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-             
-             // Prevents error msg when failure block is invoked
-             if (operation.isCancelled) {
-                 return;
-             }
-             
-             [self showNetworkError];
-             _isLoading = NO;
-             [self.tableView reloadData];
-         }];
-        
-        [_queue addOperation:operation];
+        [self afNetworkingStuff:url];
         
     }
     
+}
+
+- (void)searchRecipesFromHomeView:(NSString *)searchText
+{
+   
+    _isLoading = YES;
+    [self.tableView reloadData];
+    
+    // Cancels old searches if new search is peformed
+    [_queue cancelAllOperations];
+        
+    // Initialize searchResults array with 20 elements
+    _searchResults = [NSMutableArray arrayWithCapacity:20];
+        
+        
+    // Get a URL object from search string
+    NSURL *url = [self urlWithSearchText:searchText];
+        
+    [self afNetworkingStuff:url];
+    
+}
+
+- (void)afNetworkingStuff:(NSURL *)url
+{
+    
+    // Get a request object for the server using url object
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    
+    // Initiate request operation on the server
+    AFHTTPRequestOperation *operation =
+    [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    
+    // Parse JSON from server
+    operation.responseSerializer = [AFJSONResponseSerializer serializer];
+    
+    [operation setCompletionBlockWithSuccess:^
+     // Request and Serialization on the server was successful
+     (AFHTTPRequestOperation *operation, id responseObject) {
+         
+         [self parseDictionary:responseObject];
+         _isLoading = NO;
+         [self.tableView reloadData];
+         
+         // Request was a failure
+     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+         
+         // Prevents error msg when failure block is invoked
+         if (operation.isCancelled) {
+             return;
+         }
+         
+         [self showNetworkError];
+         _isLoading = NO;
+         [self.tableView reloadData];
+     }];
+    
+    [_queue addOperation:operation];
+
 }
 
 - (NSString *)performStoreRequestWithURL:(NSURL *)url
@@ -282,7 +309,7 @@ static const int NumberOfSections = 1;
     
     // Builds the URL as a string by putting text from search bar behing the "term" parameter
     NSString *urlString = [NSString stringWithFormat:
-                           @"http://api.yummly.com/v1/api/recipes?_app_id=931de797&_app_key=fd48f14cdc64094977eaf86a7906d50b&q=%@", escapedSearchText];
+                           @"http://api.yummly.com/v1/api/recipes?_app_id=931de797&_app_key=fd48f14cdc64094977eaf86a7906d50b&q=%@&maxResult=500&start=10&requirePictures=true", escapedSearchText];
     
     // Turns "urlString" into a NSURL object
     NSURL *url = [NSURL URLWithString:urlString];
@@ -310,7 +337,10 @@ static const int NumberOfSections = 1;
 
 - (void)parseDictionary:(NSDictionary *)dictionary
 {
+    // Get the "attribution" dictionary from the Yummly Server
+    NSDictionary *attribution = dictionary[@"attribution"];
 
+    // Get an array of dictionaries from the the Yummly Server
     NSArray *array = dictionary[@"matches"];
     if (array == nil) {
    
@@ -318,16 +348,21 @@ static const int NumberOfSections = 1;
         return;
     }
     
+    // For each dictionary in the array of dictionaries create a SearchResult
+    // and add it the searchResults array 
     for (NSDictionary *matchDict in array) {
         
         SearchResult *searchResult;
         
         searchResult = [self parseRecipe:matchDict];
         
+        searchResult.attribution = attribution;
+        
         if (searchResult != nil){
             [_searchResults addObject:searchResult];
     
         }
+        
     }
     
 }
@@ -380,17 +415,10 @@ static const int NumberOfSections = 1;
     //NSLog(@"detailSearchResult: %@",detailSearchResult.sourceRecipe[@"sourceDisplayName"]);
     
     for (NSDictionary *dict in arrayImages){
-        detailSearchResult.bigImages = dict[@"hostedLargeUrl"];
+        detailSearchResult.bigImage = dict[@"hostedLargeUrl"];
     }
     
     detailSearchResult.ingredientLines = arrayIngredients;
-    
-    //[_detailSearchResults addObject:detailSearchResult];
-
-    /*for (DetailSearchResult *result in _detailSearchResults){
-        NSLog(@"ArrayResult-RecipeName: %@", result.recipeName);
-        NSLog(@"ArrayResult-RecipeName: %@", result.totalTime);
-    }*/
     
     return detailSearchResult;
     
@@ -402,13 +430,9 @@ static const int NumberOfSections = 1;
     SearchResult *searchResult = [[SearchResult alloc] init];
     searchResult.imageUrlsBySize = dictionary[@"imageUrlsBySize"];
     searchResult.sourceDisplayName = dictionary[@"sourceDisplayName"];
-    searchResult.ingredients = dictionary[@"ingredients"];
     searchResult.recipeID = dictionary[@"id"];
-    searchResult.smallImageUrls = dictionary[@"smallImageUrls"];
     searchResult.recipeName = dictionary[@"recipeName"];
     searchResult.totalTimeInSeconds = dictionary[@"totalTimeInSeconds"];
-    searchResult.attributes = dictionary[@"attributes"];
-    searchResult.flavors = dictionary[@"flavors"];
     searchResult.rating = dictionary[@"rating"];
     
     return searchResult;

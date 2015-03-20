@@ -11,16 +11,12 @@
 @interface SearchResult : NSObject
 
 @property (nonatomic, copy) NSDictionary *imageUrlsBySize;
+@property (nonatomic, copy) NSDictionary *attribution; 
 @property (nonatomic, copy) NSString *sourceDisplayName;
-@property (nonatomic, copy) NSArray  *ingredients;
 @property (nonatomic, copy) NSString *recipeID;
 @property (nonatomic, copy) NSString *recipeName;
-@property (nonatomic, copy) NSArray  *smallImageUrls;
-@property (nonatomic, copy) NSString *recipeNmae;
 @property (nonatomic) NSNumber *totalTimeInSeconds;
-@property (nonatomic, copy) NSDictionary *attributes;
-@property (nonatomic, copy) NSDictionary *flavors;
-@property (nonatomic) NSNumber *rating;
+@property (nonatomic, copy) NSNumber *rating;
 
 
 @end

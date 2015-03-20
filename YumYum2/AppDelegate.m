@@ -11,7 +11,6 @@
 
 #import "SCErrorHandler.h"
 #import "SCSettings.h"
-#import "DetailViewController.h"
 
 
 @interface AppDelegate ()
@@ -39,21 +38,19 @@
     self.customLocationManager.delegate = self;
     [self.customLocationManager startUpdatingLocation];
     
-    DetailViewController *detailViewController = [[DetailViewController alloc] init];
-    
     // Create an instance of a UINavigationController
     // its stack contains only itemsViewController
-    UINavigationController *navController = [[UINavigationController alloc]
-                                             initWithRootViewController:detailViewController];
+    //UINavigationController *navController = [[UINavigationController alloc]
+                                             //initWithRootViewController:detailViewController];
     
     return YES;
 }
 
 - (void)customizeAppearance
 {
-    [[UINavigationBar appearance] setBarTintColor:[UIColor redColor]];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor whiteColor]];
     [[UINavigationBar appearance] setTitleTextAttributes:@{
-                                                           NSForegroundColorAttributeName : [UIColor whiteColor],
+                                                           NSForegroundColorAttributeName : [UIColor redColor],
                                                            }];
     [[UITabBar appearance] setTintColor: [UIColor redColor]];
 }

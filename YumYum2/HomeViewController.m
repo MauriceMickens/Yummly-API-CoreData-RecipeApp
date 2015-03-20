@@ -9,10 +9,16 @@
 #import "HomeViewController.h"
 #import "HomeCell.h"
 #import "SearchListViewController.h"
+#import <AFNetworking/AFNetworking.h>
 #import "SearchResultCell.h"
 #import "SearchResult.h"
 
 static NSString * const HomeCellIdentifier = @"HomeCell";
+static NSString * const VegetarianDiet = @"&allowedDiet[]=387^Lacto-ovo vegetarian";
+static NSString * const VeganDiet = @"&allowedDiet[]=386^Vegan";
+static NSString * const PescetarianDiet = @"&allowedDiet[]=390^Pescetarian";
+static NSString * const LactoVegDiet = @"&allowedDiet[]=388^Lacto vegetarian";
+static NSString * const PaleoDiet = @"&allowedDiet[]=403^Paleo";
 
 @interface HomeViewController ()
 
@@ -25,25 +31,32 @@ static NSString * const HomeCellIdentifier = @"HomeCell";
     NSIndexPath *_selectedIndexPath;
 }
 
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    if ((self = [super initWithCoder:aDecoder])) {
+        
+        _categories = @[@"Vegetarian",
+                        @"Vegan",
+                        @"Pescetarian",
+                        @"Lacto Vegetarian",
+                        @"High Protien"];
+        
+        _backgroundImages = @[[UIImage imageNamed:@"Vegetarian.png"],
+                              [UIImage imageNamed:@"Vegan.png"],
+                              [UIImage imageNamed:@"Pescertarian.png"],
+                              [UIImage imageNamed:@"Lacto.png"],
+                              [UIImage imageNamed:@"Protein.png"]];
+    }
+    return self;
+}
+
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 
     self.tableView.rowHeight = 264;
-    
-    //UINib *cellNib = [UINib nibWithNibName:HomeCellIdentifier bundle:nil];
-    //[self.tableView registerNib:cellNib forCellReuseIdentifier:HomeCellIdentifier];
-    
-    _categories = @[@"Vegetarian",
-                    @"Vegan",
-                    @"Pescetarian",
-                    @"Lacto Vegetarian",
-                    @"High Protien"];
-    
-    _backgroundImages = @[[UIImage imageNamed:@"Vegetarian.png"],
-                          [UIImage imageNamed:@"Vegan.png"],
-                          [UIImage imageNamed:@"Pescertarian.png"],
-                          [UIImage imageNamed:@"Lacto.png"],
-                          [UIImage imageNamed:@"Protein.png"]];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -51,9 +64,6 @@ static NSString * const HomeCellIdentifier = @"HomeCell";
     // Dispose of any resources that can be recreated.
 }
 
-- (UIStatusBarStyle)preferredStatusBarStyle {
-    return UIStatusBarStyleDefault;
-}
 
 #pragma mark - Table view data source
 
@@ -90,14 +100,26 @@ static NSString * const HomeCellIdentifier = @"HomeCell";
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue
                  sender:(id)sender
-{       // Check for the correct segue
+{    // Check for the correct segue
     if ([segue.identifier isEqualToString:@"ShowCategory"]) {
         
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        NSIndexPath *path = [self.tableView indexPathForSelectedRow];
         
         UINavigationController *navigationController = segue.destinationViewController;
         
-        SearchListViewController *controller = (SearchListViewController *)navigationController.topViewController;
+        SearchListViewController *searchController = (SearchListViewController *)navigationController.topViewController;
+        
+        if (path.row == 0){
+            [searchController searchRecipesFromHomeView:VegetarianDiet];
+        } else if (path.row == 1){
+            [searchController searchRecipesFromHomeView:VeganDiet];
+        } else if (path.row == 2){
+            [searchController searchRecipesFromHomeView:PescetarianDiet];
+        } else if (path.row == 3){
+            [searchController searchRecipesFromHomeView:LactoVegDiet];
+        }else if (path.row == 4){
+            [searchController searchRecipesFromHomeView:PaleoDiet];
+        }
         
     }
 }

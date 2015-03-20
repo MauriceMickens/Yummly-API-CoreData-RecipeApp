@@ -6,18 +6,20 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
+        <view contentMode="scaleAspectFit" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch_image" translatesAutoresizingMaskIntoConstraints="NO" id="xxZ-Xs-kcg">
-                    <rect key="frame" x="-612" y="-328" width="1704" height="1136"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch_image" translatesAutoresizingMaskIntoConstraints="NO" id="j0s-5d-W1W">
+                    <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                 </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="centerY" secondItem="xxZ-Xs-kcg" secondAttribute="centerY" id="08t-UX-FL2"/>
-                <constraint firstAttribute="centerX" secondItem="xxZ-Xs-kcg" secondAttribute="centerX" id="NLo-6P-Hwd"/>
+                <constraint firstAttribute="trailing" secondItem="j0s-5d-W1W" secondAttribute="trailing" id="DgI-CI-4rw"/>
+                <constraint firstItem="j0s-5d-W1W" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="TpW-Sx-naR"/>
+                <constraint firstAttribute="bottom" secondItem="j0s-5d-W1W" secondAttribute="bottom" id="rXM-di-lBb"/>
+                <constraint firstItem="j0s-5d-W1W" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="u9z-vP-TVe"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -25,6 +27,6 @@
         </view>
     </objects>
     <resources>
-        <image name="launch_image" width="1704" height="1136"/>
+        <image name="launch_image" width="1024" height="1024"/>
     </resources>
 </document>

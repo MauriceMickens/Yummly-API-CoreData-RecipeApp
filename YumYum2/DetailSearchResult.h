@@ -11,7 +11,7 @@
 @interface DetailSearchResult : NSObject
 
 @property (nonatomic, copy) NSString *totalTime;
-@property (nonatomic, copy) NSDictionary  *bigImages;
+@property (nonatomic, copy) NSString  *bigImage;
 @property (nonatomic, copy) NSString *recipeName;
 @property (nonatomic, copy) NSDictionary *sourceRecipe;
 @property (nonatomic, copy) NSArray  *ingredientLines;

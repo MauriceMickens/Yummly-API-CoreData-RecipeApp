@@ -8,29 +8,45 @@
 
 #import "RecipeDetailViewController.h"
 #import "DetailSearchResult.h"
+#import "DetailIngredientsCell.h"
 #import "SearchResult.h"
 #import <AFNetworking/UIImageView+AFNetworking.h>
-#import "UIImage+Resize.h"
+#import "DetailIngredient.h"
 
-@interface RecipeDetailViewController ()
+static NSString * const DetailIngredientsCellIdentifier = @"DetaiLIngredients";
+
+@interface RecipeDetailViewController ()<UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, weak) IBOutlet UIImageView *artworkImageView;
 @property (nonatomic, weak) IBOutlet UILabel *recipeNameLabel;
 @property (nonatomic, weak) IBOutlet UILabel *sourceNameLabel;
-@property (nonatomic, weak) IBOutlet UILabel *genreLabel;
-@property (nonatomic, weak) IBOutlet UIButton *priceButton;
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
 
 @end
 
 @implementation RecipeDetailViewController
+{
+    NSMutableArray *_ingredients;
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        _ingredients = [NSMutableArray arrayWithCapacity:1];
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.tableView.rowHeight = 44;
     if (self.detailSearchResult != nil){
         [self updateUI];
     }
+    
+    UINib *cellNib = [UINib nibWithNibName:DetailIngredientsCellIdentifier bundle:nil];
+    [self.tableView registerNib:cellNib forCellReuseIdentifier:DetailIngredientsCellIdentifier];
 }
 
 - (void)updateUI
@@ -43,7 +59,7 @@
     }
     self.sourceNameLabel.text = sourceDisplayName;
     
-    //[self.artworkImageView setImageWithURL:[NSURL URLWithString:self.searchResult.imageUrlsBySize[@"90"]]];
+    [self.artworkImageView setImageWithURL:[NSURL URLWithString:self.detailSearchResult.bigImage]]; 
     
 }
 
@@ -63,14 +79,57 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-/*
-#pragma mark - Navigation
+#pragma mark - Table view data source
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
 }
-*/
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    return 1;
+    
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    int count = 0;
+ 
+    UITableViewCell *cell =
+    [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+                           reuseIdentifier:DetailIngredientsCellIdentifier];
+    
+    for (DetailIngredient *element in self.detailSearchResult.ingredientLines){
+        [_ingredients addObject:element];
+        NSLog(@"%@",_ingredients[count]);
+        count++; 
+    }
+    
+    //DetailIngredient *ingredient = _ingredients[indexPath.row];
+        
+    // Set the contents of the cell
+    cell.textLabel.text = @"TEST";
+    
+    return cell;
+    
+}
+
+#pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    
+    
+}
+
+- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    //Disables selection for users if searchResults empty or if connecting to server
+    
+    return indexPath;
+    
+}
 
 @end

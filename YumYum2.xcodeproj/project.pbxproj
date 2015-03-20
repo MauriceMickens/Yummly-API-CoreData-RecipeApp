@@ -32,6 +32,7 @@
 		9E1ABDE51A9C14F1008334BD /* YelpAPIService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E1ABDE31A9C14F1008334BD /* YelpAPIService.m */; };
 		9E1ABDE71A9C18EA008334BD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E1ABDE61A9C18EA008334BD /* CoreGraphics.framework */; };
 		9E20C3D81AB5F17B0007E9B0 /* ReadMe.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9E20C3D71AB5F17B0007E9B0 /* ReadMe.txt */; };
+		9E4D8EF91ABA8C2A00E50AF0 /* DetailIngredientsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E4D8EF81ABA8C2A00E50AF0 /* DetailIngredientsCell.xib */; };
 		9E76EE821A9D5E7500B9E0FA /* YelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E76EE811A9D5E7500B9E0FA /* YelpViewController.m */; };
 		9E76EE851A9D600500B9E0FA /* YelpResultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E76EE841A9D600500B9E0FA /* YelpResultTableViewCell.m */; };
 		9E76EE8B1A9E4A0E00B9E0FA /* SearchResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E76EE881A9E4A0E00B9E0FA /* SearchResultCell.m */; };
@@ -65,7 +66,6 @@
 		9EB274AE1AAD325300525022 /* SCSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB274AD1AAD325300525022 /* SCSettings.m */; };
 		9EB274B11AAD347100525022 /* SCImagePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB274B01AAD347100525022 /* SCImagePicker.m */; };
 		9EB274B41AAD349A00525022 /* SCLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB274B31AAD349A00525022 /* SCLoginViewController.m */; };
-		9EB274C81AAFDC7C00525022 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB274C61AAFDC7C00525022 /* DetailViewController.m */; };
 		9EB274CF1AB11ABE00525022 /* RecipeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB274CD1AB11ABE00525022 /* RecipeDetailViewController.m */; };
 		9EB274D01AB11ABE00525022 /* RecipeDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EB274CE1AB11ABE00525022 /* RecipeDetailViewController.xib */; };
 		9EB274D31AB134D400525022 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB274D21AB134D400525022 /* UIImage+Resize.m */; };
@@ -77,6 +77,16 @@
 		9EBB37831A98F7B5002B3B09 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EBB37811A98F7B5002B3B09 /* LaunchScreen.xib */; };
 		9EBB378F1A98F7B5002B3B09 /* YumYum2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EBB378E1A98F7B5002B3B09 /* YumYum2Tests.m */; };
 		9EBB37A01A990A92002B3B09 /* SearchListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EBB379F1A990A92002B3B09 /* SearchListViewController.m */; };
+		9EEEDB861AB79D51009419A1 /* CreateRecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EEEDB851AB79D51009419A1 /* CreateRecipeViewController.m */; };
+		9EEEDB881AB7A089009419A1 /* IngredientsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EEEDB871AB7A089009419A1 /* IngredientsCell.xib */; };
+		9EEEDB8A1AB7A0AA009419A1 /* DirectionsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EEEDB891AB7A0AA009419A1 /* DirectionsCell.xib */; };
+		9EEEDB8C1AB7A0E6009419A1 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EEEDB8B1AB7A0E6009419A1 /* CategoryCell.xib */; };
+		9EEEDB8F1AB7CD56009419A1 /* DetailIngredient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EEEDB8E1AB7CD56009419A1 /* DetailIngredient.m */; };
+		9EEEDB921AB7CDAC009419A1 /* Direction.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EEEDB911AB7CDAC009419A1 /* Direction.m */; };
+		9EEEDB951AB7CDC6009419A1 /* RecipeCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EEEDB941AB7CDC6009419A1 /* RecipeCategory.m */; };
+		9EEEDB9E1AB7DC85009419A1 /* IngredientsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EEEDB9C1AB7DC85009419A1 /* IngredientsViewController.m */; };
+		9EEEDB9F1AB7DC85009419A1 /* IngredientsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EEEDB9D1AB7DC85009419A1 /* IngredientsViewController.xib */; };
+		9EEEDBA21AB8EE29009419A1 /* DetailIngredientsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EEEDBA11AB8EE29009419A1 /* DetailIngredientsCell.m */; };
 		9EFE32DD1A9EC70500819E54 /* NothingFoundCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EFE32DC1A9EC70500819E54 /* NothingFoundCell.xib */; };
 		9EFE32DF1A9EC79700819E54 /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EFE32DE1A9EC79700819E54 /* LoadingCell.xib */; };
 /* End PBXBuildFile section */
@@ -140,6 +150,7 @@
 		9E1ABDE31A9C14F1008334BD /* YelpAPIService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YelpAPIService.m; sourceTree = "<group>"; };
 		9E1ABDE61A9C18EA008334BD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		9E20C3D71AB5F17B0007E9B0 /* ReadMe.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe.txt; sourceTree = "<group>"; };
+		9E4D8EF81ABA8C2A00E50AF0 /* DetailIngredientsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailIngredientsCell.xib; sourceTree = "<group>"; };
 		9E76EE801A9D5E7500B9E0FA /* YelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YelpViewController.h; path = YumYum2/YelpViewController.h; sourceTree = "<group>"; };
 		9E76EE811A9D5E7500B9E0FA /* YelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YelpViewController.m; path = YumYum2/YelpViewController.m; sourceTree = "<group>"; };
 		9E76EE831A9D600500B9E0FA /* YelpResultTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YelpResultTableViewCell.h; path = YumYum2/YelpResultTableViewCell.h; sourceTree = "<group>"; };
@@ -191,8 +202,6 @@
 		9EB274B01AAD347100525022 /* SCImagePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCImagePicker.m; sourceTree = "<group>"; };
 		9EB274B21AAD349A00525022 /* SCLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCLoginViewController.h; path = YumYum2/SCLoginViewController.h; sourceTree = "<group>"; };
 		9EB274B31AAD349A00525022 /* SCLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCLoginViewController.m; path = YumYum2/SCLoginViewController.m; sourceTree = "<group>"; };
-		9EB274C51AAFDC7C00525022 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailViewController.h; path = YumYum2/DetailViewController.h; sourceTree = "<group>"; };
-		9EB274C61AAFDC7C00525022 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailViewController.m; path = YumYum2/DetailViewController.m; sourceTree = "<group>"; };
 		9EB274CC1AB11ABE00525022 /* RecipeDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecipeDetailViewController.h; path = YumYum2/RecipeDetailViewController.h; sourceTree = "<group>"; };
 		9EB274CD1AB11ABE00525022 /* RecipeDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RecipeDetailViewController.m; path = YumYum2/RecipeDetailViewController.m; sourceTree = "<group>"; };
 		9EB274CE1AB11ABE00525022 /* RecipeDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RecipeDetailViewController.xib; path = YumYum2/RecipeDetailViewController.xib; sourceTree = "<group>"; };
@@ -213,6 +222,22 @@
 		9EBB378E1A98F7B5002B3B09 /* YumYum2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YumYum2Tests.m; sourceTree = "<group>"; };
 		9EBB379E1A990A92002B3B09 /* SearchListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchListViewController.h; path = YumYum2/SearchListViewController.h; sourceTree = "<group>"; };
 		9EBB379F1A990A92002B3B09 /* SearchListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchListViewController.m; path = YumYum2/SearchListViewController.m; sourceTree = "<group>"; };
+		9EEEDB841AB79D51009419A1 /* CreateRecipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateRecipeViewController.h; sourceTree = "<group>"; };
+		9EEEDB851AB79D51009419A1 /* CreateRecipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateRecipeViewController.m; sourceTree = "<group>"; };
+		9EEEDB871AB7A089009419A1 /* IngredientsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IngredientsCell.xib; sourceTree = "<group>"; };
+		9EEEDB891AB7A0AA009419A1 /* DirectionsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DirectionsCell.xib; sourceTree = "<group>"; };
+		9EEEDB8B1AB7A0E6009419A1 /* CategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
+		9EEEDB8D1AB7CD56009419A1 /* DetailIngredient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailIngredient.h; sourceTree = "<group>"; };
+		9EEEDB8E1AB7CD56009419A1 /* DetailIngredient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailIngredient.m; sourceTree = "<group>"; };
+		9EEEDB901AB7CDAC009419A1 /* Direction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Direction.h; sourceTree = "<group>"; };
+		9EEEDB911AB7CDAC009419A1 /* Direction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Direction.m; sourceTree = "<group>"; };
+		9EEEDB931AB7CDC6009419A1 /* RecipeCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeCategory.h; sourceTree = "<group>"; };
+		9EEEDB941AB7CDC6009419A1 /* RecipeCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeCategory.m; sourceTree = "<group>"; };
+		9EEEDB9B1AB7DC85009419A1 /* IngredientsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IngredientsViewController.h; sourceTree = "<group>"; };
+		9EEEDB9C1AB7DC85009419A1 /* IngredientsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IngredientsViewController.m; sourceTree = "<group>"; };
+		9EEEDB9D1AB7DC85009419A1 /* IngredientsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IngredientsViewController.xib; sourceTree = "<group>"; };
+		9EEEDBA01AB8EE29009419A1 /* DetailIngredientsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailIngredientsCell.h; sourceTree = "<group>"; };
+		9EEEDBA11AB8EE29009419A1 /* DetailIngredientsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailIngredientsCell.m; sourceTree = "<group>"; };
 		9EFE32DC1A9EC70500819E54 /* NothingFoundCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NothingFoundCell.xib; path = YumYum2/NothingFoundCell.xib; sourceTree = "<group>"; };
 		9EFE32DE1A9EC79700819E54 /* LoadingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoadingCell.xib; path = YumYum2/LoadingCell.xib; sourceTree = "<group>"; };
 		B9F2D41630E6C9DD0513DDAD /* Pods-YumYum2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YumYum2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YumYum2/Pods-YumYum2.debug.xcconfig"; sourceTree = "<group>"; };
@@ -336,8 +361,6 @@
 				9EB274CD1AB11ABE00525022 /* RecipeDetailViewController.m */,
 				9E9277771AA290D300CF85A6 /* NavigationController.h */,
 				9E9277781AA290D300CF85A6 /* NavigationController.m */,
-				9EB274C51AAFDC7C00525022 /* DetailViewController.h */,
-				9EB274C61AAFDC7C00525022 /* DetailViewController.m */,
 				9E76EE801A9D5E7500B9E0FA /* YelpViewController.h */,
 				9E76EE811A9D5E7500B9E0FA /* YelpViewController.m */,
 			);
@@ -354,6 +377,10 @@
 		9E20C3DB1AB5F4E70007E9B0 /* Create Recipe View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				9EEEDB841AB79D51009419A1 /* CreateRecipeViewController.h */,
+				9EEEDB851AB79D51009419A1 /* CreateRecipeViewController.m */,
+				9EEEDB9B1AB7DC85009419A1 /* IngredientsViewController.h */,
+				9EEEDB9C1AB7DC85009419A1 /* IngredientsViewController.m */,
 			);
 			name = "Create Recipe View Controllers";
 			sourceTree = "<group>";
@@ -418,6 +445,8 @@
 				9E76EE841A9D600500B9E0FA /* YelpResultTableViewCell.m */,
 				9E76EE871A9E4A0E00B9E0FA /* SearchResultCell.h */,
 				9E76EE881A9E4A0E00B9E0FA /* SearchResultCell.m */,
+				9EEEDBA01AB8EE29009419A1 /* DetailIngredientsCell.h */,
+				9EEEDBA11AB8EE29009419A1 /* DetailIngredientsCell.m */,
 			);
 			name = "Table Cells";
 			sourceTree = "<group>";
@@ -425,11 +454,16 @@
 		9E20C3E31AB5F8CA0007E9B0 /* Xibs */ = {
 			isa = PBXGroup;
 			children = (
+				9EEEDB9D1AB7DC85009419A1 /* IngredientsViewController.xib */,
 				9EB274CE1AB11ABE00525022 /* RecipeDetailViewController.xib */,
 				9EBB37811A98F7B5002B3B09 /* LaunchScreen.xib */,
 				9EFE32DC1A9EC70500819E54 /* NothingFoundCell.xib */,
 				9E9277641AA2345500CF85A6 /* SearchResultCell.xib */,
 				9EFE32DE1A9EC79700819E54 /* LoadingCell.xib */,
+				9EEEDB871AB7A089009419A1 /* IngredientsCell.xib */,
+				9EEEDB891AB7A0AA009419A1 /* DirectionsCell.xib */,
+				9EEEDB8B1AB7A0E6009419A1 /* CategoryCell.xib */,
+				9E4D8EF81ABA8C2A00E50AF0 /* DetailIngredientsCell.xib */,
 			);
 			name = Xibs;
 			sourceTree = "<group>";
@@ -438,6 +472,12 @@
 			isa = PBXGroup;
 			children = (
 				9EBB37761A98F7B5002B3B09 /* YumYum2.xcdatamodeld */,
+				9EEEDB901AB7CDAC009419A1 /* Direction.h */,
+				9EEEDB911AB7CDAC009419A1 /* Direction.m */,
+				9EEEDB931AB7CDC6009419A1 /* RecipeCategory.h */,
+				9EEEDB941AB7CDC6009419A1 /* RecipeCategory.m */,
+				9EEEDB8D1AB7CD56009419A1 /* DetailIngredient.h */,
+				9EEEDB8E1AB7CD56009419A1 /* DetailIngredient.m */,
 				9EB272BF1AABA24A00525022 /* ShoppingList.h */,
 				9EB272C01AABA24A00525022 /* ShoppingList.m */,
 				9E76EE891A9E4A0E00B9E0FA /* SearchResult.h */,
@@ -656,13 +696,18 @@
 				9EB272A41AA3E44700525022 /* Images.xcassets in Resources */,
 				9EFE32DF1A9EC79700819E54 /* LoadingCell.xib in Resources */,
 				9E9277651AA2345500CF85A6 /* SearchResultCell.xib in Resources */,
+				9EEEDB8A1AB7A0AA009419A1 /* DirectionsCell.xib in Resources */,
 				9EB274A81AAD30C900525022 /* FBUserSettingsViewResources.bundle in Resources */,
 				9EB274A61AAD30B300525022 /* FacebookSDKOverrides.bundle in Resources */,
+				9EEEDB881AB7A089009419A1 /* IngredientsCell.xib in Resources */,
+				9EEEDB9F1AB7DC85009419A1 /* IngredientsViewController.xib in Resources */,
 				9E1ABDDD1A9C14A0008334BD /* README in Resources */,
+				9EEEDB8C1AB7A0E6009419A1 /* CategoryCell.xib in Resources */,
 				9E1ABDDA1A9C14A0008334BD /* OATestServer.rb in Resources */,
 				9EFE32DD1A9EC70500819E54 /* NothingFoundCell.xib in Resources */,
 				9E20C3D81AB5F17B0007E9B0 /* ReadMe.txt in Resources */,
 				9EBB37831A98F7B5002B3B09 /* LaunchScreen.xib in Resources */,
+				9E4D8EF91ABA8C2A00E50AF0 /* DetailIngredientsCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -713,6 +758,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9EEEDB951AB7CDC6009419A1 /* RecipeCategory.m in Sources */,
 				9EB274B41AAD349A00525022 /* SCLoginViewController.m in Sources */,
 				9E9277761AA277DF00CF85A6 /* UIImage+ImageEffects.m in Sources */,
 				9E1ABDCF1A9C14A0008334BD /* sha1.c in Sources */,
@@ -721,13 +767,13 @@
 				9E1ABDD31A9C14A0008334BD /* OADataFetcher.m in Sources */,
 				9E1ABDD61A9C14A0008334BD /* OAPlaintextSignatureProvider.m in Sources */,
 				9E1ABDE41A9C14F1008334BD /* Restaurant.m in Sources */,
-				9EB274C81AAFDC7C00525022 /* DetailViewController.m in Sources */,
 				9EB272B51AA6C4C100525022 /* ShoppingListViewController.m in Sources */,
 				9E1ABDCB1A9C14A0008334BD /* NSString+URLEncoding.m in Sources */,
 				9E1ABDD71A9C14A0008334BD /* OAProblem.m in Sources */,
 				9E1ABDD51A9C14A0008334BD /* OAMutableURLRequest.m in Sources */,
 				9E1ABDD91A9C14A0008334BD /* OAServiceTicket.m in Sources */,
 				9EB274D31AB134D400525022 /* UIImage+Resize.m in Sources */,
+				9EEEDB8F1AB7CD56009419A1 /* DetailIngredient.m in Sources */,
 				9E1ABDD81A9C14A0008334BD /* OARequestParameter.m in Sources */,
 				9E9277811AA38CFB00CF85A6 /* HomeCell.m in Sources */,
 				9EB274AE1AAD325300525022 /* SCSettings.m in Sources */,
@@ -737,9 +783,11 @@
 				9EBB37A01A990A92002B3B09 /* SearchListViewController.m in Sources */,
 				9E76EE8B1A9E4A0E00B9E0FA /* SearchResultCell.m in Sources */,
 				9EB272B01AA6BF4B00525022 /* ShoppingListCell.m in Sources */,
+				9EEEDB9E1AB7DC85009419A1 /* IngredientsViewController.m in Sources */,
 				9EBB37781A98F7B5002B3B09 /* YumYum2.xcdatamodeld in Sources */,
 				9E1ABDCA1A9C14A0008334BD /* NSMutableURLRequest+Parameters.m in Sources */,
 				9E1ABDD01A9C14A0008334BD /* OAAttachment.m in Sources */,
+				9EEEDB861AB79D51009419A1 /* CreateRecipeViewController.m in Sources */,
 				9E76EE821A9D5E7500B9E0FA /* YelpViewController.m in Sources */,
 				9E1ABDD11A9C14A0008334BD /* OACall.m in Sources */,
 				9EB274B11AAD347100525022 /* SCImagePicker.m in Sources */,
@@ -751,7 +799,9 @@
 				9EB272C11AABA24A00525022 /* ShoppingList.m in Sources */,
 				9EBB37721A98F7B4002B3B09 /* main.m in Sources */,
 				9E92777C1AA36D3E00CF85A6 /* HomeViewController.m in Sources */,
+				9EEEDB921AB7CDAC009419A1 /* Direction.m in Sources */,
 				9E1ABDE51A9C14F1008334BD /* YelpAPIService.m in Sources */,
+				9EEEDBA21AB8EE29009419A1 /* DetailIngredientsCell.m in Sources */,
 				9E1ABDDB1A9C14A0008334BD /* OAToken.m in Sources */,
 				9E76EE851A9D600500B9E0FA /* YelpResultTableViewCell.m in Sources */,
 				9E76EE8C1A9E4A0E00B9E0FA /* SearchResult.m in Sources */,

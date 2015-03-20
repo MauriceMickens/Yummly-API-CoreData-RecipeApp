@@ -13,4 +13,8 @@
 
 @property (nonatomic, strong) SearchResult *searchResult;
 
+- (void)searchRecipesFromHomeView:(NSString *)searchText;
+
+
+
 @end
