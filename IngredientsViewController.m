@@ -20,12 +20,18 @@
     NSArray *_unitsArray;
 }
 
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
+        // Initialize Data
+        _measurementsArray = @[@"-", @"1/4", @"1/3", @"1/2", @"2/3", @"3/4"];
+        _unitsArray = @[@"unit",@"as needed",@"box",@"can",@"cup",@"gallon"];
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // Initialize Data
-    _measurementsArray = @[@"-", @"1/4", @"1/3", @"1/2", @"2/3", @"3/4"];
-    _unitsArray = @[@"unit",@"as needed",@"box",@"can",@"cup",@"gallon"];
     
     // Connect data
     self.measurementPicker.dataSource = self;

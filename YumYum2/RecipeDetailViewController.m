@@ -13,7 +13,9 @@
 #import <AFNetworking/UIImageView+AFNetworking.h>
 #import "DetailIngredient.h"
 
-static NSString * const DetailIngredientsCellIdentifier = @"DetaiLIngredients";
+static NSString * const DetailIngredientsCellIdentifier = @"DetailIngredientsCell";
+static NSString * const nibNameorNil = @"RecipeDetailViewController";
+static const int NumberOfSections = 1;
 
 @interface RecipeDetailViewController ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -27,20 +29,23 @@ static NSString * const DetailIngredientsCellIdentifier = @"DetaiLIngredients";
 @implementation RecipeDetailViewController
 {
     NSMutableArray *_ingredients;
+    int ingredientCount;
+    
 }
 
-- (id)initWithCoder:(NSCoder *)aDecoder
-{
-    self = [super initWithCoder:aDecoder];
-    if (self) {
-        _ingredients = [NSMutableArray arrayWithCapacity:1];
+- (instancetype)init{
+    self = [super init];
+    if(self){
+
     }
     return self;
 }
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tableView.rowHeight = 44;
+    
     if (self.detailSearchResult != nil){
         [self updateUI];
     }
@@ -59,8 +64,15 @@ static NSString * const DetailIngredientsCellIdentifier = @"DetaiLIngredients";
     }
     self.sourceNameLabel.text = sourceDisplayName;
     
-    [self.artworkImageView setImageWithURL:[NSURL URLWithString:self.detailSearchResult.bigImage]]; 
+    [self.artworkImageView setImageWithURL:[NSURL URLWithString:self.detailSearchResult.bigImage]];
     
+    ingredientCount = [self.detailSearchResult.ingredientLines count];
+    _ingredients = [NSMutableArray arrayWithCapacity:ingredientCount];
+    
+    for (int i = 0; i < ingredientCount; i++) {
+        DetailIngredient *ingredient = [[DetailIngredient alloc] init];
+        [_ingredients addObject:ingredient];
+    }
 }
 
 - (void)dealloc
@@ -82,37 +94,33 @@ static NSString * const DetailIngredientsCellIdentifier = @"DetaiLIngredients";
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return NumberOfSections;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return 1;
+    return ingredientCount;
     
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    int count = 0;
  
-    UITableViewCell *cell =
-    [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
-                           reuseIdentifier:DetailIngredientsCellIdentifier];
-    
-    for (DetailIngredient *element in self.detailSearchResult.ingredientLines){
-        [_ingredients addObject:element];
-        NSLog(@"%@",_ingredients[count]);
-        count++; 
-    }
-    
-    //DetailIngredient *ingredient = _ingredients[indexPath.row];
-        
-    // Set the contents of the cell
-    cell.textLabel.text = @"TEST";
-    
+    DetailIngredientsCell *cell = (DetailIngredientsCell *)[tableView dequeueReusableCellWithIdentifier:DetailIngredientsCellIdentifier forIndexPath:indexPath];
+
+    DetailIngredient *ingredient = _ingredients[indexPath.row];
+    ingredient.name = self.detailSearchResult.ingredientLines[indexPath.row];
+    cell.detailIngredient.text = ingredient.name;
+
     return cell;
     
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    if (section == 0)
+        return @"Ingredients";
+    return @"undefined";
 }
 
 #pragma mark - UITableViewDelegate
@@ -131,5 +139,7 @@ static NSString * const DetailIngredientsCellIdentifier = @"DetaiLIngredients";
     return indexPath;
     
 }
+
+
 
 @end

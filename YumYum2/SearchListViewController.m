@@ -309,7 +309,7 @@ static const int NumberOfSections = 1;
     
     // Builds the URL as a string by putting text from search bar behing the "term" parameter
     NSString *urlString = [NSString stringWithFormat:
-                           @"http://api.yummly.com/v1/api/recipes?_app_id=931de797&_app_key=fd48f14cdc64094977eaf86a7906d50b&q=%@&maxResult=500&start=10&requirePictures=true", escapedSearchText];
+                           @"http://api.yummly.com/v1/api/recipes?_app_id=931de797&_app_key=fd48f14cdc64094977eaf86a7906d50b&q=%@&maxResult=100&start=10&requirePictures=true", escapedSearchText];
     
     // Turns "urlString" into a NSURL object
     NSURL *url = [NSURL URLWithString:urlString];
