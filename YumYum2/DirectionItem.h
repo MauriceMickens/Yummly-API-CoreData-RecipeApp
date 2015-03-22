@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Direction : NSObject
+@interface DirectionItem : NSObject
+
+@property (nonatomic, copy) NSString *text;
 
 @end

@@ -6,8 +6,8 @@
 //  Copyright (c) 2015 Loud Skies. All rights reserved.
 //
 
-#import "Direction.h"
+#import "DirectionItem.h"
 
-@implementation Direction
+@implementation DirectionItem
 
 @end

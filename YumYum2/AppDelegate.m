@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import <FacebookSDK/FacebookSDK.h>
+#import "RecipeDetailViewController.h"
 
 #import "SCErrorHandler.h"
 #import "SCSettings.h"
@@ -140,6 +141,7 @@
 - (NSManagedObjectModel *)managedObjectModel {
     // The managed object model for the application. It is a fatal error for the application not to be able to find and load its model.
     if (_managedObjectModel != nil) {
+        
         return _managedObjectModel;
     }
     NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"YumYum2" withExtension:@"momd"];

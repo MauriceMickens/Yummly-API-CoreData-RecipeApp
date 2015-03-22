@@ -18,6 +18,7 @@
 static NSString * const SearchResultCellIdentifier = @"SearchResultCell";
 static NSString * const NothingFoundCellIdentifier = @"NothingFoundCell";
 static NSString * const LoadingCellIdentifier = @"LoadingCell";
+static NSString * const DietRestrictions = @"&allowedDiet[]=387^Lacto-ovo vegetarian&allowedDiet[]=386^Vegan&allowedDiet[]=390^Pescetarian&allowedDiet[]=388^Lacto vegetarian&allowedDiet[]=389^Ovo vegetarian";
 static const int NumberOfSections = 1;
 
 
@@ -223,7 +224,8 @@ static const int NumberOfSections = 1;
     
         
         // Get a URL object from search string
-        NSURL *url = [self urlWithSearchText:searchBar.text];
+        NSURL *url = [self urlWithSearchText:
+                      [NSString stringWithFormat:@"%@%@",searchBar.text,DietRestrictions]];
         
         [self afNetworkingStuff:url];
         

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AddDirectionsViewController.h"
 
 @interface CreateRecipeViewController : UIViewController
 

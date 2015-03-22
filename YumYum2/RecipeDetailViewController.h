@@ -13,6 +13,7 @@
 @interface RecipeDetailViewController : UIViewController
 
 @property (nonatomic, strong) DetailSearchResult *detailSearchResult;
-
+@property (nonatomic, strong) NSManagedObjectContext
+*managedObjectContext;
 
 @end

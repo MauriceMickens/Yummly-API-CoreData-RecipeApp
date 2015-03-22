@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -13,29 +12,14 @@
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="N8r-ZB-Inf" id="ruP-tx-x9x">
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DCb-dt-ygf">
-                        <rect key="frame" x="20" y="30" width="122" height="32"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="122" id="wSk-iL-dNP"/>
-                        </constraints>
-                        <state key="normal" image="plus">
-                            <attributedString key="attributedTitle">
-                                <fragment content="Category">
-                                    <attributes>
-                                        <font key="NSFont" size="15" name="HelveticaNeue-Bold"/>
-                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                    </attributes>
-                                </fragment>
-                            </attributedString>
-                        </state>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="st6-Yb-NlE">
+                        <rect key="frame" x="8" y="28" width="111" height="32"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                        <state key="normal" title="Categories" image="plus"/>
                     </button>
                 </subviews>
-                <constraints>
-                    <constraint firstItem="DCb-dt-ygf" firstAttribute="leading" secondItem="ruP-tx-x9x" secondAttribute="leadingMargin" constant="12" id="2hY-jT-zlJ"/>
-                    <constraint firstItem="DCb-dt-ygf" firstAttribute="top" secondItem="ruP-tx-x9x" secondAttribute="topMargin" constant="22" id="HIm-Ti-U4c"/>
-                </constraints>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="253" y="223"/>
+            <point key="canvasLocation" x="253" y="218"/>
         </tableViewCell>
     </objects>
     <resources>

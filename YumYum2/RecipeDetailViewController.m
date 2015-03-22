@@ -12,6 +12,7 @@
 #import "SearchResult.h"
 #import <AFNetworking/UIImageView+AFNetworking.h>
 #import "DetailIngredient.h"
+#import <CoreData/CoreData.h>
 
 static NSString * const DetailIngredientsCellIdentifier = @"DetailIngredientsCell";
 static NSString * const nibNameorNil = @"RecipeDetailViewController";

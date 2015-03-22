@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -13,32 +12,15 @@
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kpT-LA-CxV" id="ufg-ou-1vd">
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jNz-En-hhG">
-                        <rect key="frame" x="20" y="30" width="117" height="32"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="117" id="qDD-gP-kKc"/>
-                        </constraints>
-                        <state key="normal" image="plus">
-                            <attributedString key="attributedTitle">
-                                <fragment content="Directions">
-                                    <attributes>
-                                        <font key="NSFont" size="15" name="HelveticaNeue-Bold"/>
-                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                    </attributes>
-                                </fragment>
-                            </attributedString>
-                        </state>
-                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add Directions" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HSg-0T-dcz">
+                        <rect key="frame" x="8" y="34" width="304" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
-                <constraints>
-                    <constraint firstItem="jNz-En-hhG" firstAttribute="leading" secondItem="ufg-ou-1vd" secondAttribute="leadingMargin" constant="12" id="gKP-Vp-adC"/>
-                    <constraint firstItem="jNz-En-hhG" firstAttribute="top" secondItem="ufg-ou-1vd" secondAttribute="topMargin" constant="22" id="smc-pT-YpP"/>
-                </constraints>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="242" y="245"/>
+            <point key="canvasLocation" x="242" y="239"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="plus" width="32" height="32"/>
-    </resources>
 </document>

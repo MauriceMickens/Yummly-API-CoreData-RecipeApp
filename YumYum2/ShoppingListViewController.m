@@ -76,11 +76,12 @@ static NSString * const ShoppingListCellIdentifier = @"ShoppingListCell";
     self.title = self.shoppingList.name;
 }
 
-- (IBAction)cancel
-{
-    [self.presentingViewController
-     dismissViewControllerAnimated:YES completion:nil];
+- (IBAction)clearScreen:(id)sender {
+    
+    [self.view endEditing:YES];
+    self.fTextField.text = @"";
 }
+
 
 - (void)saveShoppingListItems
 {
