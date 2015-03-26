@@ -13,6 +13,7 @@
 #import <AFNetworking/UIImageView+AFNetworking.h>
 #import "DetailIngredient.h"
 #import <CoreData/CoreData.h>
+#import "HudView.h"
 
 static NSString * const DetailIngredientsCellIdentifier = @"DetailIngredientsCell";
 static NSString * const nibNameorNil = @"RecipeDetailViewController";
@@ -31,6 +32,7 @@ static const int NumberOfSections = 1;
 {
     NSMutableArray *_ingredients;
     int ingredientCount;
+    NSDate *_date;
     
 }
 
@@ -40,6 +42,29 @@ static const int NumberOfSections = 1;
 
     }
     return self;
+}
+
+- (IBAction)done:(id)sender
+{
+    HudView *hudView = [HudView
+                        hudInView:self.view animated:YES];
+    hudView.text = @"Fressh Saved";
+    
+    [self performSelector:@selector(closeScreen) withObject:nil
+               afterDelay:0.6];
+    
+    Recipe *recipe = [NSEntityDescription
+                          insertNewObjectForEntityForName:@"Recipe"
+                          inManagedObjectContext:self.managedObjectContext];
+    
+    recipe.recipeName = self.detailSearchResult.recipeName;
+    recipe.sourceRecipe = self.detailSearchResult.sourceRecipe[@"sourceDisplayName"];
+}
+
+
+- (void)closeScreen
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 
@@ -69,6 +94,7 @@ static const int NumberOfSections = 1;
     
     ingredientCount = [self.detailSearchResult.ingredientLines count];
     _ingredients = [NSMutableArray arrayWithCapacity:ingredientCount];
+    _date = [NSDate date];
     
     for (int i = 0; i < ingredientCount; i++) {
         DetailIngredient *ingredient = [[DetailIngredient alloc] init];

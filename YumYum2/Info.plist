@@ -33,6 +33,8 @@
 	<string>922094584520999</string>
 	<key>FacebookDisplayName</key>
 	<string>Fressh</string>
+	<key>FacebookBundleName</key>
+	<string>FacebookSDKOverrides</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>

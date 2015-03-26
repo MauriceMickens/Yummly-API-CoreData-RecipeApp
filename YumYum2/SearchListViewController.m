@@ -12,6 +12,7 @@
 #import "RecipeDetailViewController.h"
 #import "UIImage+Resize.h"
 #import "DetailSearchResult.h"
+#import "AppDelegate.h"
 
 
 
@@ -165,6 +166,13 @@ static const int NumberOfSections = 1;
          RecipeDetailViewController *controller =
          [[RecipeDetailViewController alloc]
             initWithNibName: @"RecipeDetailViewController" bundle:nil];
+         
+         AppDelegate *appDelegate = (AppDelegate *)[[UIApplication
+                                                     sharedApplication] delegate];
+         
+         self.managedObjectContext = appDelegate.managedObjectContext;
+         
+         controller.managedObjectContext = self.managedObjectContext;
          
          controller.detailSearchResult = result;
          

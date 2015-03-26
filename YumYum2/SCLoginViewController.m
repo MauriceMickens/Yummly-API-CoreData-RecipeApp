@@ -54,6 +54,7 @@
     SCSettings *settings = [SCSettings defaultSettings];
     if (_viewDidAppear) {
         _viewIsVisible = YES;
+        [self performSegueWithIdentifier:@"showMain" sender:nil];
 
         // reset
         settings.shouldSkipLogin = NO;
@@ -61,7 +62,7 @@
         [FBSession openActiveSessionWithAllowLoginUI:NO];
         FBSession *session = [FBSession activeSession];
         if (settings.shouldSkipLogin || session.isOpen) {
-            //*************[self performSegueWithIdentifier:@"showMain" sender:nil];
+            //[self performSegueWithIdentifier:@"showMain" sender:nil];
         } else {
             _viewIsVisible = YES;
         }

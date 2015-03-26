@@ -12,6 +12,8 @@
 @interface SearchListViewController : UIViewController 
 
 @property (nonatomic, strong) SearchResult *searchResult;
+@property (nonatomic, strong) NSManagedObjectContext
+*managedObjectContext;
 
 - (void)searchRecipesFromHomeView:(NSString *)searchText;
 

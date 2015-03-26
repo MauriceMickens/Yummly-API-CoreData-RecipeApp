@@ -30,6 +30,11 @@
                                     <action selector="close:" destination="-1" id="vwq-RJ-EvM"/>
                                 </connections>
                             </barButtonItem>
+                            <barButtonItem key="rightBarButtonItem" title="Save" id="OQQ-px-hDe">
+                                <connections>
+                                    <action selector="done:" destination="-1" id="wPW-H4-dVd"/>
+                                </connections>
+                            </barButtonItem>
                         </navigationItem>
                     </items>
                 </navigationBar>

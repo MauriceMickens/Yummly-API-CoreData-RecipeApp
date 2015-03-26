@@ -59,6 +59,7 @@
 		9E9C83AD1ABE4275009F86B7 /* SCProfilePictureButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E9C83A31ABE4275009F86B7 /* SCProfilePictureButton.m */; };
 		9E9C83AE1ABE4275009F86B7 /* SCSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E9C83A61ABE4275009F86B7 /* SCSettings.m */; };
 		9E9C83AF1ABE4275009F86B7 /* SCShareUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E9C83A81ABE4275009F86B7 /* SCShareUtility.m */; };
+		9EAD3A191AC3B16A00EC0273 /* HudView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EAD3A181AC3B16A00EC0273 /* HudView.m */; };
 		9EB272A41AA3E44700525022 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9EB272A31AA3E44700525022 /* Images.xcassets */; };
 		9EB272A61AA6B07D00525022 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EB272A51AA6B07D00525022 /* QuartzCore.framework */; };
 		9EB272B01AA6BF4B00525022 /* ShoppingListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB272AF1AA6BF4B00525022 /* ShoppingListCell.m */; };
@@ -70,9 +71,6 @@
 		9EB274A41AAD276B00525022 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EB274A31AAD276B00525022 /* FacebookSDK.framework */; };
 		9EB274A61AAD30B300525022 /* FacebookSDKOverrides.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9EB274A51AAD30B300525022 /* FacebookSDKOverrides.bundle */; };
 		9EB274A81AAD30C900525022 /* FBUserSettingsViewResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9EB274A71AAD30C900525022 /* FBUserSettingsViewResources.bundle */; };
-		9EB274AB1AAD320300525022 /* SCErrorHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB274AA1AAD320300525022 /* SCErrorHandler.m */; };
-		9EB274AE1AAD325300525022 /* SCSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB274AD1AAD325300525022 /* SCSettings.m */; };
-		9EB274B11AAD347100525022 /* SCImagePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB274B01AAD347100525022 /* SCImagePicker.m */; };
 		9EB274B41AAD349A00525022 /* SCLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB274B31AAD349A00525022 /* SCLoginViewController.m */; };
 		9EB274CF1AB11ABE00525022 /* RecipeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB274CD1AB11ABE00525022 /* RecipeDetailViewController.m */; };
 		9EB274D01AB11ABE00525022 /* RecipeDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EB274CE1AB11ABE00525022 /* RecipeDetailViewController.xib */; };
@@ -209,6 +207,8 @@
 		9E9C83A61ABE4275009F86B7 /* SCSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSettings.m; sourceTree = "<group>"; };
 		9E9C83A71ABE4275009F86B7 /* SCShareUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCShareUtility.h; sourceTree = "<group>"; };
 		9E9C83A81ABE4275009F86B7 /* SCShareUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCShareUtility.m; sourceTree = "<group>"; };
+		9EAD3A171AC3B16A00EC0273 /* HudView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HudView.h; sourceTree = "<group>"; };
+		9EAD3A181AC3B16A00EC0273 /* HudView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HudView.m; sourceTree = "<group>"; };
 		9EB272A31AA3E44700525022 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = YumYum2/Images.xcassets; sourceTree = "<group>"; };
 		9EB272A51AA6B07D00525022 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		9EB272AE1AA6BF4B00525022 /* ShoppingListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShoppingListCell.h; path = YumYum2/ShoppingListCell.h; sourceTree = "<group>"; };
@@ -226,12 +226,6 @@
 		9EB274A31AAD276B00525022 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		9EB274A51AAD30B300525022 /* FacebookSDKOverrides.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FacebookSDKOverrides.bundle; sourceTree = "<group>"; };
 		9EB274A71AAD30C900525022 /* FBUserSettingsViewResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FBUserSettingsViewResources.bundle; sourceTree = "<group>"; };
-		9EB274A91AAD320300525022 /* SCErrorHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCErrorHandler.h; sourceTree = "<group>"; };
-		9EB274AA1AAD320300525022 /* SCErrorHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCErrorHandler.m; sourceTree = "<group>"; };
-		9EB274AC1AAD325300525022 /* SCSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSettings.h; sourceTree = "<group>"; };
-		9EB274AD1AAD325300525022 /* SCSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSettings.m; sourceTree = "<group>"; };
-		9EB274AF1AAD347100525022 /* SCImagePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCImagePicker.h; sourceTree = "<group>"; };
-		9EB274B01AAD347100525022 /* SCImagePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCImagePicker.m; sourceTree = "<group>"; };
 		9EB274B21AAD349A00525022 /* SCLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCLoginViewController.h; path = YumYum2/SCLoginViewController.h; sourceTree = "<group>"; };
 		9EB274B31AAD349A00525022 /* SCLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCLoginViewController.m; path = YumYum2/SCLoginViewController.m; sourceTree = "<group>"; };
 		9EB274CC1AB11ABE00525022 /* RecipeDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecipeDetailViewController.h; path = YumYum2/RecipeDetailViewController.h; sourceTree = "<group>"; };
@@ -473,6 +467,8 @@
 			children = (
 				9E20C3E31AB5F8CA0007E9B0 /* Xibs */,
 				9E20C3E21AB5F8B30007E9B0 /* Table Cells */,
+				9EAD3A171AC3B16A00EC0273 /* HudView.h */,
+				9EAD3A181AC3B16A00EC0273 /* HudView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -586,13 +582,7 @@
 		9E9277701AA2753900CF85A6 /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
-				9EB274AF1AAD347100525022 /* SCImagePicker.h */,
-				9EB274B01AAD347100525022 /* SCImagePicker.m */,
-				9EB274A91AAD320300525022 /* SCErrorHandler.h */,
-				9EB274AA1AAD320300525022 /* SCErrorHandler.m */,
 				9E9277741AA277DF00CF85A6 /* UIImage+ImageEffects.h */,
-				9EB274AC1AAD325300525022 /* SCSettings.h */,
-				9EB274AD1AAD325300525022 /* SCSettings.m */,
 				9E9277751AA277DF00CF85A6 /* UIImage+ImageEffects.m */,
 				9EB274D11AB134D400525022 /* UIImage+Resize.h */,
 				9EB274D21AB134D400525022 /* UIImage+Resize.m */,
@@ -854,7 +844,6 @@
 				9EEEDB8F1AB7CD56009419A1 /* DetailIngredient.m in Sources */,
 				9E1ABDD81A9C14A0008334BD /* OARequestParameter.m in Sources */,
 				9E9277811AA38CFB00CF85A6 /* HomeCell.m in Sources */,
-				9EB274AE1AAD325300525022 /* SCSettings.m in Sources */,
 				9E1ABDD21A9C14A0008334BD /* OAConsumer.m in Sources */,
 				9EB274D61AB143F000525022 /* DetailSearchResult.m in Sources */,
 				9EB272BB1AAB6A3E00525022 /* EditItemViewController.m in Sources */,
@@ -870,14 +859,13 @@
 				9E76EE821A9D5E7500B9E0FA /* YelpViewController.m in Sources */,
 				9E9C83A91ABE4275009F86B7 /* SCErrorHandler.m in Sources */,
 				9E1ABDD11A9C14A0008334BD /* OACall.m in Sources */,
-				9EB274B11AAD347100525022 /* SCImagePicker.m in Sources */,
 				9E1ABDD41A9C14A0008334BD /* OAHMAC_SHA1SignatureProvider.m in Sources */,
 				9EB272BE1AAB98BF00525022 /* AllListsViewController.m in Sources */,
 				9EBB37751A98F7B4002B3B09 /* AppDelegate.m in Sources */,
 				9EFD84D91ABDCE46006F8CA8 /* AddDirectionsViewController.m in Sources */,
 				9E9C83AD1ABE4275009F86B7 /* SCProfilePictureButton.m in Sources */,
 				9E1ABDCD1A9C14A0008334BD /* Base64Transcoder.c in Sources */,
-				9EB274AB1AAD320300525022 /* SCErrorHandler.m in Sources */,
+				9EAD3A191AC3B16A00EC0273 /* HudView.m in Sources */,
 				9EB272C11AABA24A00525022 /* ShoppingList.m in Sources */,
 				9EBB37721A98F7B4002B3B09 /* main.m in Sources */,
 				9E92777C1AA36D3E00CF85A6 /* HomeViewController.m in Sources */,

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Recipe.h" 
 
 @class DetailSearchResult;
 

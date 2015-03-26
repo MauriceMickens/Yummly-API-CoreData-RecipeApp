@@ -534,10 +534,10 @@
             </objects>
             <point key="canvasLocation" x="630" y="1303"/>
         </scene>
-        <!--Friends-->
+        <!--Login View Controller-->
         <scene sceneID="wOj-Yc-Xhb">
             <objects>
-                <viewController id="qmB-tf-2ek" customClass="SCLoginViewController" sceneMemberID="viewController">
+                <viewController title="Login View Controller" id="qmB-tf-2ek" customClass="SCLoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Jh1-Y5-AOq"/>
                         <viewControllerLayoutGuide type="bottom" id="CGj-V8-Xp7"/>
@@ -556,11 +556,14 @@
                                             <constraint firstAttribute="width" constant="204" id="eTo-PA-0Od"/>
                                             <constraint firstAttribute="height" constant="44" id="ku3-z3-NAU"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="delegate" destination="qmB-tf-2ek" id="Pox-MY-jjN"/>
+                                        </connections>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aVL-Md-DLs">
-                                        <rect key="frame" x="247" y="411" width="106" height="30"/>
+                                        <rect key="frame" x="8" y="411" width="584" height="30"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="106" id="2rV-D5-o86"/>
+                                            <constraint firstAttribute="width" constant="584" id="2rV-D5-o86"/>
                                             <constraint firstAttribute="height" constant="30" id="bcU-vJ-yVE"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -568,6 +571,9 @@
                                             <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="baw-FW-xdN" kind="presentation" identifier="continue" id="7nd-lX-SYb"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -591,16 +597,17 @@
                         <outlet property="backgroundView" destination="6Mx-iW-pDy" id="HNE-aM-luF"/>
                         <outlet property="continueButton" destination="aVL-Md-DLs" id="ZH8-TK-chA"/>
                         <outlet property="loginView" destination="cjL-bh-nOh" id="NbY-oc-8Qv"/>
+                        <segue destination="baw-FW-xdN" kind="presentation" identifier="showMain" animates="NO" id="ubp-Zb-UA9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2FC-kB-dQm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1609" y="713"/>
         </scene>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="3yF-HY-jxn">
             <objects>
-                <viewController id="baw-FW-xdN" sceneMemberID="viewController">
+                <viewController id="baw-FW-xdN" customClass="SCMainViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nfA-uh-tn0"/>
                         <viewControllerLayoutGuide type="bottom" id="HJF-Qg-REJ"/>
@@ -608,17 +615,54 @@
                     <view key="view" contentMode="scaleToFill" id="dwJ-uZ-UrT">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XIU-sI-hyN">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <color key="barTintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="FRESSH" id="zT6-X1-aZv">
+                                        <barButtonItem key="rightBarButtonItem" title="Item" id="vWC-2a-UhV"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z4V-tg-gEV">
+                                <rect key="frame" x="108" y="139" width="84" height="30"/>
+                                <state key="normal" title="Button Meal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v9T-lu-oFk">
+                                <rect key="frame" x="409" y="139" width="110" height="30"/>
+                                <state key="normal" title="Button Location">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XLt-JZ-Dcv">
+                                <rect key="frame" x="99" y="270" width="102" height="30"/>
+                                <state key="normal" title="Button Friends">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Esf-cY-4Uw">
+                                <rect key="frame" x="419" y="270" width="91" height="30"/>
+                                <state key="normal" title="Button Photo">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2r1-eF-hrg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1609" y="1509"/>
         </scene>
-        <!--View Controller-->
+        <!--Place Picker View Controller-->
         <scene sceneID="Op1-mN-nQm">
             <objects>
-                <viewController id="TsW-lL-8hC" sceneMemberID="viewController">
+                <viewController id="TsW-lL-8hC" customClass="FBPlacePickerViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HD3-ac-bNh"/>
                         <viewControllerLayoutGuide type="bottom" id="H9n-rF-JpN"/>
@@ -631,12 +675,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZqA-ZA-RBi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1941" y="2377"/>
+            <point key="canvasLocation" x="-903" y="1509"/>
         </scene>
-        <!--View Controller-->
+        <!--Friend Picker View Controller-->
         <scene sceneID="kvO-JO-l2j">
             <objects>
-                <viewController id="GjN-ws-7VV" sceneMemberID="viewController">
+                <viewController id="GjN-ws-7VV" customClass="FBFriendPickerViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9BI-fw-0Ut"/>
                         <viewControllerLayoutGuide type="bottom" id="erD-8W-FBv"/>
@@ -649,7 +693,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MHz-s4-ePA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1133" y="2375"/>
+            <point key="canvasLocation" x="-2319" y="1509"/>
         </scene>
         <!--Shopping Lists-->
         <scene sceneID="vLX-XG-GEK">
@@ -741,6 +785,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="4Je-ea-NV6"/>
+        <segue reference="7nd-lX-SYb"/>
         <segue reference="vRK-zV-Zfv"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
