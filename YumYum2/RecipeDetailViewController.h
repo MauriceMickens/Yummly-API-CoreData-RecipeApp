@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Recipe.h" 
+ 
 
 @class DetailSearchResult;
 
@@ -16,5 +16,6 @@
 @property (nonatomic, strong) DetailSearchResult *detailSearchResult;
 @property (nonatomic, strong) NSManagedObjectContext
 *managedObjectContext;
+
 
 @end

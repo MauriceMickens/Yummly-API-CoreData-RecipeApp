@@ -2,7 +2,7 @@
 //  Recipe.h
 //  YumYum2
 //
-//  Created by PhantomDestroyer on 3/21/15.
+//  Created by PhantomDestroyer on 3/29/15.
 //  Copyright (c) 2015 Loud Skies. All rights reserved.
 //
 
@@ -12,10 +12,12 @@
 
 @interface Recipe : NSManagedObject
 
+@property (nonatomic, retain) NSString * imageURL;
+@property (nonatomic, retain) id ingredientLines;
+@property (nonatomic, retain) NSNumber * numberOfServings;
 @property (nonatomic, retain) NSString * recipeName;
-@property (nonatomic, retain) NSData * sourceRecipe;
-@property (nonatomic, retain) NSNumber * totalTimeInSeconds;
-@property (nonatomic, retain) NSData * ingredientLines;
-@property (nonatomic, retain) NSString * numberOfServings;
+@property (nonatomic, retain) NSString * sourceRecipe;
+@property (nonatomic, retain) NSString * totalTime;
+@property (nonatomic, retain) NSString * recipeURL;
 
 @end

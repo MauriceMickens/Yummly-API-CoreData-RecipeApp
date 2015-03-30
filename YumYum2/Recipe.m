@@ -2,7 +2,7 @@
 //  Recipe.m
 //  YumYum2
 //
-//  Created by PhantomDestroyer on 3/21/15.
+//  Created by PhantomDestroyer on 3/29/15.
 //  Copyright (c) 2015 Loud Skies. All rights reserved.
 //
 
@@ -11,10 +11,12 @@
 
 @implementation Recipe
 
-@dynamic recipeName;
-@dynamic sourceRecipe;
-@dynamic totalTimeInSeconds;
+@dynamic imageURL;
 @dynamic ingredientLines;
 @dynamic numberOfServings;
+@dynamic recipeName;
+@dynamic sourceRecipe;
+@dynamic totalTime;
+@dynamic recipeURL;
 
 @end

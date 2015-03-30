@@ -162,7 +162,6 @@ static const int NumberOfSections = 1;
          
          DetailSearchResult *result = [self parseDetailDictionary:responseObject];
          
-         // Create instance of the RecipeDetailViewController
          RecipeDetailViewController *controller =
          [[RecipeDetailViewController alloc]
             initWithNibName: @"RecipeDetailViewController" bundle:nil];
@@ -380,52 +379,23 @@ static const int NumberOfSections = 1;
 - (DetailSearchResult *)parseDetailDictionary:(NSDictionary *)dictionary
 {
     NSString *recipeName = dictionary[@"name"];
-    //NSLog(@"RecipeName: %@",recipeName);
-    
     NSString *totalTime = dictionary[@"totalTime"];
-    /*if (totalTime == nil){
-        NSLog(@"Expected 'totalTime' string");
-        return;
-    }*/
     NSDictionary *recipeSource = dictionary[@"source"];
-    /*if (recipeSource == nil){
-        NSLog(@"Expected 'recipeSource' dictionary");
-        return;
-    }*/
     NSArray *arrayImages = dictionary[@"images"];
-    /*if (arrayImages == nil){
-        NSLog(@"Expected 'arrayImages' array");
-        return;
-    }*/
     NSArray *arrayIngredients = dictionary[@"ingredientLines"];
-    /*if (arrayIngredients == nil){
-        NSLog(@"Expected 'arrayIngredients' NSArray");
-        return;
-    }*/
-    NSDictionary *attribution = dictionary[@"attribution"];
-    /*if (attribution == nil){
-        NSLog(@"Expected 'attribution' dictionary");
-        return;
-    }*/
-    NSArray *numberOfServings = dictionary[@"numberOfServings"];
-    /*if (numberOfServings == nil){
-        NSLog(@"Expected 'numberOfServings' array");
-        return;
-    }*/
+    NSNumber *numberOfServings = dictionary[@"numberOfServings"];
     
     DetailSearchResult *detailSearchResult = [[DetailSearchResult alloc]init];
     
     detailSearchResult.recipeName = recipeName;
-    //NSLog(@"detailSearchResult: %@",detailSearchResult.recipeName);
-    
     detailSearchResult.totalTime = totalTime;
-    //NSLog(@"detailSearchResult: %@",detailSearchResult.totalTime);
-    
     detailSearchResult.sourceRecipe = recipeSource;
-    //NSLog(@"detailSearchResult: %@",detailSearchResult.sourceRecipe[@"sourceDisplayName"]);
-    
+    detailSearchResult.numberOfServings = numberOfServings;
     for (NSDictionary *dict in arrayImages){
         detailSearchResult.bigImage = dict[@"hostedLargeUrl"];
+    }
+    for (NSDictionary *dict in recipeSource){
+       // detailSearchResult.sourceRecipeURL = dict[@"sourceRecipeUrl"];
     }
     
     detailSearchResult.ingredientLines = arrayIngredients;

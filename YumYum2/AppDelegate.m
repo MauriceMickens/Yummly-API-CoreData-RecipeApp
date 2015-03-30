@@ -10,12 +10,14 @@
 #import <FacebookSDK/FacebookSDK.h>
 #import <CoreData/CoreData.h>
 #import "RecipeDetailViewController.h"
+#import "YumYum2Macros.h"
+//#import "SCErrorHandler.h"
+//#import "SCSettings.h"
 
-#import "SCErrorHandler.h"
-#import "SCSettings.h"
+NSString * const ManagedObjectContextSaveDidFailNotification =
+@"ManagedObjectContextSaveDidFailNotification";
 
-
-@interface AppDelegate ()
+@interface AppDelegate ()<UIAlertViewDelegate>
 
 
 @end
@@ -45,7 +47,10 @@
     // its stack contains only itemsViewController
     //UINavigationController *navController = [[UINavigationController alloc]
                                              //initWithRootViewController:detailViewController];
-    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(fatalCoreDataError:)
+                                                 name:ManagedObjectContextSaveDidFailNotification
+                                               object:nil];
     return YES;
 }
 
@@ -69,7 +74,7 @@
     [FBAppCall handleDidBecomeActive];
 }
 
-- (BOOL)application:(UIApplication *)application
+/*- (BOOL)application:(UIApplication *)application
             openURL:(NSURL *)url
   sourceApplication:(NSString *)sourceApplication
          annotation:(id)annotation {
@@ -88,9 +93,9 @@
             }
         }
     }];
-}
+}*/
 
-- (void)_handleOpenURLWithAccessToken:(FBAccessTokenData *)token {
+/*- (void)_handleOpenURLWithAccessToken:(FBAccessTokenData *)token {
     // Initialize a new blank session instance...
     FBSession *sessionFromToken = [[FBSession alloc] initWithAppID:nil
                                                        permissions:nil
@@ -106,7 +111,7 @@
                                     SCHandleError(error);
                                 }
                             }];
-}
+}*/
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -129,6 +134,21 @@
     [self saveContext];
 }
 
+#pragma mark - UIAlertViewDelegate
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    abort();
+}
+
+- (void)fatalCoreDataError:(NSNotification *)notification
+{
+    UIAlertView *alertView = [[UIAlertView alloc]
+                initWithTitle:NSLocalizedString(@"Internal Error", nil)
+                message:NSLocalizedString(@"There was a fatal error in the app and it cannot continue.\n\nPress OK to terminate the app. Sorry for the inconvenience.", nil) delegate:self cancelButtonTitle:NSLocalizedString(@"OK", nil)
+                        otherButtonTitles:nil];
+                        [alertView show];
+}
+                                                        
 - (NSManagedObjectModel *)managedObjectModel
 {
     if (_managedObjectModel == nil) {

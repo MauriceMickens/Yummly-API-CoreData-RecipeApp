@@ -9,11 +9,13 @@
 #import "RecipeDetailViewController.h"
 #import "DetailSearchResult.h"
 #import "DetailIngredientsCell.h"
+#import "Recipe.h"
 #import "SearchResult.h"
 #import <AFNetworking/UIImageView+AFNetworking.h>
 #import "DetailIngredient.h"
 #import <CoreData/CoreData.h>
 #import "HudView.h"
+#import "YumYum2Macros.h"
 
 static NSString * const DetailIngredientsCellIdentifier = @"DetailIngredientsCell";
 static NSString * const nibNameorNil = @"RecipeDetailViewController";
@@ -24,6 +26,8 @@ static const int NumberOfSections = 1;
 @property (nonatomic, weak) IBOutlet UIImageView *artworkImageView;
 @property (nonatomic, weak) IBOutlet UILabel *recipeNameLabel;
 @property (nonatomic, weak) IBOutlet UILabel *sourceNameLabel;
+@property (nonatomic, weak) IBOutlet UILabel *servingsLabel;
+@property (nonatomic, weak) IBOutlet UILabel *totalTimeLabel;
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
 
 @end
@@ -33,7 +37,8 @@ static const int NumberOfSections = 1;
     NSMutableArray *_ingredients;
     int ingredientCount;
     NSDate *_date;
-    
+    UIImage *_recipePhoto;
+    NSMutableArray *_images;
 }
 
 - (instancetype)init{
@@ -50,15 +55,27 @@ static const int NumberOfSections = 1;
                         hudInView:self.view animated:YES];
     hudView.text = @"Fressh Saved";
     
-    [self performSelector:@selector(closeScreen) withObject:nil
-               afterDelay:0.6];
-    
+    // Create a Core Data Managed Object
     Recipe *recipe = [NSEntityDescription
                           insertNewObjectForEntityForName:@"Recipe"
                           inManagedObjectContext:self.managedObjectContext];
     
     recipe.recipeName = self.detailSearchResult.recipeName;
-    recipe.sourceRecipe = self.detailSearchResult.sourceRecipe[@"sourceDisplayName"];
+    NSString *sourceDisplayName = self.detailSearchResult.sourceRecipe[@"sourceDisplayName"];
+    recipe.sourceRecipe = sourceDisplayName;
+    recipe.imageURL = self.detailSearchResult.bigImage;
+    recipe.ingredientLines = self.detailSearchResult.ingredientLines;
+
+    
+    NSError *error;
+    if (![self.managedObjectContext save:&error]) {
+        FATAL_CORE_DATA_ERROR(error);
+        return;
+    }
+    
+    [self performSelector:@selector(closeScreen) withObject:nil
+               afterDelay:0.6];
+    
 }
 
 
@@ -84,13 +101,27 @@ static const int NumberOfSections = 1;
 {
     self.recipeNameLabel.text = self.detailSearchResult.recipeName;
     
+    self.sourceNameLabel.text = self.detailSearchResult.source2; 
+    
     NSString *sourceDisplayName = self.detailSearchResult.sourceRecipe[@"sourceDisplayName"];
     if (sourceDisplayName == nil) {
         sourceDisplayName = @"Unknown";
     }
     self.sourceNameLabel.text = sourceDisplayName;
     
-    [self.artworkImageView setImageWithURL:[NSURL URLWithString:self.detailSearchResult.bigImage]];
+    self.servingsLabel.text = [NSString stringWithFormat:@"%@",self.detailSearchResult.numberOfServings];
+    self.totalTimeLabel.text = self.detailSearchResult.totalTime; 
+    
+    NSURLRequest *imageRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:self.detailSearchResult.bigImage]
+                                  cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:60];
+    
+    [self.artworkImageView setImageWithURLRequest:imageRequest
+                                 placeholderImage:[UIImage imageNamed:@"Placeholder"]
+                                          success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image){
+                                              self.artworkImageView.image = image;
+                                          }
+                                          failure:nil];
+    
     
     ingredientCount = [self.detailSearchResult.ingredientLines count];
     _ingredients = [NSMutableArray arrayWithCapacity:ingredientCount];

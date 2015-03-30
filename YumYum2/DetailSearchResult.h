@@ -13,9 +13,11 @@
 @property (nonatomic, copy) NSString *totalTime;
 @property (nonatomic, copy) NSString  *bigImage;
 @property (nonatomic, copy) NSString *recipeName;
+@property (nonatomic, copy) NSString *sourceRecipeURL;
+@property (nonatomic, copy) NSString *source2; 
 @property (nonatomic, copy) NSDictionary *sourceRecipe;
 @property (nonatomic, copy) NSArray  *ingredientLines;
-@property (nonatomic, copy) NSString *numberOfServings;
+@property (nonatomic) NSNumber *numberOfServings;
 @property (nonatomic) NSNumber *totalTimeInSeconds;
 
 @end

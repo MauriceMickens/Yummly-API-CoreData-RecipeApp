@@ -63,6 +63,16 @@
     
 }
 
+- (void)configureForArtworkView:(NSString *)urlString
+{
+    [self.artworkView setImageWithURL:
+     [NSURL URLWithString:urlString]];
+    
+    self.artworkView.layer.borderWidth = 0.5f;
+    self.artworkView.layer.cornerRadius = self.artworkView.bounds.size.width / 2.0f;
+    self.artworkView.clipsToBounds = YES;
+
+}
 
 // Clear any image download thats still in progress and clear labels
 - (void)prepareForReuse

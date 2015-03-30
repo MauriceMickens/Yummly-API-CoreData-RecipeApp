@@ -22,5 +22,6 @@
 
 
 - (void)configureForSearchResult:(SearchResult *)searchResult;
+- (void)configureForArtworkView:(NSString *)urlString;
 
 @end
