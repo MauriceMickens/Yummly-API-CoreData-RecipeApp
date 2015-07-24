@@ -38,9 +38,9 @@
 
 - (void)configureForSearchResult:(SearchResult *)searchResult
 {
-    //int timeInSeconds = [searchResult.totalTimeInSeconds intValue];
-    
-    //int timeInMinutes = timeInSeconds / 60;
+    int timeInSeconds = [searchResult.totalTimeInSeconds intValue];
+    int timeInMinutes = timeInSeconds / 60;
+    NSNumber *totalTime = [NSNumber numberWithInteger:timeInMinutes];
     
     self.recipeLabel.text = searchResult.recipeName;
     
@@ -48,7 +48,8 @@
     
     self.rating.text = [NSString stringWithFormat:@"%@",searchResult.rating];
     
-    self.prepTime.text = [NSString stringWithFormat:@"%@",searchResult.totalTimeInSeconds];
+    
+    self.prepTime.text = [NSString stringWithFormat:@"%@",totalTime];
     
     [self.logo setImageWithURL:
      [NSURL URLWithString:searchResult.attribution[@"logo"]]];

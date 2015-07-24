@@ -10,12 +10,16 @@
  
 
 @class DetailSearchResult;
+@class WebViewController;
 
 @interface RecipeDetailViewController : UIViewController
 
 @property (nonatomic, strong) DetailSearchResult *detailSearchResult;
 @property (nonatomic, strong) NSManagedObjectContext
 *managedObjectContext;
+@property (nonatomic) WebViewController *webViewController;
+
+@property (weak, nonatomic) IBOutlet UINavigationItem *navItem;
 
 
 @end

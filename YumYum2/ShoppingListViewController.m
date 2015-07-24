@@ -147,7 +147,7 @@ static NSString * const ShoppingListCellIdentifier = @"ShoppingListCell";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    ShoppingListCell *cell = (ShoppingListCell *)[tableView cellForRowAtIndexPath:indexPath];
     
     // Get ShoppingList item object at the index that corresponds with the row number
     ShoppingListItem *item = _items[indexPath.row];
@@ -260,7 +260,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
     
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index
                                                 inSection:0];
-    ShoppingListCell *cell = [self.resultTableView
+    ShoppingListCell *cell = (ShoppingListCell *)[self.resultTableView
                              cellForRowAtIndexPath:indexPath];
     
     [self configureTextForCell:cell withShoppingListItem:item];

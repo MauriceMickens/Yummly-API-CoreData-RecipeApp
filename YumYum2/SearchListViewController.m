@@ -304,7 +304,7 @@ static const int NumberOfSections = 1;
     NSString *resultString = [NSString stringWithContentsOfURL:url
                                                       encoding:NSUTF8StringEncoding error:&error];
     if (resultString == nil) {
-        NSLog(@"Download Error: %@", error);
+        //NSLog(@"Download Error: %@", error);
         return nil;
     }
     return resultString;
@@ -353,7 +353,7 @@ static const int NumberOfSections = 1;
     NSArray *array = dictionary[@"matches"];
     if (array == nil) {
    
-         NSLog(@"Expected 'results' array");
+         //NSLog(@"Expected 'results' array");
         return;
     }
     
@@ -384,20 +384,20 @@ static const int NumberOfSections = 1;
     NSArray *arrayImages = dictionary[@"images"];
     NSArray *arrayIngredients = dictionary[@"ingredientLines"];
     NSNumber *numberOfServings = dictionary[@"numberOfServings"];
+    NSString *sourceRecipeURL = dictionary[@"source"][@"sourceRecipeUrl"];
     
     DetailSearchResult *detailSearchResult = [[DetailSearchResult alloc]init];
-    
+    detailSearchResult.sourceRecipeURL = sourceRecipeURL;
     detailSearchResult.recipeName = recipeName;
     detailSearchResult.totalTime = totalTime;
     detailSearchResult.sourceRecipe = recipeSource;
     detailSearchResult.numberOfServings = numberOfServings;
+    detailSearchResult.disableButton = NO;
     for (NSDictionary *dict in arrayImages){
         detailSearchResult.bigImage = dict[@"hostedLargeUrl"];
     }
-    for (NSDictionary *dict in recipeSource){
-       // detailSearchResult.sourceRecipeURL = dict[@"sourceRecipeUrl"];
-    }
-    
+
+    //NSLog(@"SourceRecipe-%@",detailSearchResult.sourceRecipeURL);
     detailSearchResult.ingredientLines = arrayIngredients;
     
     return detailSearchResult;

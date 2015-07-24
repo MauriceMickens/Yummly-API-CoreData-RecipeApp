@@ -7,15 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <CoreLocation/CoreLocation.h>
 
-
-@interface AppDelegate : UIResponder <UIApplicationDelegate, CLLocationManagerDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-@property (strong, nonatomic) CLLocationManager *customLocationManager;
-@property (strong, nonatomic) CLLocation *currentUserLocation;
-
 @property (nonatomic, strong) NSManagedObjectContext
 *managedObjectContext;
 @property (nonatomic, strong) NSManagedObjectModel
@@ -24,10 +19,10 @@
 *persistentStoreCoordinator;
 
 
-- (void)saveContext;
-- (NSURL *)applicationDocumentsDirectory;
-- (void)updateCurrentLocation;
-- (void)stopUpdatingCurrentLocation;
+//- (void)saveContext;
+//- (NSURL *)applicationDocumentsDirectory;
+//- (void)updateCurrentLocation;
+//- (void)stopUpdatingCurrentLocation;
 
 
 @end

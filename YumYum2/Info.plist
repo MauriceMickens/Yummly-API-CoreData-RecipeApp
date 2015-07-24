@@ -28,13 +28,13 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>2</string>
 	<key>FacebookAppID</key>
 	<string>922094584520999</string>
-	<key>FacebookDisplayName</key>
-	<string>Fressh</string>
 	<key>FacebookBundleName</key>
 	<string>FacebookSDKOverrides</string>
+	<key>FacebookDisplayName</key>
+	<string>Fressh</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>
@@ -61,6 +61,6 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
-	<false/>
+	<true/>
 </dict>
 </plist>

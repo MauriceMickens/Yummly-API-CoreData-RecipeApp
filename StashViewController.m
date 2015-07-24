@@ -2,7 +2,7 @@
 //  StashViewController.m
 //  YumYum2
 //
-//  Created by PhantomDestroyer on 3/26/15.
+//  Created by Maurice Mickens on 3/26/15.
 //  Copyright (c) 2015 Loud Skies. All rights reserved.
 //
 
@@ -62,8 +62,6 @@ static const int NumberOfSections = 1;
     
     UINib *cellNib = [UINib nibWithNibName:SearchResultCellIdentifier bundle:nil];
     [self.tableView registerNib:cellNib forCellReuseIdentifier:SearchResultCellIdentifier];
-    
-    self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication
                                                 sharedApplication] delegate];
@@ -129,19 +127,19 @@ static const int NumberOfSections = 1;
     DetailSearchResult *result = [[DetailSearchResult alloc]init];
     
     RecipeDetailViewController *controller =
-    [[RecipeDetailViewController alloc]
-     initWithNibName: @"RecipeDetailViewController" bundle:nil];
+    [[RecipeDetailViewController alloc] init];
     
     Recipe *recipe = [self.fetchedResultsController
                       objectAtIndexPath:indexPath];
-    
     result.recipeName = recipe.recipeName;
-    result.source2 = recipe.sourceRecipe;
+    result.stashSource = YES;
+    result.source2 = recipe.sourceRecipe; 
     result.bigImage = recipe.imageURL;
     result.numberOfServings = recipe.numberOfServings;
     result.totalTime = recipe.totalTime;
     result.ingredientLines = recipe.ingredientLines;
-    
+    result.sourceRecipeURL = recipe.recipeURL;
+    result.disableButton = YES; 
     controller.detailSearchResult = result;
     
     // Show the RecipeDetailViewController
@@ -172,7 +170,6 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
 - (void)controllerWillChangeContent:
 (NSFetchedResultsController *)controller
 {
-    NSLog(@"*** controllerWillChangeContent");
     [self.tableView beginUpdates];
 }
 - (void)controller:(NSFetchedResultsController *)controller
@@ -183,20 +180,16 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     switch (type) {
         case NSFetchedResultsChangeInsert:
-            NSLog(@"*** NSFetchedResultsChangeInsert (object)");
             [self.tableView insertRowsAtIndexPaths:@[newIndexPath]
                                   withRowAnimation:UITableViewRowAnimationFade];
             break;
         case NSFetchedResultsChangeDelete:
-            NSLog(@"*** NSFetchedResultsChangeDelete (object)");
             [self.tableView deleteRowsAtIndexPaths:@[indexPath]
                                   withRowAnimation:UITableViewRowAnimationFade];
             break;
         case NSFetchedResultsChangeUpdate:
-            NSLog(@"*** NSFetchedResultsChangeUpdate (object)");
             break;
         case NSFetchedResultsChangeMove:
-            NSLog(@"*** NSFetchedResultsChangeMove (object)");
             [self.tableView deleteRowsAtIndexPaths:@[indexPath]
                                   withRowAnimation:UITableViewRowAnimationFade];
             [self.tableView insertRowsAtIndexPaths:@[newIndexPath]
@@ -212,13 +205,11 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     switch (type) {
         case NSFetchedResultsChangeInsert:
-            NSLog(@"*** NSFetchedResultsChangeInsert (section)");
             [self.tableView insertSections:[NSIndexSet
                                             indexSetWithIndex:sectionIndex]
                           withRowAnimation:UITableViewRowAnimationFade];
             break;
         case NSFetchedResultsChangeDelete:
-            NSLog(@"*** NSFetchedResultsChangeDelete (section)");
             [self.tableView deleteSections:[NSIndexSet
                                             indexSetWithIndex:sectionIndex]
                           withRowAnimation:UITableViewRowAnimationFade];
@@ -228,7 +219,6 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
 - (void)controllerDidChangeContent:
 (NSFetchedResultsController *)controller
 {
-    NSLog(@"*** controllerDidChangeContent");
     [self.tableView endUpdates];
 }
 

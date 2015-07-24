@@ -2,7 +2,7 @@
 //  IngredientsCell.h
 //  YumYum2
 //
-//  Created by PhantomDestroyer on 3/17/15.
+//  Created by Maurice Mickens on 3/17/15.
 //  Copyright (c) 2015 Loud Skies. All rights reserved.
 //
 

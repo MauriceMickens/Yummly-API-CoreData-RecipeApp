@@ -2,17 +2,23 @@
 //  CreateRecipeViewController.m
 //  YumYum2
 //
-//  Created by PhantomDestroyer on 3/16/15.
+//  Created by Maurice Mickens on 3/16/15.
 //  Copyright (c) 2015 Loud Skies. All rights reserved.
 //
 
 #import "CreateRecipeViewController.h"
+#import <CoreData/CoreData.h>
 #import "IngredientsViewController.h"
 #import "AddDirectionsViewController.h"
 #import "CategoryPickerViewController.h"
 #import "DetailIngredientsCell.h"
+#import "DetailSearchResult.h"
 #import "DirectionItem.h"
-#import "RecipeTitle.h"
+#import "MyTextField.h"
+#import "HudView.h"
+#import "Recipe.h"
+#import <QuartzCore/QuartzCore.h>
+#import "YumYum2Macros.h"
 
 static NSString * const IngredientsCellIdentifier = @"IngredientsCell";
 static NSString * const DirectionsCellIdentifier = @"DirectionsCell";
@@ -23,7 +29,9 @@ static NSString * const CreateRecipeCellIdentifier = @"CreatedRecipeCell";
 
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
 @property (nonatomic, weak) IBOutlet UIImageView *imageView;
-@property (weak, nonatomic) IBOutlet UITextField *textField;
+@property (weak, nonatomic) IBOutlet UITextField *recipeTextField;
+@property (weak, nonatomic) IBOutlet UITextField *servingsTextField;
+@property (weak, nonatomic) IBOutlet UITextField *timeTextField;
 
 @end
 
@@ -46,14 +54,53 @@ static NSString * const CreateRecipeCellIdentifier = @"CreatedRecipeCell";
 - (IBAction)clearScreen:(id)sender {
     
     [self.view endEditing:YES];
-    self.textField.text = @"";
+    self.recipeTextField.text = @"";
+    self.servingsTextField.text = @"";
+    self.timeTextField.text = @"";
+}
+
+- (IBAction)save:(id)sender
+{
+    HudView *hudView = [HudView
+                        hudInView:self.view animated:YES];
+    hudView.text = @"Fressh Saved";
+    
+    // Create a Core Data Managed Object
+    Recipe *recipe = [NSEntityDescription
+                      insertNewObjectForEntityForName:@"Recipe"
+                      inManagedObjectContext:self.managedObjectContext];
+    
+    recipe.recipeName = self.recipeTextField.text;
+    
+    NSNumberFormatter *fServings = [[NSNumberFormatter alloc] init];
+    fServings.numberStyle = NSNumberFormatterDecimalStyle;
+    recipe.numberOfServings = [fServings numberFromString:self.servingsTextField.text];
+
+    recipe.totalTime = self.timeTextField.text;
+
+    
+    NSError *error;
+    if (![self.managedObjectContext save:&error]) {
+        FATAL_CORE_DATA_ERROR(error);
+        return;
+    }
+    
+    [self performSelector:@selector(closeScreen) withObject:nil
+               afterDelay:0.6];
+}
+
+- (void)closeScreen
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.tableView.rowHeight = 88;
-    self.textField.delegate = self;
+    self.recipeTextField.delegate = self;
+    self.servingsTextField.delegate = self;
+    self.timeTextField.delegate = self;
     
     _directions = [[NSMutableArray alloc] init];
     
@@ -77,22 +124,14 @@ static NSString * const CreateRecipeCellIdentifier = @"CreatedRecipeCell";
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
     if (section == 0){
-        NSLog(@"Ingredients");
-        return 1;
+        return [_ingredients count];
     }
-    if (section == 1)
-    {
-        if ([_directions count] == 0){
-            NSLog(@"RowReturn0Array Count:%lu",(unsigned long)[_directions count]);
-            return 1;
-        }
-        else{
-            NSLog(@"RowReturn>Array Count:%lu",(unsigned long)[_directions count]);
-            return [_directions count];
-        }
+    if (section == 1){
+        return [_directions count];
     }
-    if (section == 2)
-        return 1;
+    if (section == 2){
+        return [_category count];
+    }
     return 0;
 }
 
@@ -105,10 +144,10 @@ static NSString * const CreateRecipeCellIdentifier = @"CreatedRecipeCell";
     if (indexPath.section == 0){
         cell = [tableView dequeueReusableCellWithIdentifier:IngredientsCellIdentifier];
     }else if (indexPath.section == 1){
-        if (indexPath.row == 0){
-            cell = [tableView dequeueReusableCellWithIdentifier:DirectionsCellIdentifier forIndexPath:indexPath];
-        }else
-            cell = [tableView dequeueReusableCellWithIdentifier:IngredientsCellIdentifier];
+        cell = [tableView dequeueReusableCellWithIdentifier:DirectionsCellIdentifier forIndexPath:indexPath];
+        DirectionItem *item = _directions[indexPath.row];
+        UILabel *label = (UILabel *)[cell viewWithTag:101];
+        label.text = item.text;
     }else if (indexPath.section == 2){
         cell = [tableView dequeueReusableCellWithIdentifier:CategoryCellIdentifier];
     }
@@ -127,44 +166,56 @@ static NSString * const CreateRecipeCellIdentifier = @"CreatedRecipeCell";
     return @"undefined";
 }
 
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView* customView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, 600.0, 22.0)];
+    UIButton * headerBtn = [[UIButton alloc] initWithFrame:CGRectZero];
+    headerBtn.backgroundColor = [UIColor redColor];
+    headerBtn.frame = CGRectMake(10.0, 30.0, 300.0, 25.0);
+    [headerBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [customView addSubview:headerBtn];
+    
+    if (section == 0){
+        
+        [customView setBackgroundColor:[UIColor redColor]];
+        
+        [headerBtn setTitle:@"Add Ingredients" forState:UIControlStateNormal];
+        [headerBtn addTarget:self action:@selector(addIngredient:) forControlEvents:UIControlEventTouchUpInside];
+        return customView;
+    }
+    if (section == 1){
+        
+        [customView setBackgroundColor:[UIColor redColor]];
+        
+        [headerBtn setTitle:@"Add Directions" forState:UIControlStateNormal];
+        [headerBtn addTarget:self action:@selector(addDirections:) forControlEvents:UIControlEventTouchUpInside];
+        return customView;
+    }
+    if (section == 2){
+        
+        [customView setBackgroundColor:[UIColor redColor]];
+        
+        [headerBtn setTitle:@"Add Category" forState:UIControlStateNormal];
+        [headerBtn addTarget:self action:@selector(addCategory:) forControlEvents:UIControlEventTouchUpInside];
+        return customView;
+    }
+    
+    
+    return nil;
+}
+
+- (CGFloat) tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 88.0;
+}
+
 #pragma mark - UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
     
-    if(indexPath.section == 0)
-    {
-        IngredientsViewController *ingredientsViewController =
-        [[IngredientsViewController alloc]
-         initWithNibName: @"IngredientsViewController" bundle:nil];
-        
-        [self presentViewController:ingredientsViewController animated:YES
-                         completion:nil];
-        
-    }
-    if(indexPath.section == 1)
-    {
-        AddDirectionsViewController *directionsViewController =
-        [[AddDirectionsViewController alloc]
-         initWithNibName: @"AddDirectionsViewController" bundle:nil];
-        
-        directionsViewController.delegate = self;
-        
-        [self presentViewController:directionsViewController animated:YES
-                         completion:nil];
-    }
-    if(indexPath.section == 2)
-    {
-        CategoryPickerViewController *categoryPickerViewController =
-        [[CategoryPickerViewController alloc]
-         initWithNibName: @"CategoryPickerViewController" bundle:nil];
-        
-        [self presentViewController:categoryPickerViewController animated:YES
-                         completion:nil];
-        
-    }
 
 }
 
@@ -275,19 +326,45 @@ didDismissWithButtonIndex:(NSInteger)buttonIndex
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    if ([self.textField isFirstResponder]) {
-        [self.textField resignFirstResponder];
+    if ([self.recipeTextField isFirstResponder]) {
+        [self.recipeTextField resignFirstResponder];
+    }
+    if ([self.servingsTextField isFirstResponder]){
+        [self.servingsTextField resignFirstResponder];
+    }
+    if ([self.timeTextField isFirstResponder]){
+        [self.timeTextField resignFirstResponder];
     }
     
-    RecipeTitle *recipetitle = [[RecipeTitle alloc]init];
-    recipetitle.text = self.textField.text;
-    NSLog(@"%@",recipetitle.text);
+    MyTextField *myTextField = [[MyTextField alloc]init];
+    if (textField == self.recipeTextField) {
+        self.recipeTextField.text = textField.text;
+        myTextField.recipeTitle = self.recipeTextField.text;
+        //NSLog(@"%@",myTextField.recipeTitle);
+    }
+    if (textField == self.servingsTextField) {
+        self.servingsTextField.text = textField.text;
+        myTextField.recipeServings = self.servingsTextField.text;
+        //NSLog(@"%@",myTextField.recipeServings);
+    }
+    if (textField == self.timeTextField){
+        self.servingsTextField.text = textField.text;
+        myTextField.recipeTime = self.timeTextField.text;
+        //NSLog(@"%@",myTextField.recipeTime);
+    }
+    
     return YES;
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    if ([self.textField isFirstResponder]) {
-        [self.textField resignFirstResponder];
+    if ([self.recipeTextField isFirstResponder]) {
+        [self.recipeTextField resignFirstResponder];
+    }
+    if ([self.servingsTextField isFirstResponder]){
+        [self.servingsTextField resignFirstResponder];
+    }
+    if ([self.timeTextField isFirstResponder]){
+        [self.timeTextField resignFirstResponder];
     }
     
 }
@@ -300,17 +377,7 @@ didDismissWithButtonIndex:(NSInteger)buttonIndex
 - (void)addItemViewController:(AddDirectionsViewController *)controller didFinishAddingItem:(DirectionItem *)item
 {
     NSInteger newRowIndex = [_directions count];
-    NSLog(@"InititalArray Count:%lu",(unsigned long)[_directions count]);
-    
-    if (newRowIndex == 0){
-        newRowIndex = 1;
-    }
-    NSLog(@"NewRowIndex:%ld",(long)newRowIndex);
-    
-    NSLog(@"ItemName:%@",item.text);
     [_directions addObject:item];
-    
-    NSLog(@"PostArray Count:%lu",(unsigned long)[_directions count]);
     
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:newRowIndex inSection:1];
     NSArray *indexPaths = @[indexPath];
@@ -324,33 +391,41 @@ didDismissWithButtonIndex:(NSInteger)buttonIndex
     // Dispose of any resources that can be recreated.
 }
 
-/*- (IBAction)addNewIngredient:(id)sender
+- (void)addIngredient:(id)sender
 {
-    // Get the row position for the new cell
-    NSInteger newRowIndex = [_items count];
+    IngredientsViewController *ingredientsViewController =
+    [[IngredientsViewController alloc]
+     initWithNibName: @"IngredientsViewController" bundle:nil];
     
-    // Create new ShoppingListItem object
-    ShoppingListItem *item = [[ShoppingListItem alloc] init];
-    
-    // Set the item text to textfield text with no checkmark
-    item.text = self.fTextField.text;
-    item.checked = NO;
-    
-    // Add the updated ShoppingListItem object to the data model
-    [_items addObject:item];
-    
-    // Set am indexPath object to point to newly created row
-    NSIndexPath *indexPath = [NSIndexPath
-                              indexPathForRow:newRowIndex inSection:0];
-    // Creates temporary array of indexPath objects
-    NSArray *indexPaths = @[indexPath];
-    
-    // Insert new row in table view
-    [self.resultTableView insertRowsAtIndexPaths:indexPaths
-                                withRowAnimation:UITableViewRowAnimationAutomatic];
+    [self presentViewController:ingredientsViewController animated:YES
+                     completion:nil];
     
 }
- */
+
+- (void)addDirections:(id)sender
+{
+    AddDirectionsViewController *directionsViewController =
+    [[AddDirectionsViewController alloc]
+     initWithNibName: @"AddDirectionsViewController" bundle:nil];
+    
+    directionsViewController.delegate = self;
+    
+    [self presentViewController:directionsViewController animated:YES
+                     completion:nil];
+    
+}
+
+- (void)addCategory:(id)sender
+{
+    CategoryPickerViewController *categoryPickerViewController =
+    [[CategoryPickerViewController alloc]
+     initWithNibName: @"CategoryPickerViewController" bundle:nil];
+    
+    [self presentViewController:categoryPickerViewController animated:YES
+                     completion:nil];
+    
+}
+
 
 
 @end

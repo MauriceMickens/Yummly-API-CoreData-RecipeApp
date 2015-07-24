@@ -7,10 +7,12 @@
 //
 
 #import "AppDelegate.h"
-#import <FacebookSDK/FacebookSDK.h>
+//#import <FacebookSDK/FacebookSDK.h>
 #import <CoreData/CoreData.h>
 #import "RecipeDetailViewController.h"
+#import "CreateRecipeViewController.h"
 #import "YumYum2Macros.h"
+#import "WebViewController.h"
 //#import "SCErrorHandler.h"
 //#import "SCSettings.h"
 
@@ -24,13 +26,6 @@ NSString * const ManagedObjectContextSaveDidFailNotification =
 
 @implementation AppDelegate
 
-+ (void)initialize
-{
-    // Nib files require the type to have been loaded before they can do the wireup successfully.
-    // http://stackoverflow.com/questions/1725881/unknown-class-myclass-in-interface-builder-file-error-at-runtime
-    [FBLoginView class];
-    [FBProfilePictureView class];
-}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
@@ -38,10 +33,10 @@ NSString * const ManagedObjectContextSaveDidFailNotification =
     
     // Intialize location manager
     
-    self.customLocationManager = [[CLLocationManager alloc] init];
+    /*self.customLocationManager = [[CLLocationManager alloc] init];
     self.customLocationManager.desiredAccuracy = kCLLocationAccuracyKilometer;
     self.customLocationManager.delegate = self;
-    [self.customLocationManager startUpdatingLocation];
+    [self.customLocationManager startUpdatingLocation];*/
     
     // Create an instance of a UINavigationController
     // its stack contains only itemsViewController
@@ -66,12 +61,12 @@ NSString * const ManagedObjectContextSaveDidFailNotification =
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     
     // Logs 'install' and 'app activate' App Events.
-    [FBAppEvents activateApp];
+    /*[FBAppEvents activateApp];
     
     // Facebook SDK * login flow *
     // We need to properly handle activation of the application with regards to SSO
     //  (e.g., returning from iOS 6.0 authorization dialog or from fast app switching).
-    [FBAppCall handleDidBecomeActive];
+    [FBAppCall handleDidBecomeActive];*/
 }
 
 /*- (BOOL)application:(UIApplication *)application
@@ -86,7 +81,7 @@ NSString * const ManagedObjectContextSaveDidFailNotification =
         // which can contain an access token.
         if (call.accessTokenData) {
             if ([FBSession activeSession].isOpen) {
-                NSLog(@"INFO: Ignoring new access token because current session is open.");
+                //NSLog(@"INFO: Ignoring new access token because current session is open.");
             }
             else {
                 [self _handleOpenURLWithAccessToken:call.accessTokenData];
@@ -131,7 +126,7 @@ NSString * const ManagedObjectContextSaveDidFailNotification =
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     // Saves changes in the application's managed object context before the application terminates.
-    [self saveContext];
+    //[self saveContext];
 }
 
 #pragma mark - UIAlertViewDelegate
@@ -164,7 +159,7 @@ NSString * const ManagedObjectContextSaveDidFailNotification =
 {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(
                                                          NSDocumentDirectory, NSUserDomainMask, YES);
-    NSLog(@"%@",[[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory  inDomains:NSUserDomainMask] lastObject]);
+    //NSLog(@"%@",[[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory  inDomains:NSUserDomainMask] lastObject]);
     
     NSString *documentsDirectory = [paths lastObject];
     return documentsDirectory;
@@ -255,7 +250,7 @@ NSString * const ManagedObjectContextSaveDidFailNotification =
         error = [NSError errorWithDomain:@"YOUR_ERROR_DOMAIN" code:9999 userInfo:dict];
         // Replace this with code to handle the error appropriately.
         // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        //NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
     }
     
@@ -287,13 +282,13 @@ NSString * const ManagedObjectContextSaveDidFailNotification =
         if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
             // Replace this implementation with code to handle the error appropriately.
             // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+            //NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
             abort();
         }
     }
 }
 */
-# pragma mark - Updates user's current location
+/*# pragma mark - Updates user's current location
 
 -(void)updateCurrentLocation {
     [self.customLocationManager startUpdatingLocation];
@@ -315,13 +310,13 @@ NSString * const ManagedObjectContextSaveDidFailNotification =
 - (void)locationManager:(CLLocationManager *)manager
        didFailWithError:(NSError *)error
 {
-    NSLog(@"didFailWithError %@", error);
+    //NSLog(@"didFailWithError %@", error);
 }
 - (void)locationManager:(CLLocationManager *)manager
      didUpdateLocations:(NSArray *)locations
 {
     CLLocation *newLocation = [locations lastObject];
-    NSLog(@"didUpdateLocations %@", newLocation);
-}
+    //NSLog(@"didUpdateLocations %@", newLocation);
+}*/
 
 @end

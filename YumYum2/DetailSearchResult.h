@@ -11,6 +11,8 @@
 @interface DetailSearchResult : NSObject
 
 @property (nonatomic, copy) NSString *totalTime;
+@property (nonatomic, assign) BOOL disableButton;
+@property (nonatomic, assign) BOOL stashSource;
 @property (nonatomic, copy) NSString  *bigImage;
 @property (nonatomic, copy) NSString *recipeName;
 @property (nonatomic, copy) NSString *sourceRecipeURL;

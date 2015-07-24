@@ -13,6 +13,7 @@
 #import "SearchResult.h"
 #import <AFNetworking/UIImageView+AFNetworking.h>
 #import "DetailIngredient.h"
+#import "WebViewController.h"
 #import <CoreData/CoreData.h>
 #import "HudView.h"
 #import "YumYum2Macros.h"
@@ -30,6 +31,9 @@ static const int NumberOfSections = 1;
 @property (nonatomic, weak) IBOutlet UILabel *totalTimeLabel;
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
 
+
+@property (nonatomic) NSURLSession *session;
+
 @end
 
 @implementation RecipeDetailViewController
@@ -39,17 +43,18 @@ static const int NumberOfSections = 1;
     NSDate *_date;
     UIImage *_recipePhoto;
     NSMutableArray *_images;
+    
 }
 
 - (instancetype)init{
     self = [super init];
     if(self){
-
+        
     }
     return self;
 }
 
-- (IBAction)done:(id)sender
+- (IBAction)save:(id)sender
 {
     HudView *hudView = [HudView
                         hudInView:self.view animated:YES];
@@ -61,11 +66,12 @@ static const int NumberOfSections = 1;
                           inManagedObjectContext:self.managedObjectContext];
     
     recipe.recipeName = self.detailSearchResult.recipeName;
-    NSString *sourceDisplayName = self.detailSearchResult.sourceRecipe[@"sourceDisplayName"];
-    recipe.sourceRecipe = sourceDisplayName;
+    recipe.sourceRecipe = self.detailSearchResult.sourceRecipe[@"sourceDisplayName"];
+    recipe.numberOfServings = self.detailSearchResult.numberOfServings;
+    recipe.totalTime = self.detailSearchResult.totalTime;
     recipe.imageURL = self.detailSearchResult.bigImage;
     recipe.ingredientLines = self.detailSearchResult.ingredientLines;
-
+    recipe.recipeURL = self.detailSearchResult.sourceRecipeURL;
     
     NSError *error;
     if (![self.managedObjectContext save:&error]) {
@@ -75,8 +81,23 @@ static const int NumberOfSections = 1;
     
     [self performSelector:@selector(closeScreen) withObject:nil
                afterDelay:0.6];
+}
+- (IBAction)getWebView:(id)sender {
+    
+    WebViewController *controller =
+    [[WebViewController alloc]
+     initWithNibName: @"WebViewController" bundle:nil];
+    
+    NSURL *URL = [NSURL URLWithString:self.detailSearchResult.sourceRecipeURL];
+    
+    controller.URL = URL;
+    
+    [self presentViewController:controller animated:YES
+                     completion:nil];
+    
     
 }
+
 
 
 - (void)closeScreen
@@ -91,23 +112,35 @@ static const int NumberOfSections = 1;
     
     if (self.detailSearchResult != nil){
         [self updateUI];
+        if (self.detailSearchResult.disableButton == YES){
+            [self disableBarButtonItem];
+        }
     }
     
     UINib *cellNib = [UINib nibWithNibName:DetailIngredientsCellIdentifier bundle:nil];
     [self.tableView registerNib:cellNib forCellReuseIdentifier:DetailIngredientsCellIdentifier];
 }
 
+-(void)disableBarButtonItem{
+    self.navItem.rightBarButtonItem.enabled = NO;
+}
+
 - (void)updateUI
 {
     self.recipeNameLabel.text = self.detailSearchResult.recipeName;
     
-    self.sourceNameLabel.text = self.detailSearchResult.source2; 
-    
-    NSString *sourceDisplayName = self.detailSearchResult.sourceRecipe[@"sourceDisplayName"];
-    if (sourceDisplayName == nil) {
-        sourceDisplayName = @"Unknown";
+    if (self.detailSearchResult.stashSource == YES){
+        if (self.detailSearchResult.source2 == nil){
+            self.sourceNameLabel.text = @"Unknown";
+        }
+        self.sourceNameLabel.text = self.detailSearchResult.source2;
+    }else {
+        NSString *sourceDisplayName = [self.detailSearchResult.sourceRecipe objectForKey:@"sourceDisplayName"];
+        if (sourceDisplayName == nil) {
+            sourceDisplayName = @"Unknown";
+        }
+        self.sourceNameLabel.text = sourceDisplayName;
     }
-    self.sourceNameLabel.text = sourceDisplayName;
     
     self.servingsLabel.text = [NSString stringWithFormat:@"%@",self.detailSearchResult.numberOfServings];
     self.totalTimeLabel.text = self.detailSearchResult.totalTime; 

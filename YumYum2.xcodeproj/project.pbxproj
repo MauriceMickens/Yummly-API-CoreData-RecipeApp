@@ -12,8 +12,8 @@
 		9E1ABDE71A9C18EA008334BD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E1ABDE61A9C18EA008334BD /* CoreGraphics.framework */; };
 		9E20C3D81AB5F17B0007E9B0 /* ReadMe.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9E20C3D71AB5F17B0007E9B0 /* ReadMe.txt */; };
 		9E4D8EF91ABA8C2A00E50AF0 /* DetailIngredientsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E4D8EF81ABA8C2A00E50AF0 /* DetailIngredientsCell.xib */; };
-		9E76EE821A9D5E7500B9E0FA /* YelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E76EE811A9D5E7500B9E0FA /* YelpViewController.m */; };
-		9E76EE851A9D600500B9E0FA /* YelpResultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E76EE841A9D600500B9E0FA /* YelpResultTableViewCell.m */; };
+		9E627BC51ACCAFC8006EEAE3 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E627BC31ACCAFC8006EEAE3 /* WebViewController.m */; };
+		9E627BC61ACCAFC8006EEAE3 /* WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E627BC41ACCAFC8006EEAE3 /* WebViewController.xib */; };
 		9E76EE8B1A9E4A0E00B9E0FA /* SearchResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E76EE881A9E4A0E00B9E0FA /* SearchResultCell.m */; };
 		9E76EE8C1A9E4A0E00B9E0FA /* SearchResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E76EE8A1A9E4A0E00B9E0FA /* SearchResult.m */; };
 		9E7DF3CA1A9A2390004DB657 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E7DF3C91A9A2390004DB657 /* CoreLocation.framework */; };
@@ -23,6 +23,7 @@
 		9E7DF3D21A9A23DE004DB657 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E7DF3D11A9A23DE004DB657 /* Security.framework */; };
 		9E7DF3D41A9A23F1004DB657 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E7DF3D31A9A23F1004DB657 /* Foundation.framework */; };
 		9E7DF3D61A9A2404004DB657 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E7DF3D51A9A2404004DB657 /* UIKit.framework */; };
+		9E80D2631AD06E960027EEF4 /* MyTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E80D2621AD06E960027EEF4 /* MyTextField.m */; };
 		9E9277651AA2345500CF85A6 /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E9277641AA2345500CF85A6 /* SearchResultCell.xib */; };
 		9E92776A1AA2671500CF85A6 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E9277691AA2671400CF85A6 /* Accelerate.framework */; };
 		9E92776F1AA274AA00CF85A6 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E92776E1AA274AA00CF85A6 /* CoreImage.framework */; };
@@ -40,7 +41,6 @@
 		9EB272BB1AAB6A3E00525022 /* EditItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB272BA1AAB6A3E00525022 /* EditItemViewController.m */; };
 		9EB272BE1AAB98BF00525022 /* AllListsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB272BD1AAB98BF00525022 /* AllListsViewController.m */; };
 		9EB272C11AABA24A00525022 /* ShoppingList.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB272C01AABA24A00525022 /* ShoppingList.m */; };
-		9EB274A41AAD276B00525022 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EB274A31AAD276B00525022 /* FacebookSDK.framework */; };
 		9EB274A61AAD30B300525022 /* FacebookSDKOverrides.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9EB274A51AAD30B300525022 /* FacebookSDKOverrides.bundle */; };
 		9EB274A81AAD30C900525022 /* FBUserSettingsViewResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9EB274A71AAD30C900525022 /* FBUserSettingsViewResources.bundle */; };
 		9EB274CF1AB11ABE00525022 /* RecipeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB274CD1AB11ABE00525022 /* RecipeDetailViewController.m */; };
@@ -64,7 +64,6 @@
 		9EEEDB9E1AB7DC85009419A1 /* IngredientsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EEEDB9C1AB7DC85009419A1 /* IngredientsViewController.m */; };
 		9EEEDB9F1AB7DC85009419A1 /* IngredientsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EEEDB9D1AB7DC85009419A1 /* IngredientsViewController.xib */; };
 		9EEEDBA21AB8EE29009419A1 /* DetailIngredientsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EEEDBA11AB8EE29009419A1 /* DetailIngredientsCell.m */; };
-		9EFD84CD1ABDC489006F8CA8 /* RecipeTitle.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EFD84CC1ABDC489006F8CA8 /* RecipeTitle.m */; };
 		9EFD84D91ABDCE46006F8CA8 /* AddDirectionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EFD84D71ABDCE46006F8CA8 /* AddDirectionsViewController.m */; };
 		9EFD84DA1ABDCE46006F8CA8 /* AddDirectionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EFD84D81ABDCE46006F8CA8 /* AddDirectionsViewController.xib */; };
 		9EFD84E31ABDD3D0006F8CA8 /* CategoryPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EFD84E11ABDD3D0006F8CA8 /* CategoryPickerViewController.m */; };
@@ -93,10 +92,9 @@
 		9E1ABDE61A9C18EA008334BD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		9E20C3D71AB5F17B0007E9B0 /* ReadMe.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe.txt; sourceTree = "<group>"; };
 		9E4D8EF81ABA8C2A00E50AF0 /* DetailIngredientsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailIngredientsCell.xib; sourceTree = "<group>"; };
-		9E76EE801A9D5E7500B9E0FA /* YelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YelpViewController.h; path = YumYum2/YelpViewController.h; sourceTree = "<group>"; };
-		9E76EE811A9D5E7500B9E0FA /* YelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YelpViewController.m; path = YumYum2/YelpViewController.m; sourceTree = "<group>"; };
-		9E76EE831A9D600500B9E0FA /* YelpResultTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YelpResultTableViewCell.h; path = YumYum2/YelpResultTableViewCell.h; sourceTree = "<group>"; };
-		9E76EE841A9D600500B9E0FA /* YelpResultTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YelpResultTableViewCell.m; path = YumYum2/YelpResultTableViewCell.m; sourceTree = "<group>"; };
+		9E627BC21ACCAFC8006EEAE3 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		9E627BC31ACCAFC8006EEAE3 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		9E627BC41ACCAFC8006EEAE3 /* WebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebViewController.xib; sourceTree = "<group>"; };
 		9E76EE871A9E4A0E00B9E0FA /* SearchResultCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchResultCell.h; path = YumYum2/SearchResultCell.h; sourceTree = "<group>"; };
 		9E76EE881A9E4A0E00B9E0FA /* SearchResultCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchResultCell.m; path = YumYum2/SearchResultCell.m; sourceTree = "<group>"; };
 		9E76EE891A9E4A0E00B9E0FA /* SearchResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResult.h; sourceTree = "<group>"; };
@@ -108,6 +106,8 @@
 		9E7DF3D11A9A23DE004DB657 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		9E7DF3D31A9A23F1004DB657 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9E7DF3D51A9A2404004DB657 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		9E80D2611AD06E960027EEF4 /* MyTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTextField.h; sourceTree = "<group>"; };
+		9E80D2621AD06E960027EEF4 /* MyTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTextField.m; sourceTree = "<group>"; };
 		9E9277641AA2345500CF85A6 /* SearchResultCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SearchResultCell.xib; path = YumYum2/SearchResultCell.xib; sourceTree = "<group>"; };
 		9E9277691AA2671400CF85A6 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		9E92776E1AA274AA00CF85A6 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
@@ -176,8 +176,6 @@
 		9EEEDB9D1AB7DC85009419A1 /* IngredientsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IngredientsViewController.xib; sourceTree = "<group>"; };
 		9EEEDBA01AB8EE29009419A1 /* DetailIngredientsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailIngredientsCell.h; sourceTree = "<group>"; };
 		9EEEDBA11AB8EE29009419A1 /* DetailIngredientsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailIngredientsCell.m; sourceTree = "<group>"; };
-		9EFD84CB1ABDC489006F8CA8 /* RecipeTitle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeTitle.h; sourceTree = "<group>"; };
-		9EFD84CC1ABDC489006F8CA8 /* RecipeTitle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeTitle.m; sourceTree = "<group>"; };
 		9EFD84D61ABDCE46006F8CA8 /* AddDirectionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddDirectionsViewController.h; sourceTree = "<group>"; };
 		9EFD84D71ABDCE46006F8CA8 /* AddDirectionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddDirectionsViewController.m; sourceTree = "<group>"; };
 		9EFD84D81ABDCE46006F8CA8 /* AddDirectionsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddDirectionsViewController.xib; sourceTree = "<group>"; };
@@ -205,7 +203,6 @@
 				9E7DF3D41A9A23F1004DB657 /* Foundation.framework in Frameworks */,
 				9E7DF3D21A9A23DE004DB657 /* Security.framework in Frameworks */,
 				9E7DF3D01A9A23CD004DB657 /* SystemConfiguration.framework in Frameworks */,
-				9EB274A41AAD276B00525022 /* FacebookSDK.framework in Frameworks */,
 				9E7DF3CE1A9A23C0004DB657 /* CFNetwork.framework in Frameworks */,
 				9E7DF3CC1A9A23AF004DB657 /* AVFoundation.framework in Frameworks */,
 				9E7DF3CA1A9A2390004DB657 /* CoreLocation.framework in Frameworks */,
@@ -234,8 +231,8 @@
 				9EB274CD1AB11ABE00525022 /* RecipeDetailViewController.m */,
 				9E9277771AA290D300CF85A6 /* NavigationController.h */,
 				9E9277781AA290D300CF85A6 /* NavigationController.m */,
-				9E76EE801A9D5E7500B9E0FA /* YelpViewController.h */,
-				9E76EE811A9D5E7500B9E0FA /* YelpViewController.m */,
+				9E627BC21ACCAFC8006EEAE3 /* WebViewController.h */,
+				9E627BC31ACCAFC8006EEAE3 /* WebViewController.m */,
 			);
 			name = "Home View Controllers";
 			sourceTree = "<group>";
@@ -313,8 +310,6 @@
 				9E9277801AA38CFB00CF85A6 /* HomeCell.m */,
 				9EB272AE1AA6BF4B00525022 /* ShoppingListCell.h */,
 				9EB272AF1AA6BF4B00525022 /* ShoppingListCell.m */,
-				9E76EE831A9D600500B9E0FA /* YelpResultTableViewCell.h */,
-				9E76EE841A9D600500B9E0FA /* YelpResultTableViewCell.m */,
 				9E76EE871A9E4A0E00B9E0FA /* SearchResultCell.h */,
 				9E76EE881A9E4A0E00B9E0FA /* SearchResultCell.m */,
 				9EEEDBA01AB8EE29009419A1 /* DetailIngredientsCell.h */,
@@ -326,6 +321,7 @@
 		9E20C3E31AB5F8CA0007E9B0 /* Xibs */ = {
 			isa = PBXGroup;
 			children = (
+				9E627BC41ACCAFC8006EEAE3 /* WebViewController.xib */,
 				9EFD84E21ABDD3D0006F8CA8 /* CategoryPickerViewController.xib */,
 				9EFD84D81ABDCE46006F8CA8 /* AddDirectionsViewController.xib */,
 				9EEEDB9D1AB7DC85009419A1 /* IngredientsViewController.xib */,
@@ -348,10 +344,10 @@
 			isa = PBXGroup;
 			children = (
 				9EBB37761A98F7B5002B3B09 /* YumYum2.xcdatamodeld */,
+				9E80D2611AD06E960027EEF4 /* MyTextField.h */,
+				9E80D2621AD06E960027EEF4 /* MyTextField.m */,
 				9EAE662A1AC8CFBE00341D4D /* Recipe.h */,
 				9EAE662B1AC8CFBE00341D4D /* Recipe.m */,
-				9EFD84CB1ABDC489006F8CA8 /* RecipeTitle.h */,
-				9EFD84CC1ABDC489006F8CA8 /* RecipeTitle.m */,
 				9EEEDB901AB7CDAC009419A1 /* DirectionItem.h */,
 				9EEEDB911AB7CDAC009419A1 /* DirectionItem.m */,
 				9EEEDB931AB7CDC6009419A1 /* RecipeCategory.h */,
@@ -566,6 +562,7 @@
 				9EB89C0D1A9FFA0600A2BE44 /* Main.storyboard in Resources */,
 				9EB274D01AB11ABE00525022 /* RecipeDetailViewController.xib in Resources */,
 				9EB272A41AA3E44700525022 /* Images.xcassets in Resources */,
+				9E627BC61ACCAFC8006EEAE3 /* WebViewController.xib in Resources */,
 				9EFE32DF1A9EC79700819E54 /* LoadingCell.xib in Resources */,
 				9E9277651AA2345500CF85A6 /* SearchResultCell.xib in Resources */,
 				9EEEDB8A1AB7A0AA009419A1 /* DirectionsCell.xib in Resources */,
@@ -633,7 +630,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9EEEDB951AB7CDC6009419A1 /* RecipeCategory.m in Sources */,
-				9EFD84CD1ABDC489006F8CA8 /* RecipeTitle.m in Sources */,
 				9E9277761AA277DF00CF85A6 /* UIImage+ImageEffects.m in Sources */,
 				9EB274CF1AB11ABE00525022 /* RecipeDetailViewController.m in Sources */,
 				9EB272B51AA6C4C100525022 /* ShoppingListViewController.m in Sources */,
@@ -649,7 +645,6 @@
 				9EEEDB9E1AB7DC85009419A1 /* IngredientsViewController.m in Sources */,
 				9EBB37781A98F7B5002B3B09 /* YumYum2.xcdatamodeld in Sources */,
 				9EEEDB861AB79D51009419A1 /* CreateRecipeViewController.m in Sources */,
-				9E76EE821A9D5E7500B9E0FA /* YelpViewController.m in Sources */,
 				9EB272BE1AAB98BF00525022 /* AllListsViewController.m in Sources */,
 				9EBB37751A98F7B4002B3B09 /* AppDelegate.m in Sources */,
 				9EFD84D91ABDCE46006F8CA8 /* AddDirectionsViewController.m in Sources */,
@@ -657,11 +652,12 @@
 				9EB272C11AABA24A00525022 /* ShoppingList.m in Sources */,
 				9EBB37721A98F7B4002B3B09 /* main.m in Sources */,
 				9E92777C1AA36D3E00CF85A6 /* HomeViewController.m in Sources */,
+				9E627BC51ACCAFC8006EEAE3 /* WebViewController.m in Sources */,
 				9EEEDB921AB7CDAC009419A1 /* DirectionItem.m in Sources */,
 				9EEEDBA21AB8EE29009419A1 /* DetailIngredientsCell.m in Sources */,
 				9EFD84E31ABDD3D0006F8CA8 /* CategoryPickerViewController.m in Sources */,
-				9E76EE851A9D600500B9E0FA /* YelpResultTableViewCell.m in Sources */,
 				9E76EE8C1A9E4A0E00B9E0FA /* SearchResult.m in Sources */,
+				9E80D2631AD06E960027EEF4 /* MyTextField.m in Sources */,
 				9EAE662C1AC8CFBE00341D4D /* Recipe.m in Sources */,
 				9EB272B81AA80C6B00525022 /* ShoppingListItem.m in Sources */,
 				9E9277791AA290D300CF85A6 /* NavigationController.m in Sources */,
@@ -795,7 +791,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				"USER_HEADER_SEARCH_PATHS[arch=*]" = "";
 				VALID_ARCHS = "armv7 armv7s arm64";
 			};
@@ -818,7 +814,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Release;

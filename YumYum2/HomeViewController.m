@@ -50,8 +50,6 @@ static NSString * const PaleoDiet = @"&allowedDiet[]=403^Paleo";
     return self;
 }
 
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
 
